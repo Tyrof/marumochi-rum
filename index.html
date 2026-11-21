@@ -329,7 +329,7 @@
       justify-content: space-between;
     }
 
-    /* ステージマップ */
+    /* 章マップ */
     .stage-section {
       margin-bottom: 28px;
     }
@@ -1103,7 +1103,7 @@
 
   <script>
     /* ==============================================================
-       1. お話データ定義（プロローグ5 + Stage 0 6 + 近日公開ステージ）
+       1. お話データ定義（プロローグ5 + 第1章 6 + 近日公開章）
        ============================================================== */
     const STAGES = [
       {
@@ -1115,35 +1115,35 @@
       },
       {
         id: "stage0",
-        title: "Stage 0：ラムって何者？",
+        title: "第1章：ラムって何者？",
         desc: "原料・仲間分け・色・3大系統・度数。ラベルを読める大人の第一歩。",
         status: "open",
         lessonIds: ["s0-01", "s0-02", "s0-03", "s0-04", "s0-05", "s0-06"]
       },
       {
         id: "stage1",
-        title: "Stage 1：ラムの造られ方と個性",
+        title: "第2章：ラムの造られ方と個性",
         desc: "発酵の秘密、ポットスチルとカラムスチル、樽熟成が生む芳醇なマジック。",
         status: "upcoming",
         lessonIds: []
       },
       {
         id: "stage2",
-        title: "Stage 2：世界のラム産地めぐり",
+        title: "第3章：世界のラム産地めぐり",
         desc: "ジャマイカ、バルバドス、キューバ、マルティニーク…風土が育む味わい。",
         status: "upcoming",
         lessonIds: []
       },
       {
         id: "stage3",
-        title: "Stage 3：美味しい飲み方とグラス",
+        title: "第4章：美味しい飲み方とグラス",
         desc: "ストレートの作法、氷の魔法、ラムハイボールの黄金比、名作カクテル。",
         status: "upcoming",
         lessonIds: []
       },
       {
         id: "stage4",
-        title: "Stage 4：自分にぴったりの1本を選ぶ",
+        title: "第5章：自分にぴったりの1本を選ぶ",
         desc: "好みの香味チャート、バーでのスマートな頼み方、おうちボトルの選び方。",
         status: "upcoming",
         lessonIds: []
@@ -1546,15 +1546,15 @@
 
                 <circle cx="130" cy="50" r="12" fill="#D97706"/>
                 <text x="130" y="54" fill="#FFF" font-size="9" font-weight="bold" text-anchor="middle">基礎</text>
-                <text x="130" y="80" fill="#6B7280" font-size="8" text-anchor="middle">Stage 0</text>
+                <text x="130" y="80" fill="#6B7280" font-size="8" text-anchor="middle">第1章</text>
 
                 <circle cx="210" cy="50" r="12" fill="#F59E0B"/>
                 <text x="210" y="54" fill="#FFF" font-size="9" font-weight="bold" text-anchor="middle">製法</text>
-                <text x="210" y="80" fill="#6B7280" font-size="8" text-anchor="middle">Stage 1</text>
+                <text x="210" y="80" fill="#6B7280" font-size="8" text-anchor="middle">第2章</text>
 
                 <circle cx="290" cy="50" r="12" fill="#F59E0B"/>
                 <text x="290" y="54" fill="#FFF" font-size="9" font-weight="bold" text-anchor="middle">産地</text>
-                <text x="290" y="80" fill="#6B7280" font-size="8" text-anchor="middle">Stage 2</text>
+                <text x="290" y="80" fill="#6B7280" font-size="8" text-anchor="middle">第3章</text>
 
                 <circle cx="370" cy="50" r="12" fill="#F59E0B"/>
                 <text x="370" y="54" fill="#FFF" font-size="9" font-weight="bold" text-anchor="middle">実践</text>
@@ -1587,10 +1587,10 @@
         },
         problems: [
           {
-            scene: "【場面】これからStage 0（基礎知識編）へと進みます。学習中の心構えとして最もおすすめなのはどれ？",
+            scene: "【場面】これから第1章（基礎知識編）へと進みます。学習中の心構えとして最もおすすめなのはどれ？",
             sceneFigure: `
               <div style="display:inline-flex; align-items:center; gap:8px; background:#ECFDF5; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#065F46;">
-                <span>🚀 いざStage 0へ！</span>
+                <span>🚀 いざ第1章へ！</span>
               </div>
             `,
             question: "ガイドを愉しむスタンスとして最も素敵なものは？",
@@ -1609,11 +1609,11 @@
           "週末のバーや自宅での晩酌を豊かにするためのガイドです。",
           "ワクワクしながら進めるのが一番身につきます。"
         ],
-        afterNote: "まるもち「プロローグ完了おめでとう！次はStage 0で、ラムの正体をじっくり解き明かしていくよ〜！」"
+        afterNote: "まるもち「プロローグ完了おめでとう！次は第1章で、ラムの正体をじっくり解き明かしていくよ〜！」"
       },
 
       // -------------------------------------------------------------
-      // Stage 0 6お話
+      // 第1章 6お話
       // -------------------------------------------------------------
       "s0-01": {
         id: "s0-01",
@@ -2125,7 +2125,7 @@
           "搾り汁から造られるアグリコール製法はどの国の旧領で発展したでしょう？",
           "草原やハーブのような洗練された香りが特徴のフランス系です。"
         ],
-        afterNote: "まるもち「見事Stage 0を全問クリア！これであなたも立派なラムの目利き。ラベルを見るのがどんどん楽しくなるよ〜！」"
+        afterNote: "まるもち「見事第1章を全問クリア！これであなたも立派なラムの目利き。ラベルを見るのがどんどん楽しくなるよ〜！」"
       }
     };
 
@@ -2286,12 +2286,12 @@
             <div class="progress-bar-fill" style="width: ${progressPercent}%;"></div>
           </div>
           <div class="progress-text-sub">
-            <span>第1弾実装：プロローグ ＆ Stage 0</span>
+            <span>第1弾 公開中：プロローグ ＆ 第1章</span>
             <span>${progressPercent}% 完了</span>
           </div>
         </div>
 
-        <!-- 各ステージ -->
+        <!-- 各章 -->
         ${stagesHtml}
       `;
 
@@ -2368,7 +2368,7 @@
         <div class="lesson-container">
           <div class="lesson-header-bar">
             <div class="lesson-meta-row">
-              <span class="lesson-badge-category">${currentLesson.number} : ${currentLesson.stageId === 'prologue' ? 'プロローグ' : 'Stage 0'}</span>
+              <span class="lesson-badge-category">${currentLesson.number} : ${currentLesson.stageId === 'prologue' ? 'プロローグ' : '第1章'}</span>
               <div class="step-indicator-pills">${pillsHtml}</div>
             </div>
             <h2 class="lesson-main-title">${currentLesson.title}</h2>
@@ -2728,14 +2728,14 @@
               ? `<button class="btn btn-primary" style="width:100%;" onclick="startLesson('${nextLesson.id}')">次のお話へ進む（${nextLesson.title}） →</button>`
               : ''
             }
-            <button class="btn btn-secondary" style="width:100%;" onclick="goHome()">ステージ一覧（トップ）に戻る</button>
+            <button class="btn btn-secondary" style="width:100%;" onclick="goHome()">章一覧（トップ）に戻る</button>
           </div>
         </div>
       `;
     }
 
     /* ==============================================================
-       5. お祝いモーダル管理（ステージ全クリ・実装全クリ）
+       5. お祝いモーダル管理（章全クリ・実装全クリ）
        ============================================================== */
     function checkMilestoneModals() {
       // プロローグ全クリアチェック
@@ -2747,13 +2747,13 @@
           saveProgress();
           showCongratModal(
             '🌟 プロローグ全お話達成！',
-            'おめでとうございます！ラム酒を自由に愉しむための基礎とマインドセットがバッチリ身につきました。さあ、Stage 0でラムの奥深い正体を解き明かしましょう！'
+            'おめでとうございます！ラム酒を自由に愉しむための基礎とマインドセットがバッチリ身につきました。さあ、第1章でラムの奥深い正体を解き明かしましょう！'
           );
           return;
         }
       }
 
-      // Stage 0全クリアチェック
+      // 第1章全クリアチェック
       const stage0 = STAGES.find(s => s.id === 'stage0');
       if (stage0) {
         const isStage0All = stage0.lessonIds.every(id => isLessonCleared(id));
@@ -2761,14 +2761,14 @@
           appState.shownModals.push('stage0_cleared');
           saveProgress();
           showCongratModal(
-            '🏆 Stage 0 完全制覇！',
+            '🏆 第1章 完全制覇！',
             '素晴らしい！原料・蒸留・色・3大系統まで、ラムのラベルを読み解く知識がしっかり身につきました。これであなたも立派なラムの目利きです！'
           );
           return;
         }
       }
 
-      // 実装済み全お話（プロローグ + Stage 0 計11お話）クリアチェック
+      // 実装済み全お話（プロローグ + 第1章 計11お話）クリアチェック
       const allImplementedIds = Object.keys(LESSONS);
       const isAllCleared = allImplementedIds.every(id => isLessonCleared(id));
       if (isAllCleared && !appState.shownModals.includes('all_implemented_cleared')) {
@@ -2776,7 +2776,7 @@
         saveProgress();
         showCongratModal(
           '👑 第1弾 全お話完全制覇！',
-          'プロローグ＆Stage 0の全11お話をすべてクリアしました！まるもちも大感激です！Stage 1以降の公開をぜひ楽しみにお待ちください。'
+          'プロローグ＆第1章の全11お話をすべてクリアしました！まるもちも大感激です！第2章以降の公開をぜひ楽しみにお待ちください。'
         );
       }
     }
