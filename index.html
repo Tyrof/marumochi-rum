@@ -1103,7 +1103,7 @@
 
   <script>
     /* ==============================================================
-       1. お話データ定義（プロローグ5 + 第1章 6 + 近日公開章）
+       1. お話データ定義（プロローグ4 + 第1章 6 + 近日公開章）
        ============================================================== */
     const STAGES = [
       {
@@ -1111,7 +1111,7 @@
         title: "プロローグ：ラムを愉しむ入口",
         desc: "自由で美味しいラムの世界へようこそ。まずは基本の楽しみ方と心構えから。",
         status: "open",
-        lessonIds: ["p-01", "p-02", "p-03", "p-04", "p-05"]
+        lessonIds: ["p-01", "p-02", "p-03", "p-04"]
       },
       {
         id: "stage0",
@@ -1526,92 +1526,7 @@
         afterNote: "まるもち「気づいたことを『バニラっぽい』『カラメルっぽい』とスマホのメモに残すと、自分だけのテイスティングノートができるよ〜」"
       },
 
-      "p-05": {
-        id: "p-05",
-        stageId: "prologue",
-        number: "p-05",
-        title: "このガイドの進み方",
-        summary: "基礎→製法→産地→飲み方→ボトル選び→卒業編で「場面で選ぶ1本」へ。",
-        slides: [
-          {
-            title: "ゴールは「場面でボトルを選べる大人」",
-            body: "このガイドは銘柄や歴史をテストのために丸暗記するものではありません。「今夜のこのシチュエーションなら、あの系統のラムにしよう」と自分で判断できるようになる実践的なロードマップです。",
-            figure: `
-              <svg class="fig-svg" viewBox="0 0 460 110" width="100%">
-                <line x1="40" y1="50" x2="420" y2="50" stroke="#CBD5E1" stroke-width="4" stroke-dasharray="6 6"/>
-                <!-- ステップピン -->
-                <circle cx="50" cy="50" r="14" fill="#B45309"/>
-                <text x="50" y="54" fill="#FFF" font-size="9" font-weight="bold" text-anchor="middle">入門</text>
-                <text x="50" y="80" fill="#78350F" font-size="8" font-weight="bold" text-anchor="middle">プロローグ</text>
-
-                <circle cx="130" cy="50" r="12" fill="#D97706"/>
-                <text x="130" y="54" fill="#FFF" font-size="9" font-weight="bold" text-anchor="middle">基礎</text>
-                <text x="130" y="80" fill="#6B7280" font-size="8" text-anchor="middle">第1章</text>
-
-                <circle cx="210" cy="50" r="12" fill="#F59E0B"/>
-                <text x="210" y="54" fill="#FFF" font-size="9" font-weight="bold" text-anchor="middle">製法</text>
-                <text x="210" y="80" fill="#6B7280" font-size="8" text-anchor="middle">第2章</text>
-
-                <circle cx="290" cy="50" r="12" fill="#F59E0B"/>
-                <text x="290" y="54" fill="#FFF" font-size="9" font-weight="bold" text-anchor="middle">産地</text>
-                <text x="290" y="80" fill="#6B7280" font-size="8" text-anchor="middle">第3章</text>
-
-                <circle cx="370" cy="50" r="12" fill="#F59E0B"/>
-                <text x="370" y="54" fill="#FFF" font-size="9" font-weight="bold" text-anchor="middle">実践</text>
-                <text x="370" y="80" fill="#6B7280" font-size="8" text-anchor="middle">3・4・卒業</text>
-              </svg>
-            `
-          },
-          {
-            title: "スライドで愉しくステップアップ",
-            body: "短いスライドと図解を見て、お手本の一杯（お手本）を確認したら、場面を少し変えたクイズを解いていきます。間違えても何度でもやり直せるので、気楽にまるもちと一緒に進めましょう！",
-            figure: `
-              <div style="background:#FFF; border:2px solid #FCD34D; border-radius:12px; padding:12px 16px; width:100%;">
-                <div style="font-weight:bold; color:#B45309; font-size:0.9rem; margin-bottom:6px;">学習の4拍子リズム</div>
-                <div style="font-size:0.82rem; color:#4B5563; line-height:1.5;">
-                  ① 短い図解スライド ➡ ② お手本の一杯（お手本の理由） ➡ ③ クイズ ➡ ④ 即時フィードバック
-                </div>
-              </div>
-            `
-          }
-        ],
-        example: {
-          scene: "【お手本の一杯の場面】このガイドの進め方を確認します。知識をただ丸暗記するのと、場面に合わせて選べるようになるのでは、どちらを目指す？",
-          sceneFigure: `
-            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#92400E;">
-              <span>🎯 学習ゴールの設定</span>
-            </div>
-          `,
-          answer: "場面に合わせて自分や友人のための一杯を選べるようになること",
-          reason: "ラム酒は楽しむための飲み物であり、シチュエーションに応じた判断力を身につけることが最も実践的で愉しいからです。"
-        },
-        problems: [
-          {
-            scene: "【場面】これから第1章（基礎知識編）へと進みます。学習中の心構えとして最もおすすめなのはどれ？",
-            sceneFigure: `
-              <div style="display:inline-flex; align-items:center; gap:8px; background:#ECFDF5; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#065F46;">
-                <span>🚀 いざ第1章へ！</span>
-              </div>
-            `,
-            question: "ガイドを愉しむスタンスとして最も素敵なものは？",
-            type: "choice",
-            choices: [
-              "「次の週末にバーで頼んでみようかな」「おうちで試してみよう」と想像しながら愉しく進める",
-              "1字1句すべてノートに書き写して丸暗記するまで次に進まない",
-              "お酒を飲まないといけないと義務感を感じて無理をする"
-            ],
-            answer: 0,
-            feedback: "その意気です！バーやおうちでの乾杯シーンを思い浮かべながら、リラックスして進めていきましょう。"
-          }
-        ],
-        hints: [
-          "テストで満点を取るための勉強ではありません。",
-          "週末のバーや自宅での晩酌を豊かにするためのガイドです。",
-          "ワクワクしながら進めるのが一番身につきます。"
-        ],
-        afterNote: "まるもち「プロローグ完了おめでとう！次は第1章で、ラムの正体をじっくり解き明かしていくよ〜！」"
-      },
-
+      
       // -------------------------------------------------------------
       // 第1章 6お話
       // -------------------------------------------------------------
@@ -2768,7 +2683,7 @@
         }
       }
 
-      // 実装済み全お話（プロローグ + 第1章 計11お話）クリアチェック
+      // 実装済み全お話（プロローグ + 第1章 計10お話）クリアチェック
       const allImplementedIds = Object.keys(LESSONS);
       const isAllCleared = allImplementedIds.every(id => isLessonCleared(id));
       if (isAllCleared && !appState.shownModals.includes('all_implemented_cleared')) {
@@ -2776,7 +2691,7 @@
         saveProgress();
         showCongratModal(
           '👑 第1弾 全お話完全制覇！',
-          'プロローグ＆第1章の全11お話をすべてクリアしました！まるもちも大感激です！第2章以降の公開をぜひ楽しみにお待ちください。'
+          'プロローグ＆第1章の全10お話をすべてクリアしました！まるもちも大感激です！第2章以降の公開をぜひ楽しみにお待ちください。'
         );
       }
     }
