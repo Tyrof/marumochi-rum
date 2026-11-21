@@ -462,7 +462,7 @@
       flex-shrink: 0;
     }
 
-    /* レッスン学習画面 */
+    /* お話学習画面 */
     .lesson-container {
       display: flex;
       flex-direction: column;
@@ -889,7 +889,7 @@
       margin-bottom: 16px;
     }
 
-    /* レッスン完了（まとめ）フェーズ */
+    /* お話完了（まとめ）フェーズ */
     .lesson-finish-card {
       background: #FFFFFF;
       border: 2px solid var(--border-amber);
@@ -1084,26 +1084,26 @@
           </div>
         </div>
         <div id="header-nav-slot">
-          <!-- レッスン中のみトップへ戻るボタン等を表示 -->
+          <!-- お話中のみトップへ戻るボタン等を表示 -->
         </div>
       </div>
     </header>
 
     <main id="main-content">
-      <!-- JavaScriptで動的にトップ画面 or レッスン画面をレンダリング -->
+      <!-- JavaScriptで動的にトップ画面 or お話画面をレンダリング -->
     </main>
 
     <div id="modal-slot"></div>
 
     <footer>
       <div>© RYO YOKOTA</div>
-      <button class="footer-reset-btn" onclick="confirmResetProgress()">学習進捗をリセットする</button>
+      <button class="footer-reset-btn" onclick="confirmResetProgress()">記録をリセットする</button>
     </footer>
   </div>
 
   <script>
     /* ==============================================================
-       1. レッスンデータ定義（プロローグ5 + Stage 0 6 + 近日公開ステージ）
+       1. お話データ定義（プロローグ5 + Stage 0 6 + 近日公開ステージ）
        ============================================================== */
     const STAGES = [
       {
@@ -1159,7 +1159,7 @@
 
     const LESSONS = {
       // -------------------------------------------------------------
-      // プロローグ 5レッスン
+      // プロローグ 5お話
       // -------------------------------------------------------------
       "p-01": {
         id: "p-01",
@@ -1613,7 +1613,7 @@
       },
 
       // -------------------------------------------------------------
-      // Stage 0 6レッスン
+      // Stage 0 6お話
       // -------------------------------------------------------------
       "s0-01": {
         id: "s0-01",
@@ -2173,7 +2173,7 @@
     }
 
     function confirmResetProgress() {
-      if (confirm('学習進捗をリセットしてもよろしいですか？（これまでのクリア記録が初期化されます）')) {
+      if (confirm('記録をリセットしてもよろしいですか？（これまでのクリア記録が初期化されます）')) {
         appState = { clearedLessons: [], shownModals: [] };
         saveProgress();
         renderTop();
@@ -2192,7 +2192,7 @@
       const navSlot = document.getElementById('header-nav-slot');
       navSlot.innerHTML = ''; // トップでは戻るボタンなし
 
-      // 全実装済みレッスン総数とクリア数
+      // 全実装済みお話総数とクリア数
       const allImplementedLessonIds = Object.keys(LESSONS);
       const totalImplemented = allImplementedLessonIds.length;
       const clearedCount = allImplementedLessonIds.filter(id => isLessonCleared(id)).length;
@@ -2279,8 +2279,8 @@
         <!-- 全体進捗カード -->
         <div class="progress-summary-card">
           <div class="progress-title-row">
-            <span>現在の学習達成度</span>
-            <span>${clearedCount} / ${totalImplemented} レッスン</span>
+            <span>現在の愉しみ具合</span>
+            <span>${clearedCount} / ${totalImplemented} お話</span>
           </div>
           <div class="progress-bar-bg">
             <div class="progress-bar-fill" style="width: ${progressPercent}%;"></div>
@@ -2299,7 +2299,7 @@
     }
 
     /* ==============================================================
-       4. レッスン学習画面ロジック
+       4. お話学習画面ロジック
        ============================================================== */
     let currentLesson = null;
     let currentSlideIdx = 0;
@@ -2699,7 +2699,7 @@
       }
     }
 
-    /* 4-5. レッスン完了画面 */
+    /* 4-5. お話完了画面 */
     function finishLesson() {
       lessonPhase = 'finish';
       markLessonCleared(currentLesson.id);
@@ -2707,7 +2707,7 @@
     }
 
     function renderFinishPhase() {
-      // 次のレッスンを探す
+      // 次のお話を探す
       const allIds = Object.keys(LESSONS);
       const currentIdx = allIds.indexOf(currentLesson.id);
       const nextLesson = currentIdx >= 0 && currentIdx < allIds.length - 1 ? LESSONS[allIds[currentIdx + 1]] : null;
@@ -2715,7 +2715,7 @@
       return `
         <div class="lesson-finish-card">
           <div class="finish-icon">🎊</div>
-          <h2 class="finish-title">レッスン完了！</h2>
+          <h2 class="finish-title">お話完了！</h2>
           <div style="color:#059669; font-weight:700; font-size:0.95rem;">「${currentLesson.title}」をマスターしました</div>
 
           <div class="finish-afternote">
@@ -2725,7 +2725,7 @@
 
           <div style="display:flex; flex-direction:column; gap:10px;">
             ${nextLesson
-              ? `<button class="btn btn-primary" style="width:100%;" onclick="startLesson('${nextLesson.id}')">次のレッスンへ進む（${nextLesson.title}） →</button>`
+              ? `<button class="btn btn-primary" style="width:100%;" onclick="startLesson('${nextLesson.id}')">次のお話へ進む（${nextLesson.title}） →</button>`
               : ''
             }
             <button class="btn btn-secondary" style="width:100%;" onclick="goHome()">ステージ一覧（トップ）に戻る</button>
@@ -2746,7 +2746,7 @@
           appState.shownModals.push('prologue_cleared');
           saveProgress();
           showCongratModal(
-            '🌟 プロローグ全レッスン達成！',
+            '🌟 プロローグ全お話達成！',
             'おめでとうございます！ラム酒を自由に愉しむための基礎とマインドセットがバッチリ身につきました。さあ、Stage 0でラムの奥深い正体を解き明かしましょう！'
           );
           return;
@@ -2768,15 +2768,15 @@
         }
       }
 
-      // 実装済み全レッスン（プロローグ + Stage 0 計11レッスン）クリアチェック
+      // 実装済み全お話（プロローグ + Stage 0 計11お話）クリアチェック
       const allImplementedIds = Object.keys(LESSONS);
       const isAllCleared = allImplementedIds.every(id => isLessonCleared(id));
       if (isAllCleared && !appState.shownModals.includes('all_implemented_cleared')) {
         appState.shownModals.push('all_implemented_cleared');
         saveProgress();
         showCongratModal(
-          '👑 第1弾 全レッスン完全制覇！',
-          'プロローグ＆Stage 0の全11レッスンをすべてクリアしました！まるもちも大感激です！Stage 1以降の公開をぜひ楽しみにお待ちください。'
+          '👑 第1弾 全お話完全制覇！',
+          'プロローグ＆Stage 0の全11お話をすべてクリアしました！まるもちも大感激です！Stage 1以降の公開をぜひ楽しみにお待ちください。'
         );
       }
     }
