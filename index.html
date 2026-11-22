@@ -209,6 +209,38 @@
       border-radius: 22%;
     }
 
+    /* 動き：登場ポップ・ひょっこり・ジャンプ */
+    .marumochi-avatar { cursor: pointer; }
+    .marumochi-dialogue .marumochi-avatar {
+      animation: tarukichi-bob 2.6s ease-in-out infinite, tarukichi-pop .5s cubic-bezier(.34, 1.56, .64, 1) both;
+    }
+    @keyframes tarukichi-pop {
+      0% { scale: 0; }
+      60% { scale: 1.18; }
+      100% { scale: 1; }
+    }
+    .marumochi-dialogue .marumochi-avatar.avatar-toki {
+      animation: tarukichi-bob 2.6s ease-in-out .75s infinite, tarukichi-peek .75s ease-out both;
+    }
+    @keyframes tarukichi-peek {
+      0% { translate: -85% 0; opacity: 0; }
+      55% { translate: 7% 0; opacity: 1; }
+      78% { translate: -3% 0; }
+      100% { translate: 0 0; opacity: 1; }
+    }
+    .marumochi-avatar.avatar-jump {
+      animation: tarukichi-bob 2.6s ease-in-out infinite, tarukichi-jump .6s ease;
+    }
+    .marumochi-dialogue .marumochi-avatar.avatar-jump {
+      animation: tarukichi-bob 2.6s ease-in-out infinite, tarukichi-jump .6s ease;
+    }
+    @keyframes tarukichi-jump {
+      0%, 100% { translate: 0 0; }
+      35% { translate: 0 -16px; }
+      60% { translate: 0 0; }
+      78% { translate: 0 -7px; }
+    }
+
     /* たる吉吹き出しコンポーネント */
     .marumochi-dialogue {
       display: flex;
@@ -969,7 +1001,7 @@
     <header>
       <div class="header-content">
         <div class="app-title-area" onclick="goHome()">
-          <div class="marumochi-avatar header-marumochi-avatar">
+          <div class="marumochi-avatar header-marumochi-avatar" onclick="avatarTap(this,event)">
             <div class="marumochi-face">
               <div class="marumochi-eye left"></div>
               <div class="marumochi-eye right"></div>
@@ -2114,7 +2146,7 @@
 
         <!-- たる吉の案内吹き出し -->
         <div class="marumochi-dialogue">
-          <div class="marumochi-avatar avatar-toki">
+          <div class="marumochi-avatar avatar-toki" onclick="avatarTap(this,event)">
             <div class="marumochi-face">
               <div class="marumochi-eye left"></div>
               <div class="marumochi-eye right"></div>
@@ -2259,7 +2291,7 @@
         </div>
 
         <div class="marumochi-dialogue">
-          <div class="marumochi-avatar">
+          <div class="marumochi-avatar" onclick="avatarTap(this,event)">
             <div class="marumochi-face">
               <div class="marumochi-eye left"></div>
               <div class="marumochi-eye right"></div>
@@ -2320,7 +2352,7 @@
         </div>
 
         <div class="marumochi-dialogue">
-          <div class="marumochi-avatar avatar-sendo">
+          <div class="marumochi-avatar avatar-sendo" onclick="avatarTap(this,event)">
             <div class="marumochi-face">
               <div class="marumochi-eye left"></div>
               <div class="marumochi-eye right"></div>
@@ -2403,7 +2435,7 @@
 
         ${!hasSelected ? `
           <div class="marumochi-dialogue">
-            <div class="marumochi-avatar avatar-rowing">
+            <div class="marumochi-avatar avatar-rowing" onclick="avatarTap(this,event)">
               <div class="marumochi-face">
                 <div class="marumochi-eye left"></div>
                 <div class="marumochi-eye right"></div>
@@ -2450,7 +2482,7 @@
 
       return `
         <div class="story-finish-card">
-          <div class="marumochi-avatar avatar-large avatar-happy" style="margin:0 auto 14px;"></div>
+          <div class="marumochi-avatar avatar-large avatar-happy" style="margin:0 auto 14px;" onclick="avatarTap(this,event)"></div>
           <h2 class="finish-title">このお話を読み終えました！</h2>
           <div style="color:#B45309; font-weight:700; font-size:1rem;">「${currentStory.title}」読了</div>
 
@@ -2522,13 +2554,26 @@
       slot.innerHTML = `
         <div class="modal-overlay" onclick="closeModal()">
           <div class="modal-window" onclick="event.stopPropagation()">
-            <div class="marumochi-avatar avatar-large avatar-happy" style="margin:0 auto 14px;"></div>
+            <div class="marumochi-avatar avatar-large avatar-happy" style="margin:0 auto 14px;" onclick="avatarTap(this,event)"></div>
             <h3 class="modal-title">${title}</h3>
             <p class="modal-desc">${message}</p>
             <button class="btn btn-primary" style="width:100%;" onclick="closeModal()">ありがとう！続ける</button>
           </div>
         </div>
       `;
+    }
+
+    function avatarTap(el, ev) {
+      if (ev) ev.stopPropagation();
+      el.classList.remove('avatar-jump');
+      void el.offsetWidth;
+      el.classList.add('avatar-jump');
+      el.addEventListener('animationend', function handler(e) {
+        if (e.animationName === 'tarukichi-jump') {
+          el.classList.remove('avatar-jump');
+          el.removeEventListener('animationend', handler);
+        }
+      });
     }
 
     function closeModal() {
