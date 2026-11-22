@@ -19,10 +19,6 @@
       --text-subtle: #6B7280;
       --border: #E5E7EB;
       --border-amber: #FCD34D;
-      --success: #059669;
-      --success-bg: #ECFDF5;
-      --error: #DC2626;
-      --error-bg: #FEF2F2;
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 20px;
@@ -101,16 +97,30 @@
     }
 
     .app-subtitle {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 600;
       color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tag-release {
+      display: inline-block;
+      background: #B45309;
+      color: #FFF;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.02em;
     }
 
     .header-nav-btn {
       background: white;
       border: 1px solid var(--border-amber);
       color: var(--primary-dark);
-      font-size: 0.85rem;
+      font-size: 0.88rem;
       font-weight: 700;
       padding: 8px 14px;
       border-radius: var(--radius-full);
@@ -141,7 +151,7 @@
       padding: 12px 16px;
       border-radius: var(--radius-sm);
       margin-bottom: 20px;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: #9A3412;
       display: flex;
       align-items: center;
@@ -150,7 +160,7 @@
     }
 
     .alcohol-warning-icon {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
       flex-shrink: 0;
     }
 
@@ -248,7 +258,7 @@
       border-radius: var(--radius-md);
       padding: 14px 18px;
       flex: 1;
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: var(--text);
       box-shadow: var(--shadow-sm);
       line-height: 1.6;
@@ -278,7 +288,7 @@
     }
 
     .marumochi-name-tag {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       font-weight: 800;
       color: var(--primary);
       margin-bottom: 4px;
@@ -287,7 +297,7 @@
       gap: 4px;
     }
 
-    /* 進捗サマリーカード */
+    /* 愉しみ具合（進捗）カード */
     .progress-summary-card {
       background: linear-gradient(to right, #FFFBEB, #FEF3C7);
       border: 1px solid var(--border-amber);
@@ -303,12 +313,12 @@
       margin-bottom: 10px;
       font-weight: 700;
       color: var(--primary-dark);
-      font-size: 0.95rem;
+      font-size: 1rem;
     }
 
     .progress-bar-bg {
       width: 100%;
-      height: 10px;
+      height: 12px;
       background: #E5E7EB;
       border-radius: var(--radius-full);
       overflow: hidden;
@@ -323,18 +333,18 @@
     }
 
     .progress-text-sub {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
       display: flex;
       justify-content: space-between;
     }
 
-    /* 章マップ */
-    .stage-section {
+    /* 目次・各章セクション */
+    .chapter-section {
       margin-bottom: 28px;
     }
 
-    .stage-header {
+    .chapter-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -343,8 +353,8 @@
       border-bottom: 2px solid #F3F4F6;
     }
 
-    .stage-title {
-      font-size: 1.1rem;
+    .chapter-title {
+      font-size: 1.15rem;
       font-weight: 800;
       color: var(--text);
       display: flex;
@@ -352,29 +362,29 @@
       gap: 8px;
     }
 
-    .stage-badge {
-      font-size: 0.75rem;
-      padding: 3px 8px;
+    .chapter-badge {
+      font-size: 0.78rem;
+      padding: 3px 10px;
       border-radius: var(--radius-full);
       font-weight: 700;
     }
-    .stage-badge.ready {
+    .chapter-badge.ready {
       background: var(--primary-surface);
       color: var(--primary-dark);
       border: 1px solid var(--border-amber);
     }
-    .stage-badge.locked {
+    .chapter-badge.locked {
       background: #F3F4F6;
       color: var(--text-subtle);
     }
 
-    .lesson-grid {
+    .story-grid {
       display: flex;
       flex-direction: column;
       gap: 12px;
     }
 
-    .lesson-card {
+    .story-card {
       background: #FFFFFF;
       border: 1.5px solid var(--border);
       border-radius: var(--radius-md);
@@ -388,45 +398,32 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .lesson-card:hover {
+    .story-card:hover {
       border-color: var(--primary-light);
       transform: translateY(-2px);
       box-shadow: var(--shadow-md);
     }
 
-    .lesson-card.cleared {
-      border-color: #A7F3D0;
-      background: #F0FDF4;
+    .story-card.cleared {
+      border-color: #FCD34D;
+      background: #FFFDF7;
     }
 
-    .lesson-card.locked {
-      opacity: 0.65;
-      cursor: not-allowed;
-      background: #F9FAFB;
-      border-style: dashed;
-    }
-
-    .lesson-card.locked:hover {
-      transform: none;
-      box-shadow: var(--shadow-sm);
-      border-color: var(--border);
-    }
-
-    .lesson-card-left {
+    .story-card-left {
       display: flex;
       align-items: center;
       gap: 14px;
       flex: 1;
     }
 
-    .lesson-id-badge {
-      width: 38px;
-      height: 38px;
+    .story-id-badge {
+      width: 40px;
+      height: 40px;
       border-radius: var(--radius-sm);
       background: var(--primary-bg);
       border: 1px solid var(--border-amber);
       color: var(--primary-dark);
-      font-size: 0.82rem;
+      font-size: 0.88rem;
       font-weight: 800;
       display: flex;
       align-items: center;
@@ -434,58 +431,58 @@
       flex-shrink: 0;
     }
 
-    .lesson-card.cleared .lesson-id-badge {
-      background: #D1FAE5;
-      border-color: #6EE7B7;
-      color: #065F46;
+    .story-card.cleared .story-id-badge {
+      background: #FEF3C7;
+      border-color: #F59E0B;
+      color: #92400E;
     }
 
-    .lesson-info {
+    .story-info {
       flex: 1;
     }
 
-    .lesson-title {
-      font-size: 0.98rem;
+    .story-title {
+      font-size: 1.02rem;
       font-weight: 700;
       color: var(--text);
       margin-bottom: 2px;
     }
 
-    .lesson-desc {
-      font-size: 0.78rem;
+    .story-desc {
+      font-size: 0.82rem;
       color: var(--text-muted);
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
-    .lesson-status-icon {
-      font-size: 1.25rem;
+    .story-status-icon {
+      font-size: 1.3rem;
       flex-shrink: 0;
     }
 
-    /* お話学習画面 */
-    .lesson-container {
+    /* お話画面 */
+    .story-container {
       display: flex;
       flex-direction: column;
       flex: 1;
     }
 
-    .lesson-header-bar {
+    .story-header-bar {
       margin-bottom: 16px;
     }
 
-    .lesson-meta-row {
+    .story-meta-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 8px;
     }
 
-    .lesson-badge-category {
-      font-size: 0.78rem;
+    .story-badge-category {
+      font-size: 0.82rem;
       font-weight: 700;
       color: var(--primary);
       background: var(--primary-bg);
-      padding: 3px 10px;
+      padding: 4px 12px;
       border-radius: var(--radius-full);
       border: 1px solid var(--border-amber);
     }
@@ -496,8 +493,8 @@
     }
 
     .step-pill {
-      width: 22px;
-      height: 6px;
+      width: 24px;
+      height: 7px;
       border-radius: var(--radius-full);
       background: #E5E7EB;
       transition: var(--transition);
@@ -505,15 +502,15 @@
 
     .step-pill.active {
       background: var(--primary);
-      width: 32px;
+      width: 34px;
     }
 
     .step-pill.completed {
-      background: #10B981;
+      background: #D97706;
     }
 
-    .lesson-main-title {
-      font-size: 1.25rem;
+    .story-main-title {
+      font-size: 1.3rem;
       font-weight: 800;
       color: var(--text);
       margin-bottom: 4px;
@@ -541,29 +538,28 @@
     }
 
     .slide-page-badge {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 700;
       color: var(--text-subtle);
       background: #F3F4F6;
-      padding: 2px 8px;
+      padding: 3px 10px;
       border-radius: var(--radius-full);
     }
 
     .slide-title {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 800;
       color: var(--primary-dark);
     }
 
     .slide-body {
-      font-size: 0.95rem;
-      line-height: 1.7;
+      font-size: 0.98rem;
+      line-height: 1.75;
       color: var(--text);
     }
 
-    /* スライド内図解エリア */
+    /* スライド内図解エリア（文字サイズをしっかり大きく確保） */
     .slide-figure-box {
-      background: #FAF5FF;
       background: linear-gradient(135deg, #FFFDF8 0%, #FFFBEB 100%);
       border: 1.5px solid var(--border-amber);
       border-radius: var(--radius-md);
@@ -573,7 +569,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 140px;
+      min-height: 150px;
     }
 
     .slide-nav-controls {
@@ -586,9 +582,9 @@
 
     /* ボタン共通 */
     .btn {
-      font-size: 0.95rem;
+      font-size: 1rem;
       font-weight: 700;
-      padding: 12px 20px;
+      padding: 13px 22px;
       border-radius: var(--radius-md);
       cursor: pointer;
       border: none;
@@ -626,14 +622,14 @@
       background: linear-gradient(135deg, var(--primary) 0%, #D97706 100%);
       color: white;
       width: 100%;
-      font-size: 1.05rem;
-      padding: 14px;
+      font-size: 1.08rem;
+      padding: 15px;
     }
     .btn-accent:hover {
       background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
     }
 
-    /* お手本の一杯（Worked Example）フェーズ */
+    /* お手本の一杯（Example）フェーズ */
     .example-container {
       background: #FFFFFF;
       border: 2px solid var(--border-amber);
@@ -647,9 +643,9 @@
       display: inline-block;
       background: var(--primary-surface);
       color: var(--primary-dark);
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       font-weight: 800;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: var(--radius-full);
       margin-bottom: 12px;
       border: 1px solid var(--border-amber);
@@ -659,12 +655,12 @@
       background: #F9FAFB;
       border: 1px solid var(--border);
       border-radius: var(--radius-md);
-      padding: 14px 16px;
+      padding: 15px 16px;
       margin-bottom: 16px;
     }
 
     .scene-title {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 800;
       color: var(--text-subtle);
       text-transform: uppercase;
@@ -676,41 +672,41 @@
     }
 
     .scene-desc {
-      font-size: 0.95rem;
+      font-size: 1rem;
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    .example-answer-card {
-      background: #ECFDF5;
-      border: 1.5px solid #6EE7B7;
+    .example-choice-card {
+      background: #FFFBEB;
+      border: 1.5px solid #FCD34D;
       border-radius: var(--radius-md);
       padding: 16px;
       margin-bottom: 16px;
     }
 
-    .example-answer-label {
-      font-size: 0.82rem;
+    .example-choice-label {
+      font-size: 0.85rem;
       font-weight: 800;
-      color: #065F46;
+      color: #92400E;
       margin-bottom: 4px;
     }
 
-    .example-answer-text {
-      font-size: 1.1rem;
+    .example-choice-text {
+      font-size: 1.15rem;
       font-weight: 800;
-      color: #047857;
+      color: #78350F;
       margin-bottom: 8px;
     }
 
     .example-reason-text {
-      font-size: 0.9rem;
-      color: #065F46;
-      line-height: 1.5;
+      font-size: 0.95rem;
+      color: #92400E;
+      line-height: 1.6;
     }
 
-    /* クイズ（Quiz）フェーズ */
-    .quiz-container {
+    /* 「気分で選ぶ」（Pick）フェーズ */
+    .pick-container {
       background: #FFFFFF;
       border: 2px solid var(--border);
       border-radius: var(--radius-lg);
@@ -719,40 +715,40 @@
       box-shadow: var(--shadow-md);
     }
 
-    .quiz-badge {
+    .pick-badge {
       display: inline-block;
-      background: #E0E7FF;
-      color: #3730A3;
-      font-size: 0.8rem;
+      background: #FEF3C7;
+      color: #92400E;
+      font-size: 0.85rem;
       font-weight: 800;
-      padding: 4px 10px;
+      padding: 4px 12px;
       border-radius: var(--radius-full);
       margin-bottom: 12px;
+      border: 1px solid #FCD34D;
     }
 
-    .quiz-question {
-      font-size: 1.05rem;
+    .pick-question {
+      font-size: 1.08rem;
       font-weight: 800;
       color: var(--text);
       margin-bottom: 16px;
-      line-height: 1.5;
+      line-height: 1.55;
     }
 
-    /* 選択肢ボタン群 */
     .choices-list {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
-    .choice-btn {
+    .pick-btn {
       background: #FFFFFF;
       border: 2px solid var(--border);
       border-radius: var(--radius-md);
       padding: 16px 18px;
       text-align: left;
-      font-size: 1rem;
+      font-size: 1.02rem;
       font-weight: 600;
       color: var(--text);
       cursor: pointer;
@@ -762,135 +758,59 @@
       gap: 14px;
     }
 
-    .choice-btn:hover {
+    .pick-btn:hover {
       border-color: var(--primary-light);
       background: var(--primary-bg);
       transform: translateY(-2px);
     }
 
-    .choice-btn-letter {
-      width: 28px;
-      height: 28px;
+    .pick-btn.selected {
+      border-color: var(--primary);
+      background: var(--primary-bg);
+      box-shadow: 0 0 0 2px var(--border-amber);
+    }
+
+    .pick-btn-icon {
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
-      background: #F3F4F6;
+      background: #FEF3C7;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.85rem;
-      font-weight: 800;
-      color: var(--text-muted);
+      font-size: 1.15rem;
       flex-shrink: 0;
     }
 
-    .choice-btn:hover .choice-btn-letter {
-      background: var(--primary-surface);
-      color: var(--primary-dark);
-    }
-
-    /* テキスト入力式クイズ */
-    .input-quiz-area {
-      margin-bottom: 20px;
-    }
-
-    .text-input-field {
-      width: 100%;
-      padding: 14px 16px;
-      font-size: 1.05rem;
-      border: 2px solid var(--border);
+    /* 気分で選んだあとのレスポンスカード */
+    .pick-response-card {
+      background: #FFFBEB;
+      border: 2px solid #F59E0B;
       border-radius: var(--radius-md);
-      margin-bottom: 12px;
-      font-family: inherit;
-    }
-
-    .text-input-field:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.15);
-    }
-
-    /* 3段階ヒント */
-    .hint-container {
-      background: #F8FAFC;
-      border: 1px dashed #CBD5E1;
-      border-radius: var(--radius-md);
-      padding: 14px;
-      margin-bottom: 20px;
-    }
-
-    .hint-trigger-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .hint-btn {
-      background: #FFFFFF;
-      border: 1px solid #CBD5E1;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: var(--radius-full);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: var(--transition);
-    }
-
-    .hint-btn:hover {
-      background: #F1F5F9;
-      color: var(--text);
-    }
-
-    .hint-content-box {
-      margin-top: 10px;
-      padding-top: 10px;
-      border-top: 1px solid #E2E8F0;
-      font-size: 0.88rem;
-      color: #334155;
-      line-height: 1.55;
-    }
-
-    /* フィードバック表示 */
-    .feedback-card {
-      border-radius: var(--radius-lg);
-      padding: 20px;
-      margin-bottom: 20px;
+      padding: 18px;
+      margin-top: 18px;
       animation: fadeIn 0.3s ease;
     }
 
-    .feedback-card.correct {
-      background: #ECFDF5;
-      border: 2px solid #10B981;
-    }
-
-    .feedback-card.incorrect {
-      background: #FEF2F2;
-      border: 2px solid #EF4444;
-    }
-
-    .feedback-title {
-      font-size: 1.15rem;
+    .pick-response-header {
+      font-size: 1rem;
       font-weight: 800;
+      color: var(--primary-dark);
       margin-bottom: 8px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
 
-    .feedback-card.correct .feedback-title { color: #047857; }
-    .feedback-card.incorrect .feedback-title { color: #B91C1C; }
-
-    .feedback-reason {
-      font-size: 0.95rem;
-      line-height: 1.6;
+    .pick-response-body {
+      font-size: 0.96rem;
       color: var(--text);
+      line-height: 1.7;
       margin-bottom: 16px;
     }
 
-    /* お話完了（まとめ）フェーズ */
-    .lesson-finish-card {
+    /* 締めのひとこと（afterNote） */
+    .story-finish-card {
       background: #FFFFFF;
       border: 2px solid var(--border-amber);
       border-radius: var(--radius-lg);
@@ -916,11 +836,11 @@
       background: var(--primary-bg);
       border: 1px solid var(--border-amber);
       border-radius: var(--radius-md);
-      padding: 16px;
+      padding: 18px;
       text-align: left;
       margin: 18px 0 24px 0;
-      font-size: 0.95rem;
-      line-height: 1.6;
+      font-size: 0.98rem;
+      line-height: 1.7;
       color: var(--text);
     }
 
@@ -973,9 +893,9 @@
     }
 
     .modal-desc {
-      font-size: 0.95rem;
+      font-size: 0.98rem;
       color: var(--text-muted);
-      line-height: 1.6;
+      line-height: 1.65;
       margin-bottom: 24px;
     }
 
@@ -985,7 +905,7 @@
       border-top: 1px solid var(--border);
       padding: 20px;
       text-align: center;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       color: var(--text-subtle);
     }
 
@@ -993,14 +913,14 @@
       background: none;
       border: none;
       color: var(--text-subtle);
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       text-decoration: underline;
       cursor: pointer;
       margin-top: 8px;
     }
 
     .footer-reset-btn:hover {
-      color: var(--error);
+      color: #DC2626;
     }
 
     /* アニメーション */
@@ -1014,19 +934,31 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    /* 図解用SVG・CSSスタイル群 */
+    /* 図解用SVG・CSSスタイル（文字サイズをスマホでくっきり読めるよう大きく設定） */
     .fig-svg {
       max-width: 100%;
       height: auto;
       display: block;
     }
 
+    .fig-text-title {
+      font-size: 14px;
+      font-weight: 800;
+      fill: #78350F;
+    }
+
+    .fig-text-desc {
+      font-size: 13px;
+      font-weight: 600;
+      fill: #4B5563;
+    }
+
     .gradient-color-bar {
       width: 100%;
-      height: 38px;
+      height: 44px;
       border-radius: var(--radius-sm);
       border: 2px solid #D1D5DB;
-      margin: 10px 0;
+      margin: 12px 0;
       position: relative;
     }
 
@@ -1034,16 +966,16 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--text-muted);
-      margin-top: 4px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-top: 6px;
     }
 
     .comp-table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 0.82rem;
+      font-size: 0.92rem;
       background: white;
       border-radius: var(--radius-sm);
       overflow: hidden;
@@ -1052,14 +984,16 @@
 
     .comp-table th, .comp-table td {
       border: 1px solid #E5E7EB;
-      padding: 8px 10px;
+      padding: 10px 12px;
       text-align: left;
+      line-height: 1.5;
     }
 
     .comp-table th {
       background: #FEF3C7;
       color: var(--primary-dark);
       font-weight: 800;
+      font-size: 0.95rem;
     }
   </style>
 </head>
@@ -1079,134 +1013,137 @@
             </div>
           </div>
           <div>
-            <div class="app-subtitle">大人のためのテイスティング学習</div>
+            <div class="app-subtitle">
+              <span>大人のためのラム酒ガイド</span>
+              <span class="tag-release">第1弾 公開中</span>
+            </div>
             <h1 class="app-title">まるもちと愉しむラム酒ガイド</h1>
           </div>
         </div>
         <div id="header-nav-slot">
-          <!-- お話中のみトップへ戻るボタン等を表示 -->
+          <!-- お話画面のとき「目次へ」を表示 -->
         </div>
       </div>
     </header>
 
     <main id="main-content">
-      <!-- JavaScriptで動的にトップ画面 or お話画面をレンダリング -->
+      <!-- JavaScriptで動的に目次 or お話画面をレンダリング -->
     </main>
 
     <div id="modal-slot"></div>
 
     <footer>
       <div>© RYO YOKOTA</div>
-      <button class="footer-reset-btn" onclick="confirmResetProgress()">記録をリセットする</button>
+      <button class="footer-reset-btn" onclick="confirmResetProgress()">読んだ記録をリセットする</button>
     </footer>
   </div>
 
   <script>
     /* ==============================================================
-       1. お話データ定義（プロローグ4 + 第1章 6 + 近日公開章）
+       1. 目次・お話データ定義（プロローグ4お話 + 第1章6お話 + 近日公開）
        ============================================================== */
-    const STAGES = [
+    const CHAPTERS = [
       {
         id: "prologue",
         title: "プロローグ：ラムを愉しむ入口",
         desc: "自由で美味しいラムの世界へようこそ。まずは基本の楽しみ方と心構えから。",
         status: "open",
-        lessonIds: ["p-01", "p-02", "p-03", "p-04"]
+        storyIds: ["p-01", "p-02", "p-03", "p-04"]
       },
       {
-        id: "stage0",
+        id: "chapter1",
         title: "第1章：ラムって何者？",
         desc: "原料・仲間分け・色・3大系統・度数。ラベルを読める大人の第一歩。",
         status: "open",
-        lessonIds: ["s0-01", "s0-02", "s0-03", "s0-04", "s0-05", "s0-06"]
+        storyIds: ["s0-01", "s0-02", "s0-03", "s0-04", "s0-05", "s0-06"]
       },
       {
-        id: "stage1",
+        id: "chapter2",
         title: "第2章：ラムの造られ方と個性",
         desc: "発酵の秘密、ポットスチルとカラムスチル、樽熟成が生む芳醇なマジック。",
         status: "upcoming",
-        lessonIds: []
+        storyIds: []
       },
       {
-        id: "stage2",
+        id: "chapter3",
         title: "第3章：世界のラム産地めぐり",
         desc: "ジャマイカ、バルバドス、キューバ、マルティニーク…風土が育む味わい。",
         status: "upcoming",
-        lessonIds: []
+        storyIds: []
       },
       {
-        id: "stage3",
+        id: "chapter4",
         title: "第4章：美味しい飲み方とグラス",
         desc: "ストレートの作法、氷の魔法、ラムハイボールの黄金比、名作カクテル。",
         status: "upcoming",
-        lessonIds: []
+        storyIds: []
       },
       {
-        id: "stage4",
+        id: "chapter5",
         title: "第5章：自分にぴったりの1本を選ぶ",
         desc: "好みの香味チャート、バーでのスマートな頼み方、おうちボトルの選び方。",
         status: "upcoming",
-        lessonIds: []
+        storyIds: []
       },
       {
         id: "graduate",
         title: "卒業編：場面で選ぶ、とっておきの1本",
         desc: "「この日のこの夜なら、このラム」。場面に合わせた最高のセレクト。",
         status: "upcoming",
-        lessonIds: []
+        storyIds: []
       }
     ];
 
-    const LESSONS = {
+    const STORIES = {
       // -------------------------------------------------------------
-      // プロローグ 5お話
+      // プロローグ 4お話
       // -------------------------------------------------------------
       "p-01": {
         id: "p-01",
-        stageId: "prologue",
+        chapterId: "prologue",
         number: "p-01",
         title: "ラムの愉しみ方はいろいろ",
-        summary: "ストレート、ロック、ソーダ割り、カクテル。場面で選ぶ自由な愉しみ方。",
+        summary: "ストレート、ロック、ソーダ割り、カクテル、食事と一緒。場面で選ぶ自由な愉しみ方。",
         slides: [
           {
             title: "ラムは「最も自由なスピリッツ」",
             body: "ラム酒の最大の魅力はその懐の深さ。ストレートやロックはもちろん、ソーダで弾けさせたり、ライムやミントと合わせたカクテル（モヒートやダイキリなど）にしても絶品です。食事と合わせることもできます。",
             figure: `
-              <svg class="fig-svg" viewBox="0 0 460 140" width="100%">
-                <g transform="translate(15, 15)">
-                  <!-- ストレート -->
-                  <rect x="0" y="0" width="95" height="110" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="1.5"/>
-                  <path d="M 35 70 Q 47 90 60 70 L 60 45 L 35 45 Z" fill="#F59E0B" opacity="0.8"/>
-                  <path d="M 47 90 L 47 100 M 37 100 L 57 100" stroke="#78350F" stroke-width="2"/>
-                  <text x="47" y="30" text-anchor="middle" font-size="13" font-weight="bold" fill="#78350F">ストレート</text>
-                  <text x="47" y="105" text-anchor="middle" font-size="11" fill="#6B7280">香りと余韻</text>
+              <svg class="fig-svg" viewBox="0 0 360 160" width="100%">
+                <!-- ストレート -->
+                <g transform="translate(10, 15)">
+                  <rect width="78" height="130" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/>
+                  <path d="M 26 75 Q 39 95 52 75 L 52 48 L 26 48 Z" fill="#F59E0B" opacity="0.85"/>
+                  <path d="M 39 95 L 39 108 M 28 108 L 50 108" stroke="#78350F" stroke-width="2.5"/>
+                  <text x="39" y="30" text-anchor="middle" class="fig-text-title">ストレート</text>
+                  <text x="39" y="122" text-anchor="middle" class="fig-text-desc">香りと余韻</text>
                 </g>
-                <g transform="translate(125, 15)">
-                  <!-- ロック -->
-                  <rect x="0" y="0" width="95" height="110" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="1.5"/>
-                  <rect x="30" y="45" width="35" height="40" rx="3" fill="#E5E7EB" stroke="#9CA3AF"/>
-                  <rect x="35" y="55" width="25" height="25" fill="#D97706" opacity="0.85"/>
-                  <rect x="40" y="50" width="14" height="14" fill="#FFF" opacity="0.75" rx="2"/>
-                  <text x="47" y="30" text-anchor="middle" font-size="13" font-weight="bold" fill="#78350F">オン・ザ・ロック</text>
-                  <text x="47" y="105" text-anchor="middle" font-size="11" fill="#6B7280">冷涼感と変化</text>
+                <!-- ロック -->
+                <g transform="translate(98, 15)">
+                  <rect width="78" height="130" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/>
+                  <rect x="22" y="52" width="34" height="42" rx="3" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="1.5"/>
+                  <rect x="26" y="62" width="26" height="28" fill="#D97706" opacity="0.9"/>
+                  <rect x="30" y="56" width="16" height="16" fill="#FFF" opacity="0.8" rx="2"/>
+                  <text x="39" y="30" text-anchor="middle" class="fig-text-title">ロック</text>
+                  <text x="39" y="122" text-anchor="middle" class="fig-text-desc">冷涼感と変化</text>
                 </g>
-                <g transform="translate(235, 15)">
-                  <!-- ソーダ割 -->
-                  <rect x="0" y="0" width="95" height="110" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="1.5"/>
-                  <path d="M 32 40 L 62 40 L 58 95 L 36 95 Z" fill="#FEF3C7" stroke="#D97706" stroke-width="1.5"/>
-                  <circle cx="43" cy="75" r="2" fill="#D97706"/>
-                  <circle cx="50" cy="65" r="1.5" fill="#D97706"/>
-                  <circle cx="46" cy="55" r="2" fill="#D97706"/>
-                  <text x="47" y="30" text-anchor="middle" font-size="13" font-weight="bold" fill="#78350F">ソーダ割り</text>
-                  <text x="47" y="105" text-anchor="middle" font-size="11" fill="#6B7280">爽快な炭酸</text>
+                <!-- ソーダ割 -->
+                <g transform="translate(186, 15)">
+                  <rect width="78" height="130" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/>
+                  <path d="M 24 45 L 54 45 L 50 100 L 28 100 Z" fill="#FEF3C7" stroke="#D97706" stroke-width="2"/>
+                  <circle cx="34" cy="80" r="2.5" fill="#D97706"/>
+                  <circle cx="44" cy="70" r="2" fill="#D97706"/>
+                  <circle cx="38" cy="58" r="2.5" fill="#D97706"/>
+                  <text x="39" y="30" text-anchor="middle" class="fig-text-title">ソーダ割り</text>
+                  <text x="39" y="122" text-anchor="middle" class="fig-text-desc">爽快な炭酸</text>
                 </g>
-                <g transform="translate(345, 15)">
-                  <!-- カクテル -->
-                  <rect x="0" y="0" width="95" height="110" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="1.5"/>
-                  <path d="M 27 45 L 67 45 L 47 75 Z" fill="#10B981" opacity="0.85"/>
-                  <path d="M 47 75 L 47 98 M 35 98 L 59 98" stroke="#047857" stroke-width="2"/>
-                  <text x="47" y="30" text-anchor="middle" font-size="13" font-weight="bold" fill="#78350F">カクテル</text>
-                  <text x="47" y="105" text-anchor="middle" font-size="11" fill="#6B7280">モヒート等</text>
+                <!-- カクテル -->
+                <g transform="translate(274, 15)">
+                  <rect width="76" height="130" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/>
+                  <path d="M 18 50 L 58 50 L 38 80 Z" fill="#10B981" opacity="0.85"/>
+                  <path d="M 38 80 L 38 105 M 26 105 L 50 105" stroke="#047857" stroke-width="2.5"/>
+                  <text x="38" y="30" text-anchor="middle" class="fig-text-title">カクテル</text>
+                  <text x="38" y="122" text-anchor="middle" class="fig-text-desc">モヒート等</text>
                 </g>
               </svg>
             `
@@ -1215,92 +1152,94 @@
             title: "場面と気分で飲み分けるのが大人",
             body: "「このラムはこの飲み方でなければいけない」という縛りはありません。暑い日の夕暮れならソーダ割り、静かな夜に本を読むならロックやストレートなど、シチュエーションに合わせて選ぶのがラムの上手な愉しみ方です。",
             figure: `
-              <div style="width:100%; display:flex; justify-content:space-around; align-items:center; gap:8px;">
-                <div style="background:#FEF3C7; padding:10px 14px; border-radius:10px; text-align:center; flex:1;">
-                  <div style="font-size:1.4rem;">☀️</div>
-                  <div style="font-weight:bold; font-size:0.85rem; color:#78350F; margin-top:4px;">喉を潤したい時</div>
-                  <div style="font-size:0.75rem; color:#92400E;">ラムハイボール / モヒート</div>
+              <div style="width:100%; display:flex; justify-content:space-around; align-items:center; gap:10px;">
+                <div style="background:#FEF3C7; padding:12px 14px; border-radius:12px; text-align:center; flex:1;">
+                  <div style="font-size:1.6rem;">☀️</div>
+                  <div style="font-weight:800; font-size:0.95rem; color:#78350F; margin-top:4px;">喉を潤したい時</div>
+                  <div style="font-size:0.85rem; color:#92400E; margin-top:2px;">ラムハイボール / モヒート</div>
                 </div>
-                <div style="font-size:1.2rem; color:#D97706;">⇄</div>
-                <div style="background:#FEF3C7; padding:10px 14px; border-radius:10px; text-align:center; flex:1;">
-                  <div style="font-size:1.4rem;">🌙</div>
-                  <div style="font-weight:bold; font-size:0.85rem; color:#78350F; margin-top:4px;">ゆっくり寛ぐ夜</div>
-                  <div style="font-size:0.75rem; color:#92400E;">オン・ザ・ロック / ストレート</div>
+                <div style="font-size:1.4rem; color:#D97706; font-weight:bold;">⇄</div>
+                <div style="background:#FEF3C7; padding:12px 14px; border-radius:12px; text-align:center; flex:1;">
+                  <div style="font-size:1.6rem;">🌙</div>
+                  <div style="font-weight:800; font-size:0.95rem; color:#78350F; margin-top:4px;">ゆっくり寛ぐ夜</div>
+                  <div style="font-size:0.85rem; color:#92400E; margin-top:2px;">オン・ザ・ロック / ストレート</div>
                 </div>
               </div>
             `
           }
         ],
         example: {
-          scene: "【お手本の一杯の場面】金曜日の夜、1週間の仕事を終えて帰宅したばかり。お風呂上がりに喉を鳴らして爽快にリフレッシュしたいときの一杯。",
+          scene: "【たとえばこんな場面】金曜日の夜、1週間の仕事を終えて帰宅したばかり。お風呂上がりに喉を鳴らして爽快にリフレッシュしたいとき。",
           sceneFigure: `
-            <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#1E40AF;">
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#1E40AF; font-weight:700;">
               <span>🛁 お風呂上がり × 爽快感</span>
             </div>
           `,
-          answer: "ラムソーダ（ラムハイボール）やモヒートを選ぶ",
-          reason: "炭酸の弾ける泡がラムの甘みと香りを引き立て、火照った身体をすっきりとリフレッシュしてくれるからです。"
+          choice: "お手本：ラムソーダ（ラムハイボール）やモヒートを選ぶのもいいね",
+          reason: "炭酸の弾ける泡がラムの甘みと香りを引き立て、火照った身体を心地よくすっきりと潤してくれるからです。"
         },
-        problems: [
+        picks: [
           {
-            scene: "【場面】秋の夜長、部屋の明かりを少し落として、お気に入りの本を読みながら30分以上かけてゆっくりと1杯を味わいたいとき。",
+            scene: "【場面】今夜のあなたの気分はどれに近いですか？",
             sceneFigure: `
-              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#92400E;">
-                <span>📖 静かな読書の夜 × ゆったり時間</span>
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
+                <span>🌙 今夜のあなたの気分のグラス</span>
               </div>
             `,
-            question: "この場面で最も贅沢にラムの個性を愉しめる飲み方はどれでしょう？",
-            type: "choice",
+            question: "気になる飲み方をタップして、今夜の愉しみ方を覗いてみましょう：",
             choices: [
-              "グラスに注いだストレート、または大きな氷を入れたロックで少しずつ口に含む",
-              "炭酸水で薄めに割って、一気にゴクゴクと飲み干す",
-              "氷を細かく砕いて激辛のコーラで割り、味を分からなくする"
-            ],
-            answer: 0,
-            feedback: "正解！豊かな香りと時間の経過による味の変化を、ストレートやロックで少しずつ愛でるのが大人の寛ぎ時間にぴったりです。"
+              {
+                label: "静かな夜に、本を読みながらゆっくり香りを愛でたい",
+                response: "すてきな夜ですね！グラスに少しだけ注いだストレートや、大きめの氷を浮かべたロックがぴったり。時間が経つにつれて氷が溶け、バニラやカラメルの香りがゆっくりと開いていく変化を楽しめます。"
+              },
+              {
+                label: "炭酸のシュワシュワで喉を鳴らしてスカッとしたい",
+                response: "爽快ですね！ラムハイボール（ソーダ割り）や、ライムを絞ったキューバリブレが最高です。ホワイトラムなら軽快に、ゴールドラムなら香ばしいコクが泡とともに弾けます。"
+              },
+              {
+                label: "ミントやライムが香る、華やかなカクテルで乾杯したい",
+                response: "華やかで心躍りますね！フレッシュミントをたっぷり使った「モヒート」や、ライムと砂糖でシェイクする「ダイキリ」がうってつけ。ラムの南国らしい明るさを存分に味わえます。"
+              }
+            ]
           }
-        ],
-        hints: [
-          "読書をしながら長い時間をかけて楽しむシチュエーションです。",
-          "炭酸で一気に飲むスタイルよりも、香りをじっくり愉しめるスタイルが合いそうです。",
-          "ストレートやオン・ザ・ロックなら、時間とともに開く香りを少しずつ楽しめます。"
         ],
         afterNote: "まるもち「ラムはルールに縛られないお酒！その日の気分と場面に素直になるのが一番の愉しみ方だよ〜」"
       },
 
       "p-02": {
         id: "p-02",
-        stageId: "prologue",
+        chapterId: "prologue",
         number: "p-02",
         title: "ラムの歴史をざっくり物語で",
-        summary: "カリブ海のサトウキビ、海軍の配給、禁酒法とカクテル文化の開花。",
+        summary: "カリブ海のサトウキビ、海軍の毎日のラム配給、禁酒法時代のキューバとカクテル文化。",
         slides: [
           {
             title: "カリブ海とサトウキビの出会い",
             body: "大航海時代、コロンブスがカリブ海の島々にサトウキビを持ち込みました。砂糖を精製する際に余る黒い液体「糖蜜（モラセス）」を発酵させて蒸留したのがラム酒の始まりです。",
             figure: `
-              <svg class="fig-svg" viewBox="0 0 460 130" width="100%">
-                <path d="M 0 110 Q 115 90 230 110 T 460 110 L 460 130 L 0 130 Z" fill="#3B82F6" opacity="0.3"/>
-                <!-- 帆船 -->
-                <g transform="translate(180, 25)">
-                  <path d="M 10 65 L 80 65 L 70 85 L 20 85 Z" fill="#78350F"/>
-                  <line x1="45" y1="20" x2="45" y2="65" stroke="#78350F" stroke-width="3"/>
-                  <path d="M 45 25 Q 75 40 45 60 Z" fill="#FFFBEB" stroke="#B45309" stroke-width="1.5"/>
-                  <path d="M 45 30 Q 20 42 45 58 Z" fill="#FFFBEB" stroke="#B45309" stroke-width="1.5"/>
-                </g>
+              <svg class="fig-svg" viewBox="0 0 360 140" width="100%">
+                <path d="M 0 115 Q 90 95 180 115 T 360 115 L 360 140 L 0 140 Z" fill="#3B82F6" opacity="0.25"/>
                 <!-- 島とヤシの木 -->
-                <g transform="translate(40, 50)">
-                  <ellipse cx="40" cy="55" rx="35" ry="12" fill="#D97706" opacity="0.4"/>
-                  <path d="M 40 55 Q 35 30 45 15" stroke="#78350F" stroke-width="3" fill="none"/>
-                  <circle cx="45" cy="15" r="10" fill="#10B981"/>
-                  <text x="40" y="70" font-size="12" font-weight="bold" fill="#78350F" text-anchor="middle">カリブ海の島</text>
+                <g transform="translate(25, 45)">
+                  <ellipse cx="35" cy="65" rx="32" ry="12" fill="#D97706" opacity="0.35"/>
+                  <path d="M 35 65 Q 30 35 40 20" stroke="#78350F" stroke-width="3" fill="none"/>
+                  <circle cx="40" cy="20" r="10" fill="#10B981"/>
+                  <text x="35" y="85" class="fig-text-title" text-anchor="middle">カリブ海の島</text>
+                </g>
+                <!-- 帆船 -->
+                <g transform="translate(135, 20)">
+                  <path d="M 10 70 L 80 70 L 70 90 L 20 90 Z" fill="#78350F"/>
+                  <line x1="45" y1="20" x2="45" y2="70" stroke="#78350F" stroke-width="3"/>
+                  <path d="M 45 25 Q 75 42 45 65 Z" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
+                  <path d="M 45 30 Q 20 44 45 62 Z" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
+                  <text x="45" y="108" class="fig-text-desc" text-anchor="middle">大航海時代</text>
                 </g>
                 <!-- 樽 -->
-                <g transform="translate(340, 50)">
-                  <ellipse cx="30" cy="40" rx="18" ry="24" fill="#B45309"/>
-                  <line x1="12" y1="30" x2="48" y2="30" stroke="#FEF3C7" stroke-width="2"/>
-                  <line x1="12" y1="50" x2="48" y2="50" stroke="#FEF3C7" stroke-width="2"/>
-                  <text x="30" y="75" font-size="12" font-weight="bold" fill="#78350F" text-anchor="middle">誕生したラム</text>
+                <g transform="translate(255, 45)">
+                  <ellipse cx="40" cy="48" rx="22" ry="28" fill="#B45309"/>
+                  <line x1="20" y1="36" x2="60" y2="36" stroke="#FEF3C7" stroke-width="2.5"/>
+                  <line x1="20" y1="60" x2="60" y2="60" stroke="#FEF3C7" stroke-width="2.5"/>
+                  <text x="40" y="92" class="fig-text-title" text-anchor="middle">誕生したラム</text>
                 </g>
               </svg>
             `
@@ -1309,258 +1248,264 @@
             title: "海軍のトットから、禁酒法下のハバナへ",
             body: "英国海軍は水兵の健康維持と士気向上のため、毎日ラムを配給（トット）していました。そして1920年代、米国の禁酒法時代には、お酒を求める人々がキューバのハバナへ渡り、ダイキリやモヒートといった伝説的カクテルが花開きました。",
             figure: `
-              <div style="display:flex; justify-content:space-around; align-items:center; width:100%; gap:10px;">
-                <div style="background:#FFF; border:1px solid #E5E7EB; border-radius:8px; padding:8px 12px; text-align:center; flex:1;">
-                  <div style="font-size:1.3rem;">⚓</div>
-                  <div style="font-weight:bold; font-size:0.8rem; color:#1E3A8A;">英国海軍の配給</div>
-                  <div style="font-size:0.7rem; color:#6B7280;">荒海を越える活力</div>
+              <div style="display:flex; justify-content:space-around; align-items:center; width:100%; gap:12px;">
+                <div style="background:#FFF; border:2px solid #E5E7EB; border-radius:10px; padding:12px; text-align:center; flex:1;">
+                  <div style="font-size:1.6rem;">⚓</div>
+                  <div style="font-weight:800; font-size:0.95rem; color:#1E3A8A; margin-top:2px;">英国海軍の配給</div>
+                  <div style="font-size:0.82rem; color:#6B7280; margin-top:2px;">荒海を越える活力</div>
                 </div>
-                <div style="color:#B45309; font-weight:bold;">➡</div>
-                <div style="background:#FFF; border:1px solid #E5E7EB; border-radius:8px; padding:8px 12px; text-align:center; flex:1;">
-                  <div style="font-size:1.3rem;">🍸</div>
-                  <div style="font-weight:bold; font-size:0.8rem; color:#9D174D;">禁酒法とハバナ</div>
-                  <div style="font-size:0.7rem; color:#6B7280;">洗練されたカクテルへ</div>
+                <div style="color:#B45309; font-weight:800; font-size:1.3rem;">➡</div>
+                <div style="background:#FFF; border:2px solid #E5E7EB; border-radius:10px; padding:12px; text-align:center; flex:1;">
+                  <div style="font-size:1.6rem;">🍸</div>
+                  <div style="font-weight:800; font-size:0.95rem; color:#9D174D; margin-top:2px;">禁酒法とハバナ</div>
+                  <div style="font-size:0.82rem; color:#6B7280; margin-top:2px;">洗練されたカクテルへ</div>
                 </div>
               </div>
             `
           }
         ],
         example: {
-          scene: "【お手本の一杯の場面】カリブ海の歴史小説を読んでいたら、「海軍の水兵たちが毎日の航海で配給されるお酒を楽しみにしていた」という記述に出会いました。",
+          scene: "【歴史の一杯】18世紀の英国海軍の水兵たちが、荒れ狂う大西洋の船上で毎日楽しみにしていた一杯。",
           sceneFigure: `
-            <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#1E40AF;">
-              <span>⚓ 18世紀・英国海軍の船上</span>
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#1E40AF; font-weight:700;">
+              <span>⚓ 18世紀・海軍伝統のグロッグ</span>
             </div>
           `,
-          answer: "配給されていたのはラム酒（グロッグ）",
-          reason: "腐りやすい水の代わりに、長持ちして士気と活力を高めてくれるラム酒が水兵に毎日支給されていた歴史があるからです。"
+          choice: "お手本：ラムに水とライム、少しの砂糖を入れた「グロッグ」派",
+          reason: "腐りやすい水の代わりにアルコール度数の高いラムで殺菌し、ビタミンC補給のためにライムを絞って健康を保った、歴史ある美味しい知恵です。"
         },
-        problems: [
+        picks: [
           {
-            scene: "【場面】1920年代、アメリカで禁酒法が施行されていた時代。お酒を愛する作家ヘミングウェイや文化人たちがキューバのハバナを訪れた目的は？",
+            scene: "【場面】ラムの長い歴史の中で、あなたが一番ロマンを感じるシーンはどれですか？",
             sceneFigure: `
-              <div style="display:inline-flex; align-items:center; gap:8px; background:#FDF2F8; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#9D174D;">
-                <span>🌴 1920年代・キューバのバー</span>
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#FDF2F8; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#9D174D; font-weight:700;">
+                <span>📜 カリブ海をめぐる3つの物語</span>
               </div>
             `,
-            question: "この時代にキューバでラム酒が果たした文化的役割として最もふさわしいものはどれでしょう？",
-            type: "choice",
+            question: "気になる歴史のワンシーンをタップしてみましょう：",
             choices: [
-              "良質なラムを使ったダイキリやモヒートなど、洗練されたモダンカクテル文化が発展した",
-              "ラム酒の製造が全面的に禁止され、歴史から完全に姿を消した",
-              "お酒としてではなく、自動車の燃料としてのみ流通した"
-            ],
-            answer: 0,
-            feedback: "その通り！禁酒法から逃れてきた腕利きバーテンダーと旅行者によって、キューバで華やかなカクテル文化が花開きました。"
+              {
+                label: "荒海を進む帆船と海賊、海軍の男たちが樽から注ぎ合う風景",
+                response: "海と冒険のロマンですね！ジャマイカやガイアナの重厚でスモーキーなラム（プッサーズやエル ドラドなど）を飲むと、当時の船員たちが味わった力強い樽の息吹をそのまま感じられます。"
+              },
+              {
+                label: "1920年代のキューバ・ハバナで、音楽とともに交わされるカクテル",
+                response: "エレガントで粋な世界ですね！ヘミングウェイが愛したフローズン・ダイキリやモヒートはまさにこの時代に磨かれました。ハバナクラブなどのキューバンラムで、心地よい音楽とともに味わいたくなります。"
+              },
+              {
+                label: "カリブの青い海と緑豊かなサトウキビ畑が広がる自然の風景",
+                response: "太陽と大地の恵みですね！マルティニーク島などフランス領の「アグリコール・ラム（クレマンなど）」は、刈りたてのサトウキビの果汁から直接造られ、豊かな自然の香りがそのまま詰まっています。"
+              }
+            ]
           }
-        ],
-        hints: [
-          "アメリカ本土でお酒が飲めなかった時代、すぐ近くの島国キューバはどうなっていたでしょう？",
-          "ヘミングウェイが愛した「フローズン・ダイキリ」や「モヒート」が生まれた背景です。",
-          "ラム酒を使ったカクテル文化が大きく洗練された時代でした。"
         ],
         afterNote: "まるもち「歴史を知ると、グラス一杯のラムにカリブ海の風と海のロマンが溶け込んでいるのが感じられるね〜」"
       },
 
       "p-03": {
         id: "p-03",
-        stageId: "prologue",
+        chapterId: "prologue",
         number: "p-03",
         title: "正解は「自分のうまい」",
-        summary: "飲み方に上下はない。値段が高い＝偉い、でもない。",
+        summary: "飲み方に上下はない。高い＝偉い、でもない。このガイドに答え合わせがない理由もここで伝える。",
         slides: [
           {
             title: "「通の飲み方」に囚われない",
             body: "お酒の世界には時に「高級な酒を割るなんてもったいない」「ストレートで飲んでこそ本物」という声があります。しかしラム酒の世界で一番尊いのは、飲む人自身が「おいしい！」と笑顔になれることです。",
             figure: `
-              <div style="display:flex; justify-content:center; align-items:center; width:100%; gap:20px;">
-                <div style="text-align:center; padding:12px 18px; background:#FFFFFF; border:2px solid #10B981; border-radius:12px;">
-                  <div style="font-size:1.8rem;">😋✨</div>
-                  <div style="font-weight:bold; color:#047857; margin-top:4px;">「自分がうまい！」</div>
-                  <div style="font-size:0.75rem; color:#6B7280;">これが唯一の絶対ルール</div>
+              <div style="display:flex; justify-content:center; align-items:center; width:100%;">
+                <div style="text-align:center; padding:16px 24px; background:#FFFFFF; border:2.5px solid #F59E0B; border-radius:14px; width:100%; max-width:320px;">
+                  <div style="font-size:2.2rem;">😋✨</div>
+                  <div style="font-weight:800; font-size:1.15rem; color:#78350F; margin-top:6px;">「自分がうまい！」</div>
+                  <div style="font-size:0.88rem; color:#4B5563; margin-top:4px;">これこそが唯一の絶対ルール</div>
                 </div>
               </div>
             `
           },
           {
-            title: "高い＝偉い、ではない",
-            body: "数千円の手頃なラムには元気なカクテルにぴったりの良さがあり、長期熟成のラムには静かに楽しむ奥深さがあります。上下関係ではなく「それぞれの役どころ」があるだけなのです。",
+            title: "このガイドに「答え合わせ」がない理由",
+            body: "誰かが決めた正解を暗記するテストは、お酒を窮屈にしてしまいます。だからこのガイドには正解・不正解の判定がありません。「今夜はこれにしようかな」と自分の気分で選ぶことこそが、最高のお酒の愉しみ方だからです。",
             figure: `
               <div style="display:flex; justify-content:space-between; align-items:center; width:100%; gap:12px;">
-                <div style="flex:1; background:#FFF; border:1px solid #E5E7EB; border-radius:8px; padding:10px; text-align:center;">
-                  <div style="font-weight:bold; color:#B45309; font-size:0.85rem;">気軽なデイリーボトル</div>
-                  <div style="font-size:0.75rem; color:#4B5563; margin-top:4px;">ソーダやライムと抜群の相性！普段使いの友</div>
+                <div style="flex:1; background:#FFF; border:2px solid #E5E7EB; border-radius:10px; padding:12px; text-align:center;">
+                  <div style="font-weight:800; color:#B45309; font-size:0.95rem;">気取らないデイリーボトル</div>
+                  <div style="font-size:0.85rem; color:#4B5563; margin-top:4px;">ソーダやライムと抜群！普段の頼れる友</div>
                 </div>
-                <div style="font-size:1.2rem;">🤝</div>
-                <div style="flex:1; background:#FFF; border:1px solid #E5E7EB; border-radius:8px; padding:10px; text-align:center;">
-                  <div style="font-weight:bold; color:#78350F; font-size:0.85rem;">長期熟成のプレミアム</div>
-                  <div style="font-size:0.75rem; color:#4B5563; margin-top:4px;">記念日や特別な夜に、じっくり香りを愛でる</div>
+                <div style="font-size:1.4rem;">🤝</div>
+                <div style="flex:1; background:#FFF; border:2px solid #E5E7EB; border-radius:10px; padding:12px; text-align:center;">
+                  <div style="font-weight:800; color:#78350F; font-size:0.95rem;">長期熟成のプレミアム</div>
+                  <div style="font-size:0.85rem; color:#4B5563; margin-top:4px;">特別な夜に、じっくり香りと余韻を愛でる</div>
                 </div>
               </div>
             `
           }
         ],
         example: {
-          scene: "【お手本の一杯の場面】友人が少し奮発して買った熟成ラムを開けながら、「ソーダで割って飲みたいけれど、もったいないかな？」と恥ずかしそうにしています。",
+          scene: "【たとえばこんな場面】友人が少し奮発して買った熟成ラムを開けながら、「ソーダで割って飲みたいけれど、もったいないかな？」と恥ずかしそうにしているとき。",
           sceneFigure: `
-            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#92400E;">
-              <span>💬 友人の「割ったらもったいない？」という迷い</span>
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
+              <span>💬 「割ったらもったいない？」という迷い</span>
             </div>
           `,
-          answer: "「自分が一番美味しいと思う飲み方で割って愉しもう！」と勧める",
+          choice: "お手本：「自分が一番おいしいと思う飲み方で割って愉しもう！」と笑顔で声をかける",
           reason: "お酒に上下はなく、本人が心から美味しいと感じるスタイルこそが最高の愉しみ方だからです。"
         },
-        problems: [
+        picks: [
           {
-            scene: "【場面】バーでラムを注文するとき、隣の人から「ラムの美味しさはストレートでしか分からないよ」と言われたときの大人のスタンスは？",
+            scene: "【場面】もし目の前に、贅沢な長期熟成のプレミアムラムがあったら、あなたはどう愉しんでみたいですか？",
             sceneFigure: `
-              <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#1E40AF;">
-                <span>🍸 バーのカウンターでの一コマ</span>
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#1E40AF; font-weight:700;">
+                <span>🥃 プレミアムボトルの前での選択</span>
               </div>
             `,
-            question: "あなたの心構えとして最もふさわしいものはどれでしょう？",
-            type: "choice",
+            question: "あなたの心のままに選んでみてください：",
             choices: [
-              "「そういう楽しみ方もあるね」と受け止めつつ、自分はその時一番飲みたいスタイル（ロックやソーダ割り等）を堂々と愉しむ",
-              "無理をして度数の強いストレートを一気に飲み、辛い思いをする",
-              "怒ってその場でバーテンダーに抗議する"
-            ],
-            answer: 0,
-            feedback: "大正解！他人の好みを尊重しつつ、自分の好みを大切にするのが一番粋なお酒の愉しみ方です。"
+              {
+                label: "まずはグラスに注いで、そのままストレートで香りをじっくり確かめる",
+                response: "素晴らしいですね！何年も樽の中で眠っていたバニラやドライフルーツ、トーストのような芳醇なアロマをダイレクトに満喫できます。ゆっくりと時間をかけてどうぞ。"
+              },
+              {
+                label: "大きな氷をひとつ浮かべて、冷たさと少しずつ溶けるまろやかさを味わう",
+                response: "最高に贅沢ですね！氷の冷涼感でアルコールの当たりが優しくなり、溶け出した水によって香りの成分がふわりと変化していく過程を長く楽しめます。"
+              },
+              {
+                label: "贅沢に強炭酸水で割って、プレミアムな大人のハイボールにする",
+                response: "実はバーテンダーの間でも大絶賛される愉しみ方です！上質な熟成ラムで作るハイボールは、驚くほど上品で香ばしく、一度飲むと忘れられない極上の一杯になります。"
+              }
+            ]
           }
-        ],
-        hints: [
-          "お酒は誰かに見せびらかすためのものではなく、自分が心地よくなるためのものです。",
-          "ストレートもロックもソーダ割りも、それぞれ魅力的な飲み方です。",
-          "無理に他人の流儀に合わせる必要はありません。"
         ],
         afterNote: "まるもち「あなたの『おいしい！』が一番の正解。誰にも遠慮せず、自分の舌を信じてね！」"
       },
 
       "p-04": {
         id: "p-04",
-        stageId: "prologue",
+        chapterId: "prologue",
         number: "p-04",
-        title: "テイスティングの作法",
-        summary: "色を見る→香りを取る→少し含む→余韻。メモが次を愉しくする。",
+        title: "テイスティングの愉しみ方",
+        summary: "色を見る→香りを取る→少し含む→余韻。気づいたことをメモに残すと次が愉しくなる。",
         slides: [
           {
             title: "味わいを深める4つのステップ",
             body: "①色を見る（琥珀の深さや輝き）→ ②香りを取る（鼻を突っ込まず、やさしく漂わせる）→ ③少し含む（舌の上で転がす）→ ④余韻を感じる（鼻から抜ける香りを楽しむ）。",
             figure: `
-              <svg class="fig-svg" viewBox="0 0 460 120" width="100%">
-                <g transform="translate(10, 10)">
-                  <rect width="95" height="100" rx="8" fill="#FFF" stroke="#E5E7EB"/>
-                  <text x="47" y="24" text-anchor="middle" font-size="12" font-weight="bold" fill="#B45309">① 色を見る</text>
-                  <circle cx="47" cy="55" r="16" fill="#F59E0B" stroke="#B45309" stroke-width="1.5"/>
-                  <text x="47" y="90" text-anchor="middle" font-size="10" fill="#6B7280">輝きと濃さ</text>
+              <svg class="fig-svg" viewBox="0 0 360 140" width="100%">
+                <!-- 1 色を見る -->
+                <g transform="translate(8, 10)">
+                  <rect width="80" height="120" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/>
+                  <text x="40" y="28" text-anchor="middle" class="fig-text-title">① 色を見る</text>
+                  <circle cx="40" cy="62" r="18" fill="#F59E0B" stroke="#B45309" stroke-width="2"/>
+                  <text x="40" y="104" text-anchor="middle" class="fig-text-desc">輝きと濃さ</text>
                 </g>
-                <g transform="translate(120, 10)">
-                  <rect width="95" height="100" rx="8" fill="#FFF" stroke="#E5E7EB"/>
-                  <text x="47" y="24" text-anchor="middle" font-size="12" font-weight="bold" fill="#B45309">② 香りを取る</text>
-                  <path d="M 40 50 Q 47 40 54 50 T 47 70" stroke="#D97706" stroke-width="2" fill="none"/>
-                  <text x="47" y="90" text-anchor="middle" font-size="10" fill="#6B7280">離してやさしく</text>
+                <!-- 2 香りを取る -->
+                <g transform="translate(96, 10)">
+                  <rect width="80" height="120" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/>
+                  <text x="40" y="28" text-anchor="middle" class="fig-text-title">② 香りを取る</text>
+                  <path d="M 32 58 Q 40 45 48 58 T 40 82" stroke="#D97706" stroke-width="3" fill="none"/>
+                  <text x="40" y="104" text-anchor="middle" class="fig-text-desc">少し離して</text>
                 </g>
-                <g transform="translate(230, 10)">
-                  <rect width="95" height="100" rx="8" fill="#FFF" stroke="#E5E7EB"/>
-                  <text x="47" y="24" text-anchor="middle" font-size="12" font-weight="bold" fill="#B45309">③ 少し含む</text>
-                  <ellipse cx="47" cy="55" rx="14" ry="8" fill="#FEF3C7" stroke="#78350F" stroke-width="1.5"/>
-                  <text x="47" y="90" text-anchor="middle" font-size="10" fill="#6B7280">少量転がす</text>
+                <!-- 3 少し含む -->
+                <g transform="translate(184, 10)">
+                  <rect width="80" height="120" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/>
+                  <text x="40" y="28" text-anchor="middle" class="fig-text-title">③ 少し含む</text>
+                  <ellipse cx="40" cy="62" rx="16" ry="10" fill="#FEF3C7" stroke="#78350F" stroke-width="2"/>
+                  <text x="40" y="104" text-anchor="middle" class="fig-text-desc">舌で転がす</text>
                 </g>
-                <g transform="translate(340, 10)">
-                  <rect width="95" height="100" rx="8" fill="#FFF" stroke="#E5E7EB"/>
-                  <text x="47" y="24" text-anchor="middle" font-size="12" font-weight="bold" fill="#B45309">④ 余韻</text>
-                  <path d="M 35 60 Q 47 45 60 60" stroke="#10B981" stroke-width="2" fill="none"/>
-                  <text x="47" y="90" text-anchor="middle" font-size="10" fill="#6B7280">息を抜く</text>
+                <!-- 4 余韻 -->
+                <g transform="translate(272, 10)">
+                  <rect width="80" height="120" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/>
+                  <text x="40" y="28" text-anchor="middle" class="fig-text-title">④ 余韻</text>
+                  <path d="M 28 66 Q 40 48 52 66" stroke="#F59E0B" stroke-width="3" fill="none"/>
+                  <text x="40" y="104" text-anchor="middle" class="fig-text-desc">息を抜く</text>
                 </g>
               </svg>
             `
           },
           {
-            title: "香りを嗅ぐときのコツ",
-            body: "ラムはアルコール度数が40度以上あります。ワインのように鼻をグラスの奥まで突っ込むと、強いアルコール刺激で鼻が麻痺してしまいます。グラスから数センチ離して、フワッと立ち上る香りを拾うのがコツです。",
+            title: "香りを嗅ぐときの小さなコツ",
+            body: "ラムはアルコール度数が40度前後あります。ワインのように鼻をグラスの奥まで突っ込むと強い刺激で鼻が驚いてしまいます。グラスから数センチ離して、口を半開きにしながらやさしく漂う香りを拾うのがコツです。",
             figure: `
-              <div style="background:#FFFBEB; border:1px solid #FCD34D; border-radius:10px; padding:12px; width:100%; text-align:center;">
-                <div style="font-weight:bold; color:#78350F; font-size:0.9rem;">💡 プロのワンポイント</div>
-                <div style="font-size:0.82rem; color:#92400E; margin-top:4px;">
-                  「口をほんの少し半開きにして息を吸うと、アルコールのツンとした刺激が和らいで、バニラやフルーツの甘い香りがくっきりと感じられるよ！」
+              <div style="background:#FFFBEB; border:2px solid #FCD34D; border-radius:12px; padding:14px; width:100%; text-align:center;">
+                <div style="font-weight:800; color:#78350F; font-size:1rem;">💡 まるもちのテイスティングメモ</div>
+                <div style="font-size:0.92rem; color:#92400E; margin-top:6px; line-height:1.6;">
+                  「口をほんの少し開けて息を吸うと、アルコールのツンとした刺激が和らいで、甘いバニラや黒糖の香りがくっきりと感じられるよ！」
                 </div>
               </div>
             `
           }
         ],
         example: {
-          scene: "【お手本の一杯の場面】バーで琥珀色に輝くラムをグラスで提供されました。最初のアクションとして香りを確かめようとしています。",
+          scene: "【お手本の一杯】バーのカウンターで、美しい琥珀色のラムがグラスに注がれた瞬間。",
           sceneFigure: `
-            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#92400E;">
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
               <span>🥃 グラスに注がれた熟成ラムのテイスティング</span>
             </div>
           `,
-          answer: "グラスに鼻を突っ込まず、少し離してやさしく漂う香りを嗅ぐ",
-          reason: "40度以上の強いアルコールで鼻腔が麻痺するのを防ぎ、ラムが持つ繊細なバニラや樽の香りをキャッチするためです。"
+          choice: "お手本：鼻を近づけすぎず、グラスの縁からふわりと立ち上るアロマをゆっくり愛でる",
+          reason: "強いアルコール刺激を避けながら、ラムの奥に隠れている豊かな果実香や樽のトースト香をしっかりと感じ取ることができるからです。"
         },
-        problems: [
+        picks: [
           {
-            scene: "【場面】グラスのラムを一口含みました。口の中に広がる味わいをテイスティングするとき、最も香味が豊かに感じられる飲み方は？",
+            scene: "【場面】グラスを鼻に近づけたとき、あなたが「あったらいいな」と感じる香りはどれですか？",
             sceneFigure: `
-              <div style="display:inline-flex; align-items:center; gap:8px; background:#ECFDF5; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#065F46;">
-                <span>👅 口に含んだ瞬間のテイスティング</span>
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#ECFDF5; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#065F46; font-weight:700;">
+                <span>👃 グラスから漂う香りの好み</span>
               </div>
             `,
-            question: "口中でのスマートな味わい方として適切なものはどれでしょう？",
-            type: "choice",
+            question: "今心惹かれるアロマをひとつ選んでみてください：",
             choices: [
-              "少量（スプーン半分程度）を舌の上に載せ、唾液と混ぜながらゆっくり転がす",
-              "大きめのひと口を一気に喉の奥へ流し込み、すぐさま息を止める",
-              "氷をガリガリと噛み砕きながら急速に飲み干す"
-            ],
-            answer: 0,
-            feedback: "完璧です！少量を舌の上で転がすことで、アルコールの刺激を抑えつつ、甘み・酸味・香ばしさを余すところなく捉えられます。"
+              {
+                label: "甘やかで濃厚なバニラ、カラメル、黒糖のような香り",
+                response: "スイーツ好きにはたまらないアロマですね！スペイン系のラム（ディプロマティコやロン サカパなど）に多く見られ、樽から溶け出した優しい甘みが心をふっと解きほぐしてくれます。"
+              },
+              {
+                label: "完熟したバナナやマンゴー、パイナップルのような南国フルーツ香",
+                response: "トロピカルで元気が出るアロマですね！ジャマイカ産のイギリス系ラム（アップルトンやスミス＆クロスなど）が得意とする「エステル香」で、エネルギッシュな魅力が弾けます。"
+              },
+              {
+                label: "刈りたての草原やハーブ、花のようなフレッシュで爽やかな香り",
+                response: "爽快で洗練されたアロマですね！サトウキビの搾り汁から造るフランス系のアグリコール・ラム（クレマンなど）ならではの個性で、新緑の風のような清々しさを味わえます。"
+              }
+            ]
           }
         ],
-        hints: [
-          "度数の高いスピリッツは、一度にたくさん含むと刺激で舌がピリピリしてしまいます。",
-          "少量を舌の上でやさしく馴染ませるのがポイントです。",
-          "唾液と混ざり合うことで、隠れていた甘みやフレーバーが花開きます。"
-        ],
-        afterNote: "まるもち「気づいたことを『バニラっぽい』『カラメルっぽい』とスマホのメモに残すと、自分だけのテイスティングノートができるよ〜」"
+        afterNote: "まるもち「プロローグ読了おめでとう！気づいたことを『バニラっぽい』『黒糖みたい』とスマホのメモに残すと、自分だけのテイスティングノートができるよ〜」"
       },
 
-      
       // -------------------------------------------------------------
       // 第1章 6お話
       // -------------------------------------------------------------
       "s0-01": {
         id: "s0-01",
-        stageId: "stage0",
+        chapterId: "chapter1",
         number: "s0-01",
         title: "原料はサトウキビ",
-        summary: "主流の糖蜜（モラセス）と、少数派の搾り汁（アグリコール）。香りの違い。",
+        summary: "多くのラムは糖蜜＝モラセスから。搾り汁から作るアグリコールは少数派で草のような香り。",
         slides: [
           {
             title: "ラムの母はサトウキビ",
             body: "世界中のラム酒の原料はすべてサトウキビです。しかし、そこから「糖蜜（モラセス）」を使うか、サトウキビの「生搾りジュース」を使うかで、味わいが大きく2つに分かれます。",
             figure: `
-              <svg class="fig-svg" viewBox="0 0 460 130" width="100%">
+              <svg class="fig-svg" viewBox="0 0 360 160" width="100%">
                 <!-- サトウキビ -->
-                <g transform="translate(15, 10)">
-                  <rect width="80" height="110" rx="6" fill="#FFF" stroke="#E5E7EB"/>
-                  <path d="M 40 85 L 40 25 M 35 45 Q 20 35 30 25 M 45 60 Q 60 50 50 40" stroke="#10B981" stroke-width="3" fill="none"/>
-                  <text x="40" y="100" text-anchor="middle" font-size="11" font-weight="bold" fill="#047857">サトウキビ</text>
+                <g transform="translate(10, 15)">
+                  <rect width="80" height="130" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/>
+                  <path d="M 40 95 L 40 30 M 34 55 Q 18 42 28 32 M 46 70 Q 62 60 52 48" stroke="#10B981" stroke-width="3.5" fill="none"/>
+                  <text x="40" y="118" text-anchor="middle" class="fig-text-title" fill="#047857">サトウキビ</text>
                 </g>
                 <!-- 分岐矢印 -->
-                <path d="M 100 65 L 145 35 M 100 65 L 145 95" stroke="#B45309" stroke-width="2" fill="none"/>
+                <path d="M 98 75 L 128 45 M 98 85 L 128 115" stroke="#B45309" stroke-width="2.5" fill="none"/>
                 <!-- 糖蜜（トラディショナル） -->
-                <g transform="translate(150, 5)">
-                  <rect width="290" height="52" rx="6" fill="#FFFBEB" stroke="#F59E0B"/>
-                  <text x="12" y="22" font-size="12" font-weight="bold" fill="#78350F">糖蜜（モラセス）／ トラディショナル【95%】</text>
-                  <text x="12" y="40" font-size="10.5" fill="#6B7280">製糖の副産物。カラメルや黒糖のような深いコクと甘い香り</text>
+                <g transform="translate(135, 12)">
+                  <rect width="215" height="60" rx="8" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2"/>
+                  <text x="12" y="26" class="fig-text-title" fill="#78350F">糖蜜（モラセス）［主流 95%］</text>
+                  <text x="12" y="48" class="fig-text-desc">カラメル・黒糖の深いコクと甘み</text>
                 </g>
                 <!-- 搾り汁（アグリコール） -->
-                <g transform="translate(150, 68)">
-                  <rect width="290" height="52" rx="6" fill="#ECFDF5" stroke="#10B981"/>
-                  <text x="12" y="22" font-size="12" font-weight="bold" fill="#047857">搾り汁（ジュース）／ アグリコール【約5%】</text>
-                  <text x="12" y="40" font-size="10.5" fill="#6B7280">収穫期のみ搾る。青草やハーブのようなフレッシュな芳香</text>
+                <g transform="translate(135, 85)">
+                  <rect width="215" height="60" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
+                  <text x="12" y="26" class="fig-text-title" fill="#047857">生搾り汁［希少 約5%］</text>
+                  <text x="12" y="48" class="fig-text-desc">刈りたての草・ハーブの清々しい芳香</text>
                 </g>
               </svg>
             `
@@ -1571,97 +1516,91 @@
             figure: `
               <table class="comp-table">
                 <tr>
-                  <th>タイプ</th>
-                  <th>原料</th>
-                  <th>香りと味わいの特徴</th>
+                  <th style="width:38%;">タイプ</th>
+                  <th>原料と香りの特徴</th>
                 </tr>
                 <tr>
-                  <td style="font-weight:bold; color:#78350F;">トラディショナル</td>
-                  <td>糖蜜（モラセス）</td>
-                  <td>黒糖、バニラ、カラメル、香ばしいコク</td>
+                  <td style="font-weight:800; color:#78350F;">トラディショナル</td>
+                  <td><strong>糖蜜（モラセス）</strong><br>黒糖、バニラ、香ばしいカラメルのコク</td>
                 </tr>
                 <tr>
-                  <td style="font-weight:bold; color:#047857;">アグリコール</td>
-                  <td>サトウキビ生搾り汁</td>
-                  <td>刈りたての草、ハーブ、フローラル、フレッシュ</td>
+                  <td style="font-weight:800; color:#047857;">アグリコール</td>
+                  <td><strong>サトウキビ生搾り汁</strong><br>草原、ハーブ、フレッシュで華やかな芳香</td>
                 </tr>
               </table>
             `
           }
         ],
         example: {
-          scene: "【お手本の一杯の場面】バーで「爽快でハーブや草原のような、青々しいフレッシュな香りのラムを飲んでみたい」とリクエストしたいとき。",
+          scene: "【たとえばこんな場面】濃厚でコクのあるプリンやバニラアイスに少しかけて、カラメルのような香ばしさと深い甘みを引き立てたいとき。",
           sceneFigure: `
-            <div style="display:inline-flex; align-items:center; gap:8px; background:#ECFDF5; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#065F46;">
-              <span>🌿 草原・ハーブのような爽やかな植物の香り</span>
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
+              <span>🍮 スイーツに合わせるカラメル感・濃厚な甘み</span>
             </div>
           `,
-          answer: "サトウキビの搾り汁から造られる「アグリコール・ラム」を選ぶ",
-          reason: "糖蜜を加熱したカラメル感ではなく、サトウキビ本来の生搾り果汁を発酵させるため、フレッシュな植物香が豊かに現れるからです。"
+          choice: "お手本：糖蜜（モラセス）から造られたトラディショナル・ラムをひと回し",
+          reason: "糖蜜由来の芳醇なカラメル香や黒糖のような甘やかなコクが、スイーツの甘みと最高のマリアージュを生み出してくれるからです。"
         },
-        problems: [
+        picks: [
           {
-            scene: "【場面】濃厚でコクのあるプリンやバニラアイスに少しかけて、カラメルのような香ばしさと深い甘みを引き立てたいとき。",
+            scene: "【場面】原料の違いを知ったいま、あなたがグラスで試してみたいのはどちら？",
             sceneFigure: `
-              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#92400E;">
-                <span>🍮 スイーツに合わせるカラメル感・濃厚な甘み</span>
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#1E40AF; font-weight:700;">
+                <span>🎋 2つの原料の飲み比べ</span>
               </div>
             `,
-            question: "この場面で原料的に最もぴったりなラムのタイプはどちらでしょう？",
-            type: "choice",
+            question: "直感で気になるほうをタップしてみましょう：",
             choices: [
-              "糖蜜（モラセス）から造られたトラディショナル・ラム",
-              "サトウキビの搾り汁をそのまま使ったアグリコール・ラム",
-              "ブドウの果汁から造られたブランデー"
-            ],
-            answer: 0,
-            feedback: "正解！糖蜜（モラセス）由来の深いカラメル香や黒糖のような甘やかなコクが、スイーツの甘みと最高のマリアージュを生み出します。"
+              {
+                label: "黒糖やカラメルのような、深く親しみやすいコク（トラディショナル）",
+                response: "ラムの王道ですね！世界のボトルの大半がこのタイプ。マウントゲイやディプロマティコなど、スイーツのような香ばしさと優しい甘みで誰にでも愛される美味しさです。"
+              },
+              {
+                label: "草原やハーブのような、青々しくフレッシュな植物香（アグリコール）",
+                response: "通好みの素晴らしい選択です！マルティニーク島のクレマンなどに代表されるアグリコールは、サトウキビの搾りたてジュースの生命力がそのまま宿る、清々しく個性的な味わいです。"
+              }
+            ]
           }
         ],
-        hints: [
-          "スイーツに合うのは「カラメルや黒糖のようなコク」です。",
-          "サトウキビから砂糖を煮詰めて分離した後の濃厚な蜜が「糖蜜（モラセス）」です。",
-          "世界のラムの9割以上を占める伝統的な製法がトラディショナルです。"
-        ],
-        afterNote: "まるもち「モラセス＝コクとカラメル、アグリコール＝草とハーブ。この原料の違いを覚えるだけでラム通への大きな一歩だよ！豆知識：実は中間もあるよ。搾り汁を煮詰めた『ハイテストモラセス』から作るラムもあって、味はモラセスより軽やかで、アグリコールより濃いめだよ」"
+        afterNote: "まるもち「モラセス＝コクとカラメル、アグリコール＝草とハーブ。この原料の違いを覚えるだけでラム通への大きな一歩だよ！<br><br>💡 <strong>豆知識：</strong>搾り汁を煮詰めた中間原料『ハイテストモラセス』から作るラムもあるよ。味はモラセスより軽やかでアグリコールより濃いめなんだ〜」"
       },
 
       "s0-02": {
         id: "s0-02",
-        stageId: "stage0",
+        chapterId: "chapter1",
         number: "s0-02",
         title: "蒸留酒の仲間分け",
-        summary: "ラム、ウイスキー、焼酎、ウォッカ。原料と製法で見分ける。",
+        summary: "ラム＝サトウキビ、ウイスキー＝穀物、本格焼酎＝芋・麦・米など、ウォッカ＝香味を抑えた蒸留。スライドの比較表で。",
         slides: [
           {
             title: "世界の蒸留酒（スピリッツ）マップ",
-            body: "お酒は原料によって個性が決まります。大麦などの穀物から造られるウイスキー、白樺炭で濾過するウォッカ、ボタニカルが香るジン、そしてサトウキビから造られるのがラム酒です。",
+            body: "お酒は原料によって個性が決まります。大麦などの穀物から造られるウイスキー、白樺炭で濾過するウォッカ、米や芋から造る日本の本格焼酎、そしてサトウキビから造られるのがラム酒です。",
             figure: `
               <table class="comp-table">
                 <tr>
-                  <th>お酒の種類</th>
-                  <th>主な原料</th>
-                  <th>香味の最大の特徴</th>
+                  <th style="width:30%;">お酒</th>
+                  <th style="width:35%;">主な原料</th>
+                  <th>香味の特徴</th>
                 </tr>
                 <tr>
-                  <td style="font-weight:bold; color:#B45309;">ラム</td>
-                  <td>サトウキビ（糖蜜・搾り汁）</td>
-                  <td>甘やかなコク、バニラ、トロピカル</td>
+                  <td style="font-weight:800; color:#B45309;">ラム</td>
+                  <td>サトウキビ</td>
+                  <td>甘やかなコク、南国感</td>
                 </tr>
                 <tr>
-                  <td style="font-weight:bold; color:#374151;">ウイスキー</td>
-                  <td>大麦麦芽・トウモロコシ等穀物</td>
-                  <td>樽熟成香、スモーキー、麦芽の旨味</td>
+                  <td style="font-weight:800; color:#374151;">ウイスキー</td>
+                  <td>穀物（大麦麦芽等）</td>
+                  <td>樽香、麦芽の旨味</td>
                 </tr>
                 <tr>
-                  <td style="font-weight:bold; color:#4B5563;">ウォッカ</td>
-                  <td>穀物・ジャガイモ等</td>
-                  <td>炭濾過によるクリアで澄んだ味わい</td>
+                  <td style="font-weight:800; color:#047857;">本格焼酎</td>
+                  <td>芋・麦・米など</td>
+                  <td>原料固有の豊かな風味</td>
                 </tr>
                 <tr>
-                  <td style="font-weight:bold; color:#047857;">ジン</td>
-                  <td>穀物＋ジュニパーベリー等</td>
-                  <td>森のような爽やかなボタニカル香</td>
+                  <td style="font-weight:800; color:#4B5563;">ウォッカ</td>
+                  <td>穀物・イモ類</td>
+                  <td>炭濾過によるクリアさ</td>
                 </tr>
               </table>
             `
@@ -1670,63 +1609,64 @@
             title: "ラムは「最初から糖分を持っている」",
             body: "ウイスキーや焼酎などの穀物酒は、デンプンを糖に変える「糖化」という工程が必要です。しかしサトウキビを原料とするラムは、最初から糖分そのもの。そのため酵母が元気に発酵し、華やかで甘美なアロマが生まれやすいのです。",
             figure: `
-              <div style="background:#FFF; border:1px solid #E5E7EB; border-radius:10px; padding:12px; width:100%; display:flex; justify-content:space-around; align-items:center;">
+              <div style="background:#FFF; border:2px solid #E5E7EB; border-radius:12px; padding:14px; width:100%; display:flex; justify-content:space-around; align-items:center;">
                 <div style="text-align:center;">
-                  <div style="font-size:1.2rem;">🌾 穀物</div>
-                  <div style="font-size:0.75rem; color:#6B7280;">デンプン ➡ 糖化 ➡ 発酵</div>
+                  <div style="font-size:1.4rem;">🌾 穀物・芋</div>
+                  <div style="font-size:0.85rem; color:#6B7280; margin-top:2px;">デンプン ➡ 糖化 ➡ 発酵</div>
                 </div>
-                <div style="font-size:1.1rem; color:#9CA3AF;">VS</div>
+                <div style="font-size:1.3rem; color:#9CA3AF; font-weight:800;">VS</div>
                 <div style="text-align:center;">
-                  <div style="font-size:1.2rem;">🎋 サトウキビ</div>
-                  <div style="font-size:0.75rem; color:#B45309; font-weight:bold;">最初から純粋な糖 ➡ すぐ発酵！</div>
+                  <div style="font-size:1.4rem;">🎋 サトウキビ</div>
+                  <div style="font-size:0.9rem; color:#B45309; font-weight:800; margin-top:2px;">最初から糖分 ➡ すぐ発酵！</div>
                 </div>
               </div>
             `
           }
         ],
         example: {
-          scene: "【お手本の一杯の場面】友人から「ウイスキーとラムって、どちらも琥珀色で似ているけれど何が根本的に違うの？」と尋ねられました。",
+          scene: "【たとえばこんな場面】バーで普段ウイスキーをハイボールでよく飲んでいる人が、「今夜は少し気分を変えて、南国の甘やかなニュアンスを楽しみたい」と思ったとき。",
           sceneFigure: `
-            <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#1E40AF;">
-              <span>🥃 ウイスキーとラムの違いを説明する場面</span>
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#1E40AF; font-weight:700;">
+              <span>🥃 ウイスキー好きが楽しむ南国の一杯</span>
             </div>
           `,
-          answer: "「ウイスキーは大麦などの穀物が原料、ラムはサトウキビが原料だよ」と答える",
-          reason: "どちらも樽熟成による琥珀色の蒸留酒ですが、原料が穀物かサトウキビかで土台の甘みや香りのキャラクターが根本から異なるからです。"
+          choice: "お手本：長期熟成のダークラム（エル ドラド12年など）のソーダ割りを試してみる",
+          reason: "ウイスキーと同じ樽熟成の深い香ばしさを持ちつつ、サトウキビ由来のふくよかな甘みとコクが広がり、新鮮な美味しさに出会えるからです。"
         },
-        problems: [
+        picks: [
           {
-            scene: "【場面】バーでメニューを見ながら、「原料由来のふくよかで甘いコクと南国のフルーツ感を味わいたい」と思ったときの一杯。",
+            scene: "【場面】普段のあなたがお酒に一番求める心地よさはどれですか？",
             sceneFigure: `
-              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#92400E;">
-                <span>🌴 南国のフルーツ感と甘いコクを求めるとき</span>
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
+                <span>🌟 あなたが求めるお酒の心地よさ</span>
               </div>
             `,
-            question: "4大スピリッツの中で、まさにサトウキビを原料として造られる蒸留酒はどれ？",
-            type: "choice",
+            question: "あなたの好みに合うスピリッツの愉しみ方をチェック：",
             choices: [
-              "ラム（Rum）",
-              "ジン（Gin）",
-              "ウォッカ（Vodka）"
-            ],
-            answer: 0,
-            feedback: "ピンポン！サトウキビの恵みたっぷりのラムこそが、トロピカルで甘美な香味の世界へと連れて行ってくれます。"
+              {
+                label: "やさしい甘みとコクで、1日の疲れをほっと癒したい",
+                response: "まさにラムが最高のパートナーです！サトウキビ本来の甘やかな香気成分は、ストレートでもお湯割りでも、疲れた心と身体をじんわり温めてくれます。"
+              },
+              {
+                label: "食事の邪魔をしない、すっきりクリアでドライなキレが欲しい",
+                response: "クリア派ですね！ウォッカのソーダ割りや本格焼酎はもちろん、ラムでも活性炭濾過された軽快なホワイトラムのソーダ割りが食事に抜群に合います。"
+              },
+              {
+                label: "重厚な樽の香りや、スモーキーな深い余韻に浸りたい",
+                response: "ウイスキー派にもおすすめ！ジャマイカ産のヘビーなラムや、バーボン樽・シェリー樽でじっくり熟成されたラムなら、ウイスキー顔負けの重厚な余韻を堪能できます。"
+              }
+            ]
           }
-        ],
-        hints: [
-          "サトウキビを原料とするお酒の名前を思い出してみましょう。",
-          "大麦やジュニパーベリーではなく、熱帯の甘い植物です。",
-          "このアプリの主役のお酒です！"
         ],
         afterNote: "まるもち「お酒の正体は原料で決まる！サトウキビ生まれのラムだからこその甘美な世界があるんだよ〜」"
       },
 
       "s0-03": {
         id: "s0-03",
-        stageId: "stage0",
+        chapterId: "chapter1",
         number: "s0-03",
         title: "色と味の関係",
-        summary: "ホワイト・ゴールド・ダーク。色の濃さ＝熟成年数とは限らない？",
+        summary: "ホワイト／ゴールド／ダーク。色の濃さ＝熟成年数とは限らず、樽の色とカラメル着色の両方がある。ホワイトでも樽熟成後濾過がある。",
         slides: [
           {
             title: "3つの色分類（ホワイト/ゴールド/ダーク）",
@@ -1746,9 +1686,9 @@
             title: "【重要】色の濃さ＝熟成年数ではない！",
             body: "実は「白い＝熟成ゼロ」とは限りません。樽で3年以上熟成させた後に活性炭で色だけを抜いたプレミアムなホワイトラムも存在します。また、カラメル色素で色を濃くしたダークラムもあります。色はあくまでキャラクターの目安なのです。",
             figure: `
-              <div style="background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:10px; padding:12px; width:100%;">
-                <div style="font-weight:bold; color:#78350F; font-size:0.85rem; margin-bottom:4px;">⚠️ ラムの色の落とし穴</div>
-                <ul style="font-size:0.8rem; color:#4B5563; padding-left:18px; line-height:1.6;">
+              <div style="background:#FFFBEB; border:2px solid #FCD34D; border-radius:12px; padding:14px; width:100%;">
+                <div style="font-weight:800; color:#78350F; font-size:0.95rem; margin-bottom:6px;">⚠️ ラムの色の落とし穴</div>
+                <ul style="font-size:0.9rem; color:#4B5563; padding-left:20px; line-height:1.65;">
                   <li><strong>ホワイト：</strong>ステンレス熟成もあるが、樽熟成後に炭で脱色した高品位な銘柄も多い</li>
                   <li><strong>ダーク：</strong>長期間の樽熟成の色もあれば、伝統的なカラメル着色のものもある</li>
                 </ul>
@@ -1757,65 +1697,66 @@
           }
         ],
         example: {
-          scene: "【お手本の一杯の場面】無色透明なホワイトラム（ハバナクラブ3年など）を飲んだら、驚くほどまろやかでバニラのような熟成香を感じました。",
+          scene: "【たとえばこんな場面】無色透明なホワイトラム（ハバナクラブ3年など）を飲んだら、驚くほどまろやかでバニラのような熟成香を感じたとき。",
           sceneFigure: `
-            <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#1E40AF;">
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#1E40AF; font-weight:700;">
               <span>⚪ 透明なのにバニラの熟成香がするホワイトラム</span>
             </div>
           `,
-          answer: "「樽で熟成させた後、炭でろ過して色を抜いているから」と理解する",
-          reason: "カクテルに色をつけずに樽熟成の滑らかな深みを与えるため、熟成後に炭濾過された高品質なホワイトラムが存在するからです。"
+          choice: "お手本：「樽でじっくり熟成させた後、炭でろ過して色を抜いているんだな」と楽しむ",
+          reason: "カクテルに色をつけずに、樽熟成の滑らかな深みとアロマをカクテルに与えるための、職人の粋な工夫だからです。"
         },
-        problems: [
+        picks: [
           {
-            scene: "【場面】酒屋で「このダークラムは色が真っ黒だから、ゴールドラムより絶対に15年以上長く熟成されているに違いない！」と話している人を見かけました。",
+            scene: "【場面】今、グラスに注いでみたい色はどれですか？",
             sceneFigure: `
-              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#92400E;">
-                <span>🟤 色の濃さと熟成年数の関係についての判断</span>
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
+                <span>🎨 3色のグラスの魅力</span>
               </div>
             `,
-            question: "この人の考えに対するラムの正しい知識はどれでしょう？",
-            type: "choice",
+            question: "あなたの気になる色をタップしてみてください：",
             choices: [
-              "色の濃さは樽の焼き加減やカラメル着色の影響もあるため、色だけで熟成年数は判断できない",
-              "その通り。色の濃さは100%熟成年数に比例し、黒いほど必ず長期間樽で眠っていた証拠である",
-              "ダークラムは全て黒豆を漬け込んで着色している"
-            ],
-            answer: 0,
-            feedback: "その通り！ラムの色はカラメルの添加や樽の焼き方によっても変わるため、「色の濃さ＝年数」と思い込まないのがスマートです。"
+              {
+                label: "⚪ クリアな透明感が美しいホワイトラム",
+                response: "軽快で爽やかですね！モヒートやダイキリに最高。樽熟成後に炭濾過された銘柄なら、透明なのにまろやかな甘みが舌を包んでくれます。"
+              },
+              {
+                label: "🟡 黄金色にきらめくゴールドラム（アンバー）",
+                response: "バランス抜群ですね！樽の香ばしさと原酒のフレッシュさの良いとこ取り。ソーダ割りでもロックでも万能に活躍してくれる大人の定番です。"
+              },
+              {
+                label: "🟤 深い琥珀〜茶褐色のダークラム",
+                response: "重厚で甘美ですね！カラメルやドライフルーツ、トースト香が濃厚。夜更けにロックやストレートで、じっくり時間をかけて味わうのに最適です。"
+              }
+            ]
           }
-        ],
-        hints: [
-          "スライドで学んだ「ラムの色の落とし穴」を思い出しましょう。",
-          "ウイスキーよりも色に関する製法の自由度が高いのがラムの特徴です。",
-          "カラメル色素の調整や樽の内側の焦がし具合によっても色は変わります。"
         ],
         afterNote: "まるもち「透明だから若い、黒いから古いとは限らない！見た目に騙されず香りと味わいを楽しもうね〜」"
       },
 
       "s0-04": {
         id: "s0-04",
-        stageId: "stage0",
+        chapterId: "chapter1",
         number: "s0-04",
         title: "3つの系統（英・西・仏）",
-        summary: "重厚なイギリス系、軽快で甘美なスペイン系、ハーブ香るフランス系。",
+        summary: "イギリス系＝ポットスチル中心で重厚、スペイン系＝カラムスチルで軽やか・甘口が多い、フランス系＝アグリコールで草やハーブの香り。",
         slides: [
           {
             title: "歴史が生んだ3つの言語圏スタイル",
             body: "カリブ海の島々を支配した旧宗主国の文化により、ラムは「イギリス系」「スペイン系」「フランス系」の3大系統に分かれます。これを知るとボトルの味がひと目で想像できるようになります。",
             figure: `
-              <div style="display:flex; flex-direction:column; gap:8px; width:100%;">
-                <div style="background:#FEF2F2; border-left:4px solid #EF4444; padding:8px 12px; border-radius:4px;">
-                  <strong style="color:#991B1B; font-size:0.85rem;">🇬🇧 イギリス系（Rum）</strong>
-                  <div style="font-size:0.75rem; color:#7F1D1D;">ジャマイカ、バルバドスなど。単式蒸留器で重厚、エステル香、骨太（銘柄: マウントゲイ、アップルトン）</div>
+              <div style="display:flex; flex-direction:column; gap:10px; width:100%;">
+                <div style="background:#FEF2F2; border-left:5px solid #EF4444; padding:10px 14px; border-radius:6px;">
+                  <strong style="color:#991B1B; font-size:0.95rem;">🇬🇧 イギリス系（Rum）</strong>
+                  <div style="font-size:0.85rem; color:#7F1D1D; margin-top:2px;">ジャマイカ、バルバドスなど。単式蒸留器で重厚、エステル香、骨太（銘柄: マウントゲイ、アップルトン）</div>
                 </div>
-                <div style="background:#FFFBEB; border-left:4px solid #F59E0B; padding:8px 12px; border-radius:4px;">
-                  <strong style="color:#92400E; font-size:0.85rem;">🇪🇸 スペイン系（Ron）</strong>
-                  <div style="font-size:0.75rem; color:#78350F;">キューバ、グアテマラなど。連続式蒸留で軽快、甘美、スムーズ（銘柄: ディプロマティコ、ロン サカパ）</div>
+                <div style="background:#FFFBEB; border-left:5px solid #F59E0B; padding:10px 14px; border-radius:6px;">
+                  <strong style="color:#92400E; font-size:0.95rem;">🇪🇸 スペイン系（Ron）</strong>
+                  <div style="font-size:0.85rem; color:#78350F; margin-top:2px;">キューバ、グアテマラなど。連続式蒸留で軽快、甘美、スムーズ（銘柄: ディプロマティコ、ロン サカパ）</div>
                 </div>
-                <div style="background:#EFF6FF; border-left:4px solid #3B82F6; padding:8px 12px; border-radius:4px;">
-                  <strong style="color:#1E40AF; font-size:0.85rem;">🇫🇷 フランス系（Rhum）</strong>
-                  <div style="font-size:0.75rem; color:#1E3A8A;">マルティニークなど。アグリコール製法、ハーブや草の芳香、ドライ（銘柄: クレマン）</div>
+                <div style="background:#EFF6FF; border-left:5px solid #3B82F6; padding:10px 14px; border-radius:6px;">
+                  <strong style="color:#1E40AF; font-size:0.95rem;">🇫🇷 フランス系（Rhum）</strong>
+                  <div style="font-size:0.85rem; color:#1E3A8A; margin-top:2px;">マルティニークなど。アグリコール製法、ハーブや草の芳香、ドライ（銘柄: クレマン）</div>
                 </div>
               </div>
             `
@@ -1824,92 +1765,93 @@
             title: "ラベルの綴りで見分ける裏ワザ",
             body: "ボトルラベルの文字に注目！「Rum」ならイギリス系、「Ron」ならスペイン系、「Rhum」ならフランス系です。ラベルの言語を見るだけで、おおよその味わい系統が見抜けます。",
             figure: `
-              <div style="display:flex; justify-content:space-around; align-items:center; width:100%; text-align:center;">
-                <div style="border:1.5px solid #EF4444; padding:8px; border-radius:8px; background:#FFF; min-width:80px;">
-                  <div style="font-weight:bold; color:#B91C1C;">Rum</div>
-                  <div style="font-size:0.7rem; color:#6B7280;">英語 ➡ 重厚</div>
+              <div style="display:flex; justify-content:space-around; align-items:center; width:100%; text-align:center; gap:8px;">
+                <div style="border:2px solid #EF4444; padding:10px 8px; border-radius:10px; background:#FFF; flex:1;">
+                  <div style="font-weight:800; color:#B91C1C; font-size:1.1rem;">Rum</div>
+                  <div style="font-size:0.82rem; color:#6B7280; margin-top:2px;">英語 ➡ 重厚</div>
                 </div>
-                <div style="border:1.5px solid #F59E0B; padding:8px; border-radius:8px; background:#FFF; min-width:80px;">
-                  <div style="font-weight:bold; color:#B45309;">Ron</div>
-                  <div style="font-size:0.7rem; color:#6B7280;">西語 ➡ 甘美・軽快</div>
+                <div style="border:2px solid #F59E0B; padding:10px 8px; border-radius:10px; background:#FFF; flex:1;">
+                  <div style="font-weight:800; color:#B45309; font-size:1.1rem;">Ron</div>
+                  <div style="font-size:0.82rem; color:#6B7280; margin-top:2px;">西語 ➡ 甘美・軽快</div>
                 </div>
-                <div style="border:1.5px solid #3B82F6; padding:8px; border-radius:8px; background:#FFF; min-width:80px;">
-                  <div style="font-weight:bold; color:#1D4ED8;">Rhum</div>
-                  <div style="font-size:0.7rem; color:#6B7280;">仏語 ➡ ハーブ香</div>
+                <div style="border:2px solid #3B82F6; padding:10px 8px; border-radius:10px; background:#FFF; flex:1;">
+                  <div style="font-weight:800; color:#1D4ED8; font-size:1.1rem;">Rhum</div>
+                  <div style="font-size:0.82rem; color:#6B7280; margin-top:2px;">仏語 ➡ ハーブ香</div>
                 </div>
               </div>
             `
           }
         ],
         example: {
-          scene: "【お手本の一杯の場面】食後のデザート代わりに、ロックグラスでとろりと甘く、なめらかな口当たりのラムを愉しみたいとき。",
+          scene: "【たとえばこんな場面】食後のデザート代わりに、ロックグラスでとろりと甘く、なめらかな口当たりのラムを愉しみたいとき。",
           sceneFigure: `
-            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#92400E;">
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
               <span>🍫 食後のデザート × 甘くなめらかな口当たり</span>
             </div>
           `,
-          answer: "スペイン系（旧西領・Ron表記）のラムを選ぶ",
-          reason: "連続式蒸留機による軽やかで澄んだ酒質をベースに、ソレラシステムなどで甘美で滑らかなブレンドに仕上げられている銘柄が多いからです。"
+          choice: "お手本：スペイン系の「ロン サカパ」や「ディプロマティコ」をロックで",
+          reason: "連続式蒸留機による軽やかで澄んだ酒質をベースに、ソレラシステムなどで甘美で滑らかなブレンドに仕上げられているからです。"
         },
-        problems: [
+        picks: [
           {
-            scene: "【場面】完熟バナナやマンゴーのような濃厚なフルーツ香（エステル香）と、ガツンと力強いボディをロックで味わいたいとき。",
+            scene: "【場面】今夜のあなたの気分は、3つの系統のどれに近いですか？",
             sceneFigure: `
-              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF2F2; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#991B1B;">
-                <span>🍌 完熟フルーツのエステル香 × 骨太で力強いボディ</span>
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF2F2; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#991B1B; font-weight:700;">
+                <span>🗺️ カリブ海の3系統セレクト</span>
               </div>
             `,
-            question: "ジャマイカやバルバドスに代表される、この重厚なキャラクターを持つ系統はどれ？",
-            type: "choice",
+            question: "気になる系統をタップして銘柄の例をチェックしてみましょう：",
             choices: [
-              "イギリス系（ポットスチル主体の重厚でエステル豊かなスタイル）",
-              "スペイン系（カラムスチルによる軽快で甘口なスタイル）",
-              "フランス系（サトウキビ生搾りジュースによるハーブ調スタイル）"
-            ],
-            answer: 0,
-            feedback: "お見事！ポットスチル（単式蒸留器）でじっくり蒸留されるイギリス系ラムは、野性味あふれるエステル香と力強さが最大の魅力です。"
+              {
+                label: "🇬🇧 イギリス系（力強いコク、完熟フルーツ、骨太）",
+                response: "パンチのある夜ですね！銘柄なら「アップルトンエステート」や最古の蒸留所「マウントゲイ」がおすすめ。濃厚なエステル香と力強いボディで、飲み応え抜群です。"
+              },
+              {
+                label: "🇪🇸 スペイン系（甘美でスムーズ、バニラや蜂蜜のよう）",
+                response: "贅沢な甘みに癒やされる夜ですね！銘柄ならベネズエラの「ディプロマティコ」やグアテマラの「ロン サカパ」が代表格。絹のように滑らかな喉越しが楽しめます。"
+              },
+              {
+                label: "🇫🇷 フランス系（サトウキビ生搾り、青草やハーブの芳香）",
+                response: "洗練された大人の夜ですね！マルティニーク島の銘醸「クレマン」がおすすめ。ブランデーやワインのように繊細で、食事にも美しく寄り添ってくれます。"
+              }
+            ]
           }
-        ],
-        hints: [
-          "ジャマイカやバルバドスはどの国の旧領だったでしょうか？",
-          "力強く骨太なポットスチル蒸留を得意とする系統です。",
-          "英語圏（Rum）の伝統を受け継ぐスタイルです。"
         ],
         afterNote: "まるもち「イギリス系＝力強い、スペイン系＝甘くなめらか、フランス系＝華やかハーブ。この3つを覚えたらもう立派なラム好き！」"
       },
 
       "s0-05": {
         id: "s0-05",
-        stageId: "stage0",
+        chapterId: "chapter1",
         number: "s0-05",
         title: "度数の幅",
-        summary: "標準40度、カスクストレングス、オーバープルーフ。度数が高い＝香味が濃い。",
+        summary: "標準は40度前後、カスクストレングスは50〜60度台、オーバープルーフは57度以上。度数が高い＝荒い、ではなく香味が濃いということ。",
         slides: [
           {
             title: "ラムのアルコール度数メーター",
             body: "一般的なラムは40度前後に加水調整されていますが、樽出しそのままの「カスクストレングス（50〜60度台）」や、海軍伝統の「オーバープルーフ（57度以上、時には75.5度）」も存在します。",
             figure: `
-              <svg class="fig-svg" viewBox="0 0 460 120" width="100%">
+              <svg class="fig-svg" viewBox="0 0 360 140" width="100%">
                 <!-- メーターバー -->
-                <rect x="30" y="50" width="400" height="14" rx="7" fill="#E5E7EB"/>
-                <rect x="30" y="50" width="200" height="14" rx="7" fill="#F59E0B"/>
-                <rect x="230" y="50" width="120" height="14" fill="#EA580C"/>
-                <rect x="350" y="50" width="80" height="14" rx="7" fill="#DC2626"/>
+                <rect x="20" y="55" width="320" height="18" rx="9" fill="#E5E7EB"/>
+                <rect x="20" y="55" width="160" height="18" rx="9" fill="#F59E0B"/>
+                <rect x="180" y="55" width="90" height="18" fill="#EA580C"/>
+                <rect x="270" y="55" width="70" height="18" rx="9" fill="#DC2626"/>
 
-                <!-- 目盛り -->
-                <line x1="30" y1="45" x2="30" y2="70" stroke="#4B5563" stroke-width="2"/>
-                <text x="30" y="38" text-anchor="middle" font-size="11" fill="#6B7280">0%</text>
+                <!-- 目盛りと大きな文字 -->
+                <line x1="20" y1="48" x2="20" y2="80" stroke="#4B5563" stroke-width="2"/>
+                <text x="20" y="38" text-anchor="middle" class="fig-text-desc">0%</text>
 
-                <line x1="230" y1="45" x2="230" y2="70" stroke="#78350F" stroke-width="2"/>
-                <text x="230" y="38" text-anchor="middle" font-size="12" font-weight="bold" fill="#78350F">40%（標準）</text>
+                <line x1="180" y1="48" x2="180" y2="80" stroke="#78350F" stroke-width="2.5"/>
+                <text x="180" y="38" text-anchor="middle" class="fig-text-title" fill="#78350F">40%（標準）</text>
 
-                <line x1="330" y1="45" x2="330" y2="70" stroke="#9A3412" stroke-width="2"/>
-                <text x="330" y="38" text-anchor="middle" font-size="11" font-weight="bold" fill="#9A3412">57%（海軍仕様）</text>
+                <line x1="260" y1="48" x2="260" y2="80" stroke="#9A3412" stroke-width="2.5"/>
+                <text x="260" y="38" text-anchor="middle" class="fig-text-title" fill="#9A3412">57%（海軍仕様）</text>
 
-                <line x1="410" y1="45" x2="410" y2="70" stroke="#991B1B" stroke-width="2"/>
-                <text x="410" y="38" text-anchor="middle" font-size="11" font-weight="bold" fill="#991B1B">75.5% (151)</text>
+                <line x1="330" y1="48" x2="330" y2="80" stroke="#991B1B" stroke-width="2.5"/>
+                <text x="330" y="38" text-anchor="middle" class="fig-text-title" fill="#991B1B">75.5%</text>
 
-                <text x="230" y="90" text-anchor="middle" font-size="11.5" fill="#4B5563">度数が高い ＝ 水で薄められておらず、香気成分が超濃厚！</text>
+                <text x="180" y="108" text-anchor="middle" class="fig-text-title" fill="#4B5563">度数が高い ＝ 香気成分が超濃厚！</text>
               </svg>
             `
           },
@@ -1917,9 +1859,9 @@
             title: "度数が高い＝荒々しい、ではない！",
             body: "「度数が高いお酒は喉が焼けるだけ」と思われがちですが、加水されていない高アルコールの原酒は、ラムが持つ果実や樽の香気成分が水で薄まらず凝縮されています。数滴の水を垂らすだけで、香りの花が一気に開きます。",
             figure: `
-              <div style="background:#FFF; border:1.5px solid #FCD34D; border-radius:10px; padding:12px; width:100%; text-align:center;">
-                <div style="font-weight:bold; color:#B45309; font-size:0.9rem;">💧 数滴の水（加水）のマジック</div>
-                <div style="font-size:0.82rem; color:#4B5563; margin-top:4px;">
+              <div style="background:#FFF; border:2px solid #FCD34D; border-radius:12px; padding:14px; width:100%; text-align:center;">
+                <div style="font-weight:800; color:#B45309; font-size:1rem;">💧 数滴の水（加水）のマジック</div>
+                <div style="font-size:0.92rem; color:#4B5563; margin-top:6px; line-height:1.6;">
                   高アルコール原酒にスプーン1杯の水を垂らすと、アルコール刺激が落ち着き、閉じ込められていたバニラやトロピカルフルーツの芳香が爆発するように広がります。
                 </div>
               </div>
@@ -1927,120 +1869,122 @@
           }
         ],
         example: {
-          scene: "【お手本の一杯の場面】バーで58度のカスクストレングス（樽出し原酒）をストレートで注文しましたが、最初のひと口でアルコールの刺激が少し強いと感じました。",
+          scene: "【たとえばこんな場面】バーで58度のカスクストレングス（樽出し原酒）を注文したけれど、少しアルコールの刺激が強いと感じたとき。",
           sceneFigure: `
-            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF2F2; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#991B1B;">
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF2F2; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#991B1B; font-weight:700;">
               <span>🔥 58度の樽出し原酒 × 少し刺激が強いとき</span>
             </div>
           `,
-          answer: "バーテンダーに数滴の常温の水を加えてもらう（またはチェイサーの水を少し垂らす）",
-          reason: "わずかな加水によってアルコールの刺激を和らげつつ、閉じ込められていた豊かな香気分子を一気に解放させることができるからです。"
+          choice: "お手本：チェイサーのお水を数滴、グラスに垂らしてみる",
+          reason: "わずかな加水によってアルコールの刺激を抑えつつ、閉じ込められていた豊かな香気分子を一気に解放させることができるからです。"
         },
-        problems: [
+        picks: [
           {
-            scene: "【場面】ラムのボトルに「Overproof（オーバープルーフ）」と書かれています。このラムの度数に関する説明として正しいものは？",
+            scene: "【場面】今夜飲むなら、どの度数帯のボトルを試してみたいですか？",
             sceneFigure: `
-              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#92400E;">
-                <span>⚓ ラベルの「Overproof」の表記</span>
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
+                <span>🧭 アルコール度数による愉しみ方</span>
               </div>
             `,
-            question: "オーバープルーフ・ラムの特徴として正しい記述はどれ？",
-            type: "choice",
+            question: "あなたの好奇心に合わせてタップしてみましょう：",
             choices: [
-              "57度以上の高アルコールで、カクテルの風味付けや濃厚なアロマを味わうために造られている",
-              "アルコール度数が20度未満に抑えられた超甘口のライトラムである",
-              "賞味期限が切れて飲めなくなったお酒である"
-            ],
-            answer: 0,
-            feedback: "その通り！英国海軍の基準（火薬に浸しても着火できる度数＝57.1%以上）に由来し、カクテルに少量加えても圧倒的な存在感を放ちます。"
+              {
+                label: "40度前後の定番ボトル（穏やかにバランスよく愉しむ）",
+                response: "安心の黄金バランスですね！造り手が最も美しく調和するように加水調整した度数なので、カクテルでもストレートでも失敗がなく親しみやすいのが魅力です。"
+              },
+              {
+                label: "50〜60度の樽出しカスクストレングス（加水なしの超濃厚アロマ）",
+                response: "通の愉しみですね！樽の中で熟成されたそのままのエネルギーが封じ込められています。少量の水を垂らして香りがふわっと開く瞬間をぜひ体感してみてください。"
+              },
+              {
+                label: "57度以上のオーバープルーフ（カクテルに少量垂らしてパンチを効かせる）",
+                response: "大迫力ですね！ハイボールやトロピカルカクテルにほんの小さじ1杯フロート（浮かべる）するだけで、全体のアロマが一気に跳ね上がる魔法のスパイスになります。"
+              }
+            ]
           }
-        ],
-        hints: [
-          "「Proof（プルーフ）」は昔のアルコール度数基準です。",
-          "オーバー（Over）という言葉の通り、通常の基準（40度前後）を大きく超えています。",
-          "57度や75.5度（151プルーフ）などの非常に高い度数を指します。"
         ],
         afterNote: "まるもち「度数が高いボトルは『濃縮されたアロマのエキス』！水を1滴垂らして香りを咲かせる愉しみを知ったら本物だよ〜」"
       },
 
       "s0-06": {
         id: "s0-06",
-        stageId: "stage0",
+        chapterId: "chapter1",
         number: "s0-06",
-        title: "系統の見分けクイズ",
-        summary: "産地・原料・蒸留器から英系・西系・仏系を当てる総合トレーニング！",
+        title: "系統を愉しむ",
+        summary: "3系統の総まとめ。気分に合わせておすすめのタイプと銘柄例を見つける！",
         slides: [
           {
-            title: "ボトルの解説から系統を見抜く",
-            body: "これまでに学んだ「原料」「蒸留方法」「旧宗主国・言語」の手がかりを組み合わせれば、初めて見るボトルでもどんな味わいか推理できるようになります。",
+            title: "3大系統の個性を総ざらい",
+            body: "力強くエステル豊かな「イギリス系」、甘美で絹のように滑らかな「スペイン系」、サトウキビの命が息づく「フランス系」。それぞれの個性を知れば、どんな夜も最高の一杯と巡り会えます。",
             figure: `
               <div style="display:flex; justify-content:space-around; align-items:center; width:100%; gap:8px;">
-                <div style="background:#FFF; border:1px solid #CBD5E1; border-radius:8px; padding:8px; text-align:center; flex:1;">
-                  <div style="font-size:1.1rem;">🇬🇧</div>
-                  <div style="font-size:0.75rem; font-weight:bold;">Rum</div>
-                  <div style="font-size:0.7rem; color:#6B7280;">ポットスチル / 濃厚</div>
+                <div style="background:#FFF; border:2px solid #CBD5E1; border-radius:10px; padding:10px 6px; text-align:center; flex:1;">
+                  <div style="font-size:1.3rem;">🇬🇧</div>
+                  <div style="font-size:0.9rem; font-weight:800; color:#991B1B;">Rum</div>
+                  <div style="font-size:0.8rem; color:#4B5563; margin-top:2px;">重厚・果実香</div>
                 </div>
-                <div style="background:#FFF; border:1px solid #CBD5E1; border-radius:8px; padding:8px; text-align:center; flex:1;">
-                  <div style="font-size:1.1rem;">🇪🇸</div>
-                  <div style="font-size:0.75rem; font-weight:bold;">Ron</div>
-                  <div style="font-size:0.7rem; color:#6B7280;">カラム / 甘美なめらか</div>
+                <div style="background:#FFF; border:2px solid #CBD5E1; border-radius:10px; padding:10px 6px; text-align:center; flex:1;">
+                  <div style="font-size:1.3rem;">🇪🇸</div>
+                  <div style="font-size:0.9rem; font-weight:800; color:#92400E;">Ron</div>
+                  <div style="font-size:0.8rem; color:#4B5563; margin-top:2px;">甘美・なめらか</div>
                 </div>
-                <div style="background:#FFF; border:1px solid #CBD5E1; border-radius:8px; padding:8px; text-align:center; flex:1;">
-                  <div style="font-size:1.1rem;">🇫🇷</div>
-                  <div style="font-size:0.75rem; font-weight:bold;">Rhum</div>
-                  <div style="font-size:0.7rem; color:#6B7280;">生搾り / ハーブ香</div>
+                <div style="background:#FFF; border:2px solid #CBD5E1; border-radius:10px; padding:10px 6px; text-align:center; flex:1;">
+                  <div style="font-size:1.3rem;">🇫🇷</div>
+                  <div style="font-size:0.9rem; font-weight:800; color:#1E40AF;">Rhum</div>
+                  <div style="font-size:0.8rem; color:#4B5563; margin-top:2px;">生搾り・草の香</div>
                 </div>
               </div>
             `
           },
           {
-            title: "見分けキーワード早見表",
-            body: "・「Solera」「Ron」「Guatemala」「Cuba」➡ スペイン系<br>・「Pot Still」「Ester」「Jamaica」「Barbados」➡ イギリス系<br>・「Agricole」「Rhum」「Martinique」「Cane Juice」➡ フランス系",
+            title: "ボトル選びの合言葉",
+            body: "・がっつり力強い夜 ➡ 「Rum」表記（ジャマイカ・バルバドス）<br>・甘く癒やされたい夜 ➡ 「Ron」表記（キューバ・ベネズエラ）<br>・爽やかに華やぎたい夜 ➡ 「Rhum / Agricole」表記（マルティニーク）",
             figure: `
-              <div style="background:#FEF3C7; border:1.5px solid #F59E0B; border-radius:10px; padding:10px 14px; width:100%;">
-                <div style="font-weight:bold; color:#78350F; font-size:0.85rem; margin-bottom:4px;">🔍 ラベル探索の極意</div>
-                <div style="font-size:0.8rem; color:#4B5563;">
-                  ボトルのどこかに「Rhum Agricole」とあれば100%フランス系！「Ron」とあればスペイン系！スペル一つで味わいの地図が開きます。
+              <div style="background:#FEF3C7; border:2px solid #F59E0B; border-radius:12px; padding:14px; width:100%;">
+                <div style="font-weight:800; color:#78350F; font-size:1rem; margin-bottom:4px;">🔍 ラベル探索の極意</div>
+                <div style="font-size:0.92rem; color:#4B5563; line-height:1.6;">
+                  ボトルのどこかに「Rhum Agricole」とあればフランス系！「Ron」とあればスペイン系！スペル一つで味わいの地図が開きます。
                 </div>
               </div>
             `
           }
         ],
         example: {
-          scene: "【お手本の一杯の場面】ラベルに「Ron Anejo / Solera System / Product of Guatemala」と記されたボトルを見つけました。",
+          scene: "【お手本の一杯】バーのバックバーに並ぶ無数のボトルを前に、バーテンダーに気分をスマートに伝えるとき。",
           sceneFigure: `
-            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#92400E;">
-              <span>🏷️ ラベル：Ron / Solera / Guatemala</span>
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
+              <span>🍸 バーテンダーとの会話</span>
             </div>
           `,
-          answer: "スペイン系（旧西領スタイル）のラム",
-          reason: "スペイン語の「Ron」という表記や、ソレラシステムによるブレンド熟成はスペイン系ラムの決定的な特徴だからです。"
+          choice: "お手本：「今日は食後なので、スペイン系の甘やかで滑らかなラムをロックでいただけますか？」",
+          reason: "系統と飲み方を伝えるだけで、バーテンダーはその日のおすすめを嬉しそうに選んでくれるからです。"
         },
-        problems: [
+        picks: [
           {
-            scene: "【場面】ラベルに誇らしげに「Rhum Agricole / Martinique」と刻まれ、サトウキビの搾り汁100%で仕込まれた琥珀色のボトルに出会いました。",
+            scene: "【場面】今夜、あなたの心を満たしたい一杯はどれですか？",
             sceneFigure: `
-              <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:6px 12px; border-radius:8px; font-size:0.85rem; color:#1E40AF;">
-                <span>🏷️ ラベル：Rhum Agricole / Martinique</span>
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#1E40AF; font-weight:700;">
+                <span>✨ 3系統総まとめのセレクト</span>
               </div>
             `,
-            question: "このボトルの系統と、期待される香りのキャラクターはどれ？",
-            type: "choice",
+            question: "あなたの気分にぴったりの銘柄タイプをタップしてみましょう：",
             choices: [
-              "フランス系：青草やハーブ、フレッシュなフローラル香が広がるエレガントなスタイル",
-              "イギリス系：タールや完熟バナナの重厚なエステル香がガツンとくるスタイル",
-              "スペイン系：お菓子のように極めて甘くトロリとしたシロップのようなスタイル"
-            ],
-            answer: 0,
-            feedback: "全問正解、完璧です！フランス領マルティニーク島の「Rhum Agricole」は、ワインのように繊細でボタニカルな芳香を持つフランス系の最高峰です。"
+              {
+                label: "重厚な気分：骨太で濃厚なコクと完熟フルーツ香を堪能したい",
+                response: "イギリス系がぴったり！代表銘柄「マウントゲイ エクリプス」や「アップルトン エステート12年」がおすすめ。濃厚な香ばしさが心を力づけてくれます。"
+              },
+              {
+                label: "軽やかで甘美な気分：デザートのようにとろける甘みでリラックスしたい",
+                response: "スペイン系がぴったり！代表銘柄「ロン サカパ 23」や「ディプロマティコ レセルバ エクスクルーシバ」がおすすめ。蜂蜜のような甘美な余韻が広がります。"
+              },
+              {
+                label: "爽やかな草の香りの気分：ハーブや花のような気品ある香りに浸りたい",
+                response: "フランス系がぴったり！代表銘柄「クレマン VSOP」や「J.M」がおすすめ。サトウキビ生搾りならではのエレガントな芳香が心地よく鼻腔を抜けていきます。"
+              }
+            ]
           }
         ],
-        hints: [
-          "スペルが「Rhum」で、製法が「Agricole」です。",
-          "搾り汁から造られるアグリコール製法はどの国の旧領で発展したでしょう？",
-          "草原やハーブのような洗練された香りが特徴のフランス系です。"
-        ],
-        afterNote: "まるもち「見事第1章を全問クリア！これであなたも立派なラムの目利き。ラベルを見るのがどんどん楽しくなるよ〜！」"
+        afterNote: "まるもち「第1章を最後まで読んでくれてありがとう！これであなたも立派なラムの目利き。今夜の気分で、最高の一杯を選んでみてね！」"
       }
     };
 
@@ -2050,7 +1994,7 @@
     const STORAGE_KEY = 'rum_marumochi_progress_v1';
 
     let appState = {
-      clearedLessons: [],
+      clearedStories: [],
       shownModals: []
     };
 
@@ -2059,7 +2003,7 @@
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved) {
           const parsed = JSON.parse(saved);
-          appState.clearedLessons = Array.isArray(parsed.clearedLessons) ? parsed.clearedLessons : [];
+          appState.clearedStories = Array.isArray(parsed.clearedStories) ? parsed.clearedStories : (parsed.clearedLessons || []);
           appState.shownModals = Array.isArray(parsed.shownModals) ? parsed.shownModals : [];
         }
       } catch (e) {
@@ -2075,28 +2019,28 @@
       }
     }
 
-    function markLessonCleared(lessonId) {
-      if (!appState.clearedLessons.includes(lessonId)) {
-        appState.clearedLessons.push(lessonId);
+    function markStoryCleared(storyId) {
+      if (!appState.clearedStories.includes(storyId)) {
+        appState.clearedStories.push(storyId);
         saveProgress();
       }
       checkMilestoneModals();
     }
 
-    function isLessonCleared(lessonId) {
-      return appState.clearedLessons.includes(lessonId);
+    function isStoryCleared(storyId) {
+      return appState.clearedStories.includes(storyId);
     }
 
     function confirmResetProgress() {
-      if (confirm('記録をリセットしてもよろしいですか？（これまでのクリア記録が初期化されます）')) {
-        appState = { clearedLessons: [], shownModals: [] };
+      if (confirm('読んだ記録をリセットしてもよろしいですか？')) {
+        appState = { clearedStories: [], shownModals: [] };
         saveProgress();
         renderTop();
       }
     }
 
     /* ==============================================================
-       3. 画面レンダリング（トップ画面）
+       3. 画面レンダリング（トップ画面・目次）
        ============================================================== */
     function goHome() {
       renderTop();
@@ -2105,63 +2049,62 @@
     function renderTop() {
       const mainEl = document.getElementById('main-content');
       const navSlot = document.getElementById('header-nav-slot');
-      navSlot.innerHTML = ''; // トップでは戻るボタンなし
+      navSlot.innerHTML = '';
 
-      // 全実装済みお話総数とクリア数
-      const allImplementedLessonIds = Object.keys(LESSONS);
-      const totalImplemented = allImplementedLessonIds.length;
-      const clearedCount = allImplementedLessonIds.filter(id => isLessonCleared(id)).length;
+      const allImplementedStoryIds = Object.keys(STORIES);
+      const totalImplemented = allImplementedStoryIds.length;
+      const clearedCount = allImplementedStoryIds.filter(id => isStoryCleared(id)).length;
       const progressPercent = Math.round((clearedCount / totalImplemented) * 100);
 
-      let stagesHtml = '';
+      let chaptersHtml = '';
 
-      STAGES.forEach(stage => {
-        const isUpcoming = stage.status === 'upcoming';
-        const stageLessons = stage.lessonIds.map(id => LESSONS[id]).filter(Boolean);
-        const stageTotal = stageLessons.length;
-        const stageCleared = stageLessons.filter(l => isLessonCleared(l.id)).length;
-        const isStageFullyCleared = stageTotal > 0 && stageCleared === stageTotal;
+      CHAPTERS.forEach(chapter => {
+        const isUpcoming = chapter.status === 'upcoming';
+        const chapterStories = chapter.storyIds.map(id => STORIES[id]).filter(Boolean);
+        const chapterTotal = chapterStories.length;
+        const chapterCleared = chapterStories.filter(s => isStoryCleared(s.id)).length;
+        const isChapterFullyCleared = chapterTotal > 0 && chapterCleared === chapterTotal;
 
-        let lessonsListHtml = '';
+        let storiesListHtml = '';
 
         if (isUpcoming) {
-          lessonsListHtml = `
-            <div style="background:#F9FAFB; border:1px dashed #D1D5DB; border-radius:12px; padding:18px; text-align:center; color:#6B7280; font-size:0.9rem;">
+          storiesListHtml = `
+            <div style="background:#F9FAFB; border:1px dashed #D1D5DB; border-radius:12px; padding:20px; text-align:center; color:#6B7280; font-size:0.95rem;">
               🚧 近日公開予定です。お楽しみに！
             </div>
           `;
         } else {
-          lessonsListHtml = '<div class="lesson-grid">';
-          stageLessons.forEach(lesson => {
-            const cleared = isLessonCleared(lesson.id);
-            lessonsListHtml += `
-              <div class="lesson-card ${cleared ? 'cleared' : ''}" onclick="startLesson('${lesson.id}')">
-                <div class="lesson-card-left">
-                  <div class="lesson-id-badge">${cleared ? '✓' : lesson.number}</div>
-                  <div class="lesson-info">
-                    <div class="lesson-title">${lesson.title}</div>
-                    <div class="lesson-desc">${lesson.summary}</div>
+          storiesListHtml = '<div class="story-grid">';
+          chapterStories.forEach(story => {
+            const cleared = isStoryCleared(story.id);
+            storiesListHtml += `
+              <div class="story-card ${cleared ? 'cleared' : ''}" onclick="startStory('${story.id}')">
+                <div class="story-card-left">
+                  <div class="story-id-badge">${cleared ? '✓' : story.number}</div>
+                  <div class="story-info">
+                    <div class="story-title">${story.title}</div>
+                    <div class="story-desc">${story.summary}</div>
                   </div>
                 </div>
-                <div class="lesson-status-icon">${cleared ? '🎉' : '👉'}</div>
+                <div class="story-status-icon">${cleared ? '🥂' : '📖'}</div>
               </div>
             `;
           });
-          lessonsListHtml += '</div>';
+          storiesListHtml += '</div>';
         }
 
-        stagesHtml += `
-          <div class="stage-section">
-            <div class="stage-header">
-              <div class="stage-title">
-                <span>${stage.title}</span>
+        chaptersHtml += `
+          <div class="chapter-section">
+            <div class="chapter-header">
+              <div class="chapter-title">
+                <span>${chapter.title}</span>
               </div>
-              <span class="stage-badge ${isUpcoming ? 'locked' : 'ready'}">
-                ${isUpcoming ? '近日公開' : (isStageFullyCleared ? '全クリア！' : `${stageCleared}/${stageTotal}`)}
+              <span class="chapter-badge ${isUpcoming ? 'locked' : 'ready'}">
+                ${isUpcoming ? '近日公開' : (isChapterFullyCleared ? '読了！' : `${chapterCleared}/${chapterTotal}`)}
               </span>
             </div>
-            <div style="font-size:0.85rem; color:#4B5563; margin-bottom:12px;">${stage.desc}</div>
-            ${lessonsListHtml}
+            <div style="font-size:0.9rem; color:#4B5563; margin-bottom:14px; line-height:1.5;">${chapter.desc}</div>
+            ${storiesListHtml}
           </div>
         `;
       });
@@ -2187,76 +2130,70 @@
           <div class="marumochi-bubble">
             <div class="marumochi-name-tag">まるもちの案内</div>
             ようこそ！ラム酒は自由で奥深く、大人の夜を最高に彩ってくれるお酒です。
-            カードをめくりながら、「この場面ならどの一杯？」を一緒に愉しく学んでいきましょう！
+            カードをめくりながら、「今夜の気分ならどれ？」を一緒に愉しく選んでいきましょう！
           </div>
         </div>
 
-        <!-- 全体進捗カード -->
+        <!-- 現在の愉しみ具合カード -->
         <div class="progress-summary-card">
           <div class="progress-title-row">
             <span>現在の愉しみ具合</span>
-            <span>${clearedCount} / ${totalImplemented} お話</span>
+            <span>${clearedCount} / ${totalImplemented} お話 読了</span>
           </div>
           <div class="progress-bar-bg">
             <div class="progress-bar-fill" style="width: ${progressPercent}%;"></div>
           </div>
           <div class="progress-text-sub">
-            <span>第1弾 公開中：プロローグ ＆ 第1章</span>
-            <span>${progressPercent}% 完了</span>
+            <span>第1弾 公開中（プロローグ ＆ 第1章）</span>
+            <span>${progressPercent}% 読了</span>
           </div>
         </div>
 
-        <!-- 各章 -->
-        ${stagesHtml}
+        <!-- 各章の目次 -->
+        ${chaptersHtml}
       `;
 
       window.scrollTo(0, 0);
     }
 
     /* ==============================================================
-       4. お話学習画面ロジック
+       4. お話画面ロジック
        ============================================================== */
-    let currentLesson = null;
+    let currentStory = null;
     let currentSlideIdx = 0;
-    let lessonPhase = 'slide'; // 'slide' | 'example' | 'quiz' | 'feedback' | 'finish'
-    let currentProblemIdx = 0;
-    let retryQueue = []; // 間違えたクイズを保持するキュー
-    let currentHintLevel = 0; // 0, 1, 2, 3
-    let lastFeedbackData = null;
+    let storyPhase = 'slide'; // 'slide' | 'example' | 'pick' | 'finish'
+    let currentPickIdx = 0;
+    let selectedChoiceIdx = null;
 
-    function startLesson(lessonId) {
-      currentLesson = LESSONS[lessonId];
-      if (!currentLesson) return;
+    function startStory(storyId) {
+      currentStory = STORIES[storyId];
+      if (!currentStory) return;
 
       currentSlideIdx = 0;
-      lessonPhase = 'slide';
-      currentProblemIdx = 0;
-      retryQueue = [];
-      currentHintLevel = 0;
-      lastFeedbackData = null;
+      storyPhase = 'slide';
+      currentPickIdx = 0;
+      selectedChoiceIdx = null;
 
-      renderLessonView();
+      renderStoryView();
     }
 
-    function renderLessonView() {
+    function renderStoryView() {
       const mainEl = document.getElementById('main-content');
       const navSlot = document.getElementById('header-nav-slot');
 
-      // ヘッダーに「トップへ」ボタン
       navSlot.innerHTML = `
         <button class="header-nav-btn" onclick="goHome()">
           <span>✕</span>
-          <span>終了</span>
+          <span>目次へ</span>
         </button>
       `;
 
-      // フェーズに応じたステップインジケータ
-      const steps = ['スライド', 'お手本の一杯', 'クイズ', '完了'];
+      const steps = ['スライド', 'お手本の一杯', '気分で選ぶ', '締めのひとこと'];
       let activeStepIdx = 0;
-      if (lessonPhase === 'slide') activeStepIdx = 0;
-      else if (lessonPhase === 'example') activeStepIdx = 1;
-      else if (lessonPhase === 'quiz' || lessonPhase === 'feedback') activeStepIdx = 2;
-      else if (lessonPhase === 'finish') activeStepIdx = 3;
+      if (storyPhase === 'slide') activeStepIdx = 0;
+      else if (storyPhase === 'example') activeStepIdx = 1;
+      else if (storyPhase === 'pick') activeStepIdx = 2;
+      else if (storyPhase === 'finish') activeStepIdx = 3;
 
       let pillsHtml = steps.map((_, i) => {
         let cls = 'step-pill';
@@ -2267,40 +2204,37 @@
 
       let contentHtml = '';
 
-      if (lessonPhase === 'slide') {
+      if (storyPhase === 'slide') {
         contentHtml = renderSlidePhase();
-      } else if (lessonPhase === 'example') {
+      } else if (storyPhase === 'example') {
         contentHtml = renderExamplePhase();
-      } else if (lessonPhase === 'quiz') {
-        contentHtml = renderQuizPhase();
-      } else if (lessonPhase === 'feedback') {
-        contentHtml = renderFeedbackPhase();
-      } else if (lessonPhase === 'finish') {
+      } else if (storyPhase === 'pick') {
+        contentHtml = renderPickPhase();
+      } else if (storyPhase === 'finish') {
         contentHtml = renderFinishPhase();
       }
 
       mainEl.innerHTML = `
-        <div class="lesson-container">
-          <div class="lesson-header-bar">
-            <div class="lesson-meta-row">
-              <span class="lesson-badge-category">${currentLesson.number} : ${currentLesson.stageId === 'prologue' ? 'プロローグ' : '第1章'}</span>
+        <div class="story-container">
+          <div class="story-header-bar">
+            <div class="story-meta-row">
+              <span class="story-badge-category">${currentStory.number} : ${currentStory.chapterId === 'prologue' ? 'プロローグ' : '第1章'}</span>
               <div class="step-indicator-pills">${pillsHtml}</div>
             </div>
-            <h2 class="lesson-main-title">${currentLesson.title}</h2>
+            <h2 class="story-main-title">${currentStory.title}</h2>
           </div>
 
           ${contentHtml}
         </div>
       `;
 
-      // 画面を開いた時・切り替わった時は自動スクロールで先頭を表示（自動フォーカスによるスクロールを抑止）
       window.scrollTo(0, 0);
     }
 
-    /* 4-1. スライド表示フェーズ */
+    /* 4-1. スライドフェーズ */
     function renderSlidePhase() {
-      const slide = currentLesson.slides[currentSlideIdx];
-      const totalSlides = currentLesson.slides.length;
+      const slide = currentStory.slides[currentSlideIdx];
+      const totalSlides = currentStory.slides.length;
       const isFirst = currentSlideIdx === 0;
       const isLast = currentSlideIdx === totalSlides - 1;
 
@@ -2339,53 +2273,53 @@
             </div>
           </div>
           <div class="marumochi-bubble">
-            <div class="marumochi-name-tag">まるもちのナビ</div>
-            ${slide.body.slice(0, 45)}… 図解と一緒にじっくり味わってね！
+            <div class="marumochi-name-tag">まるもちのひとこと</div>
+            ${slide.body.slice(0, 42)}… 図解と一緒にじっくり味わってね！
           </div>
         </div>
       `;
     }
 
     function nextSlide() {
-      if (currentSlideIdx < currentLesson.slides.length - 1) {
+      if (currentSlideIdx < currentStory.slides.length - 1) {
         currentSlideIdx++;
-        renderLessonView();
+        renderStoryView();
       }
     }
 
     function prevSlide() {
       if (currentSlideIdx > 0) {
         currentSlideIdx--;
-        renderLessonView();
+        renderStoryView();
       }
     }
 
     function proceedToExample() {
-      lessonPhase = 'example';
-      renderLessonView();
+      storyPhase = 'example';
+      renderStoryView();
     }
 
-    /* 4-2. お手本の一杯（Worked Example）フェーズ */
+    /* 4-2. お手本の一杯（Example）フェーズ */
     function renderExamplePhase() {
-      const ex = currentLesson.example;
+      const ex = currentStory.example;
       return `
         <div class="example-container">
-          <span class="example-badge">💡 お手本の一杯（まるもちのお手本）</span>
+          <span class="example-badge">🥃 お手本の一杯</span>
           
           <div class="scene-box">
-            <div class="scene-title">📍 場面の提示</div>
+            <div class="scene-title">📍 場面のイメージ</div>
             <div class="scene-desc">${ex.scene}</div>
-            ${ex.sceneFigure ? `<div style="margin-top:10px;">${ex.sceneFigure}</div>` : ''}
+            ${ex.sceneFigure ? `<div style="margin-top:12px;">${ex.sceneFigure}</div>` : ''}
           </div>
 
-          <div class="example-answer-card">
-            <div class="example-answer-label">まるもちの判断と答え</div>
-            <div class="example-answer-text">👉 ${ex.answer}</div>
+          <div class="example-choice-card">
+            <div class="example-choice-label">まるもちのセレクト</div>
+            <div class="example-choice-text">${ex.choice}</div>
             <div class="example-reason-text"><strong>【理由】</strong>${ex.reason}</div>
           </div>
 
-          <button class="btn btn-accent" onclick="startPractice()">
-            ほぼ同じクイズに挑戦してみる！ →
+          <button class="btn btn-accent" onclick="startPickPhase()">
+            気分で選んでみる！ →
           </button>
         </div>
 
@@ -2401,297 +2335,188 @@
           </div>
           <div class="marumochi-bubble">
             <div class="marumochi-name-tag">まるもちの助言</div>
-            お手本の一杯の流れ（場面 ➡ 理由つきの判断）が掴めたかな？次は場面の条件が少し変わるよ。自信を持って挑戦してみてね！
+            お手本はあくまで一例だよ。次はあなたの番！好きな選択肢を直感でタップしてみてね。
           </div>
         </div>
       `;
     }
 
-    function startPractice() {
-      lessonPhase = 'quiz';
-      currentProblemIdx = 0;
-      currentHintLevel = 0;
-      renderLessonView();
+    function startPickPhase() {
+      storyPhase = 'pick';
+      currentPickIdx = 0;
+      selectedChoiceIdx = null;
+      renderStoryView();
     }
 
-    /* 4-3. クイズ（Quiz）フェーズ */
-    function renderQuizPhase() {
-      // リトライキューにあればそこから、なければ通常クイズ
-      const problem = currentProblemIdx < currentLesson.problems.length
-        ? currentLesson.problems[currentProblemIdx]
-        : retryQueue[0];
-
-      if (!problem) {
-        finishLesson();
+    /* 4-3. 気分で選ぶ（Pick）フェーズ */
+    function renderPickPhase() {
+      const pick = currentStory.picks[currentPickIdx];
+      if (!pick) {
+        finishStory();
         return;
       }
 
-      const isRetry = currentProblemIdx >= currentLesson.problems.length;
+      const hasSelected = selectedChoiceIdx !== null;
+      const selectedChoice = hasSelected ? pick.choices[selectedChoiceIdx] : null;
 
-      // 選択肢HTML
-      let choicesHtml = '';
-      if (problem.type === 'choice') {
-        const letters = ['A', 'B', 'C', 'D'];
-        choicesHtml = '<div class="choices-list">';
-        problem.choices.forEach((choice, idx) => {
-          choicesHtml += `
-            <button class="choice-btn" onclick="submitChoice(${idx})">
-              <span class="choice-btn-letter">${letters[idx]}</span>
-              <span>${choice}</span>
-            </button>
-          `;
-        });
-        choicesHtml += '</div>';
-      } else {
-        // テキスト入力式クイズの場合
-        choicesHtml = `
-          <div class="input-quiz-area">
-            <input type="text" id="quiz-text-input" class="text-input-field" placeholder="答えを入力してください" autocomplete="off">
-            <button class="btn btn-primary" style="width:100%;" onclick="submitTextInput()">回答を確定する</button>
-          </div>
+      let choicesHtml = '<div class="choices-list">';
+      const icons = ['✨', '🌿', '🌙', '☀️'];
+      pick.choices.forEach((choice, idx) => {
+        const isSelected = selectedChoiceIdx === idx;
+        choicesHtml += `
+          <button class="pick-btn ${isSelected ? 'selected' : ''}" onclick="onSelectPickChoice(${idx})">
+            <span class="pick-btn-icon">${icons[idx % icons.length]}</span>
+            <span>${choice.label}</span>
+          </button>
         `;
-      }
+      });
+      choicesHtml += '</div>';
 
-      // 3段階ヒントHTML
-      let hintBoxHtml = '';
-      if (currentLesson.hints && currentLesson.hints.length > 0) {
-        let hintTexts = [];
-        for (let i = 0; i < currentHintLevel; i++) {
-          if (currentLesson.hints[i]) {
-            hintTexts.push(`<div><strong>ヒント ${i + 1}:</strong> ${currentLesson.hints[i]}</div>`);
-          }
-        }
-
-        hintBoxHtml = `
-          <div class="hint-container">
-            <div class="hint-trigger-row">
-              <span style="font-size:0.85rem; font-weight:700; color:#475569;">💡 まるもちのヒント（3段階）</span>
-              ${currentHintLevel < currentLesson.hints.length
-                ? `<button class="hint-btn" onclick="openNextHint()">ヒントを見る (${currentHintLevel + 1}/3)</button>`
-                : `<span style="font-size:0.8rem; color:#64748B;">すべてのヒントを開きました</span>`
-              }
+      let responseHtml = '';
+      if (hasSelected && selectedChoice) {
+        responseHtml = `
+          <div class="pick-response-card">
+            <div class="pick-response-header">
+              <span>🥂 この選択の愉しみ方</span>
             </div>
-            ${hintTexts.length > 0 ? `<div class="hint-content-box">${hintTexts.join('<div style="height:6px;"></div>')}</div>` : ''}
+            <div class="pick-response-body">
+              ${selectedChoice.response}
+            </div>
+            <button class="btn btn-primary" style="width:100%;" onclick="proceedAfterPick()">
+              ${currentPickIdx < currentStory.picks.length - 1 ? '次の場面へ進む →' : '締めのひとことへ →'}
+            </button>
           </div>
         `;
       }
 
       return `
-        <div class="quiz-container">
-          <span class="quiz-badge">${isRetry ? '🔄 定着リトライクイズ' : '🎯 クイズ'}</span>
+        <div class="pick-container">
+          <span class="pick-badge">✨ 気分で選ぶ</span>
           
           <div class="scene-box">
-            <div class="scene-title">📍 あなたの直面した場面</div>
-            <div class="scene-desc">${problem.scene}</div>
-            ${problem.sceneFigure ? `<div style="margin-top:10px;">${problem.sceneFigure}</div>` : ''}
+            <div class="scene-title">📍 あなたの場面</div>
+            <div class="scene-desc">${pick.scene}</div>
+            ${pick.sceneFigure ? `<div style="margin-top:12px;">${pick.sceneFigure}</div>` : ''}
           </div>
 
-          <div class="quiz-question">${problem.question}</div>
+          <div class="pick-question">${pick.question}</div>
 
           ${choicesHtml}
-          ${hintBoxHtml}
-        </div>
-      `;
-    }
-
-    function openNextHint() {
-      if (currentLesson.hints && currentHintLevel < currentLesson.hints.length) {
-        currentHintLevel++;
-        renderLessonView();
-      }
-    }
-
-    function submitChoice(chosenIdx) {
-      const problem = currentProblemIdx < currentLesson.problems.length
-        ? currentLesson.problems[currentProblemIdx]
-        : retryQueue[0];
-
-      const isCorrect = chosenIdx === problem.answer;
-      handleAnswerResult(isCorrect, problem);
-    }
-
-    function submitTextInput() {
-      const inputEl = document.getElementById('quiz-text-input');
-      if (!inputEl) return;
-      const val = normalizeText(inputEl.value);
-
-      const problem = currentProblemIdx < currentLesson.problems.length
-        ? currentLesson.problems[currentProblemIdx]
-        : retryQueue[0];
-
-      const expected = normalizeText(problem.answer);
-      const isCorrect = val === expected || (problem.altAnswers && problem.altAnswers.map(normalizeText).includes(val));
-
-      handleAnswerResult(isCorrect, problem);
-    }
-
-    function normalizeText(str) {
-      if (!str) return '';
-      return str.trim()
-        .toLowerCase()
-        .replace(/[\s　]/g, '')
-        .replace(/[ァ-ン]/g, s => String.fromCharCode(s.charCodeAt(0) - 0x60)); // カタカナをひらがなに変換して表記ゆれを許容
-    }
-
-    function handleAnswerResult(isCorrect, problem) {
-      const isRetry = currentProblemIdx >= currentLesson.problems.length;
-
-      lastFeedbackData = {
-        isCorrect: isCorrect,
-        feedback: problem.feedback || (isCorrect ? '大正解です！' : '惜しい！もう一度見直してみましょう。'),
-        isRetry: isRetry
-      };
-
-      if (!isCorrect) {
-        // 間違えた場合はリトライキューに追加（重複しないように）
-        if (!retryQueue.includes(problem)) {
-          retryQueue.push(problem);
-        }
-      } else {
-        // リトライで正解した場合はキューから除去
-        if (isRetry) {
-          retryQueue.shift();
-        }
-      }
-
-      lessonPhase = 'feedback';
-      renderLessonView();
-    }
-
-    /* 4-4. 即時フィードバック画面 */
-    function renderFeedbackPhase() {
-      const fb = lastFeedbackData;
-      return `
-        <div class="feedback-card ${fb.isCorrect ? 'correct' : 'incorrect'}">
-          <div class="feedback-title">
-            <span>${fb.isCorrect ? '🎉 正解！' : '🤔 惜しい！'}</span>
-          </div>
-          <div class="feedback-reason">${fb.feedback}</div>
-
-          ${fb.isCorrect
-            ? `<button class="btn btn-primary" style="width:100%;" onclick="proceedAfterFeedback()">次へ進む →</button>`
-            : `<button class="btn btn-secondary" style="width:100%;" onclick="retryProblem()">もう一度挑戦する</button>`
-          }
+          ${responseHtml}
         </div>
 
-        <div class="marumochi-dialogue">
-          <div class="marumochi-avatar">
-            <div class="marumochi-face">
-              <div class="marumochi-eye left"></div>
-              <div class="marumochi-eye right"></div>
-              <div class="marumochi-cheek left"></div>
-              <div class="marumochi-cheek right"></div>
-              <div class="marumochi-mouth"></div>
+        ${!hasSelected ? `
+          <div class="marumochi-dialogue">
+            <div class="marumochi-avatar">
+              <div class="marumochi-face">
+                <div class="marumochi-eye left"></div>
+                <div class="marumochi-eye right"></div>
+                <div class="marumochi-cheek left"></div>
+                <div class="marumochi-cheek right"></div>
+                <div class="marumochi-mouth"></div>
+              </div>
+            </div>
+            <div class="marumochi-bubble">
+              <div class="marumochi-name-tag">まるもちのナビ</div>
+              正解・不正解はないよ。今夜の気分に一番近いものをタップしてみてね！
             </div>
           </div>
-          <div class="marumochi-bubble">
-            <div class="marumochi-name-tag">まるもちの一言</div>
-            ${fb.isCorrect
-              ? '素晴らしい判断！理由と場面がしっかり結びついているよ！'
-              : '間違いは発見のチャンス！理由のポイントを確認して、もう一度解いてみよう！'
-            }
-          </div>
-        </div>
+        ` : ''}
       `;
     }
 
-    function retryProblem() {
-      lessonPhase = 'quiz';
-      renderLessonView();
+    function onSelectPickChoice(idx) {
+      selectedChoiceIdx = idx;
+      renderStoryView();
     }
 
-    function proceedAfterFeedback() {
-      if (currentProblemIdx < currentLesson.problems.length) {
-        currentProblemIdx++;
-      }
-
-      // 通常クイズがまだあるか、リトライキューに残っているか
-      if (currentProblemIdx < currentLesson.problems.length || retryQueue.length > 0) {
-        lessonPhase = 'quiz';
-        renderLessonView();
+    function proceedAfterPick() {
+      if (currentPickIdx < currentStory.picks.length - 1) {
+        currentPickIdx++;
+        selectedChoiceIdx = null;
+        renderStoryView();
       } else {
-        finishLesson();
+        finishStory();
       }
     }
 
-    /* 4-5. お話完了画面 */
-    function finishLesson() {
-      lessonPhase = 'finish';
-      markLessonCleared(currentLesson.id);
-      renderLessonView();
+    /* 4-4. 締めのひとこと（finish）フェーズ */
+    function finishStory() {
+      storyPhase = 'finish';
+      markStoryCleared(currentStory.id);
+      renderStoryView();
     }
 
     function renderFinishPhase() {
-      // 次のお話を探す
-      const allIds = Object.keys(LESSONS);
-      const currentIdx = allIds.indexOf(currentLesson.id);
-      const nextLesson = currentIdx >= 0 && currentIdx < allIds.length - 1 ? LESSONS[allIds[currentIdx + 1]] : null;
+      const allIds = Object.keys(STORIES);
+      const currentIdx = allIds.indexOf(currentStory.id);
+      const nextStory = currentIdx >= 0 && currentIdx < allIds.length - 1 ? STORIES[allIds[currentIdx + 1]] : null;
 
       return `
-        <div class="lesson-finish-card">
-          <div class="finish-icon">🎊</div>
-          <h2 class="finish-title">お話完了！</h2>
-          <div style="color:#059669; font-weight:700; font-size:0.95rem;">「${currentLesson.title}」をマスターしました</div>
+        <div class="story-finish-card">
+          <div class="finish-icon">🥂</div>
+          <h2 class="finish-title">このお話を読み終えました！</h2>
+          <div style="color:#B45309; font-weight:700; font-size:1rem;">「${currentStory.title}」読了</div>
 
           <div class="finish-afternote">
-            <div style="font-weight:bold; color:var(--primary-dark); margin-bottom:4px;">📝 まるもちのテイスティングメモ</div>
-            ${currentLesson.afterNote}
+            <div style="font-weight:800; color:var(--primary-dark); margin-bottom:6px; font-size:1.02rem;">📝 まるもちのテイスティングメモ</div>
+            ${currentStory.afterNote}
           </div>
 
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            ${nextLesson
-              ? `<button class="btn btn-primary" style="width:100%;" onclick="startLesson('${nextLesson.id}')">次のお話へ進む（${nextLesson.title}） →</button>`
+          <div style="display:flex; flex-direction:column; gap:12px;">
+            ${nextStory
+              ? `<button class="btn btn-primary" style="width:100%;" onclick="startStory('${nextStory.id}')">次のお話へ進む（${nextStory.title}） →</button>`
               : ''
             }
-            <button class="btn btn-secondary" style="width:100%;" onclick="goHome()">章一覧（トップ）に戻る</button>
+            <button class="btn btn-secondary" style="width:100%;" onclick="goHome()">目次に戻る</button>
           </div>
         </div>
       `;
     }
 
     /* ==============================================================
-       5. お祝いモーダル管理（章全クリ・実装全クリ）
+       5. お祝いモーダル管理（章全読了・全お話読了）
        ============================================================== */
     function checkMilestoneModals() {
-      // プロローグ全クリアチェック
-      const prologueStage = STAGES.find(s => s.id === 'prologue');
-      if (prologueStage) {
-        const isPrologueAll = prologueStage.lessonIds.every(id => isLessonCleared(id));
+      // プロローグ全読了チェック
+      const prologueChapter = CHAPTERS.find(c => c.id === 'prologue');
+      if (prologueChapter) {
+        const isPrologueAll = prologueChapter.storyIds.every(id => isStoryCleared(id));
         if (isPrologueAll && !appState.shownModals.includes('prologue_cleared')) {
           appState.shownModals.push('prologue_cleared');
           saveProgress();
           showCongratModal(
-            '🌟 プロローグ全お話達成！',
+            '🌟 プロローグ全お話 読了！',
             'おめでとうございます！ラム酒を自由に愉しむための基礎とマインドセットがバッチリ身につきました。さあ、第1章でラムの奥深い正体を解き明かしましょう！'
           );
           return;
         }
       }
 
-      // 第1章全クリアチェック
-      const stage0 = STAGES.find(s => s.id === 'stage0');
-      if (stage0) {
-        const isStage0All = stage0.lessonIds.every(id => isLessonCleared(id));
-        if (isStage0All && !appState.shownModals.includes('stage0_cleared')) {
-          appState.shownModals.push('stage0_cleared');
+      // 第1章全読了チェック
+      const chapter1 = CHAPTERS.find(c => c.id === 'chapter1');
+      if (chapter1) {
+        const isChapter1All = chapter1.storyIds.every(id => isStoryCleared(id));
+        if (isChapter1All && !appState.shownModals.includes('chapter1_cleared')) {
+          appState.shownModals.push('chapter1_cleared');
           saveProgress();
           showCongratModal(
-            '🏆 第1章 完全制覇！',
+            '🏆 第1章 完全読了！',
             '素晴らしい！原料・蒸留・色・3大系統まで、ラムのラベルを読み解く知識がしっかり身につきました。これであなたも立派なラムの目利きです！'
           );
           return;
         }
       }
 
-      // 実装済み全お話（プロローグ + 第1章 計10お話）クリアチェック
-      const allImplementedIds = Object.keys(LESSONS);
-      const isAllCleared = allImplementedIds.every(id => isLessonCleared(id));
+      // 公開済み全お話（プロローグ4話 + 第1章6話 = 計10話）読了チェック
+      const allImplementedIds = Object.keys(STORIES);
+      const isAllCleared = allImplementedIds.every(id => isStoryCleared(id));
       if (isAllCleared && !appState.shownModals.includes('all_implemented_cleared')) {
         appState.shownModals.push('all_implemented_cleared');
         saveProgress();
         showCongratModal(
-          '👑 第1弾 全お話完全制覇！',
-          'プロローグ＆第1章の全10お話をすべてクリアしました！まるもちも大感激です！第2章以降の公開をぜひ楽しみにお待ちください。'
+          '👑 第1弾 全お話完全読了！',
+          'プロローグ＆第1章の全10お話をすべて読み終えました！まるもちも大感激です！第2章以降の公開もぜひ楽しみにお待ちください。'
         );
       }
     }
