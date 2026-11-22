@@ -2377,13 +2377,9 @@
           </div>
 
           <div class="example-choice-card">
-            <div style="display:flex; gap:12px; align-items:flex-start;">
-              <div style="flex:1; min-width:0;">
-                <div class="example-choice-label">ときぴよのセレクト</div>
-                <div class="example-choice-text">${ex.choice}</div>
-              </div>
-              ${ex.image ? `<img src="${ex.image}" alt="${ex.imageAlt || 'カクテル'}" style="width:92px; border-radius:12px; flex-shrink:0;">` : ''}
-            </div>
+            <div class="example-choice-label">ときぴよのセレクト</div>
+            <div class="example-choice-text">${ex.choice}</div>
+            ${ex.image ? `<div style="text-align:center; margin:12px 0 4px;"><img src="${ex.image}" alt="${ex.imageAlt || 'カクテル'}" style="max-width:74%; max-height:180px; border-radius:12px;"></div>` : ''}
             <div class="example-reason-text"><strong>【理由】</strong>${ex.reason}</div>
           </div>
 
