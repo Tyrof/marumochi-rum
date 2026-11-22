@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>まるもちと愉しむラム酒さんぽ</title>
+  <title>たる吉と愉しむラム酒さんぽ</title>
   <style>
     :root {
       --primary: #B45309;        /* アンバー（メインカラー） */
@@ -164,45 +164,52 @@
       flex-shrink: 0;
     }
 
-    /* まるもちキャラクター（CSS表現） */
+    /* たる吉キャラクター（CSS表現） */
     .marumochi-avatar {
       position: relative;
       width: 52px;
       height: 48px;
-      background: #FFFFFF;
-      border: 2px solid #E5E7EB;
-      border-radius: 50% 50% 48% 48% / 55% 55% 45% 45%;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+      background:
+        linear-gradient(to bottom,
+          rgba(0,0,0,0) 0, rgba(0,0,0,0) 14px,
+          rgba(122, 72, 20, 0.9) 14px, rgba(122, 72, 20, 0.9) 17px,
+          rgba(0,0,0,0) 17px, rgba(0,0,0,0) 34px,
+          rgba(122, 72, 20, 0.9) 34px, rgba(122, 72, 20, 0.9) 37px,
+          rgba(0,0,0,0) 37px),
+        linear-gradient(to bottom, #DFAE6E, #BE8647);
+      border: 2px solid #8A5A2B;
+      border-radius: 46% 46% 42% 42% / 54% 54% 32% 32%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
 
-    /* まるもちの葉っぱ（サトウキビの若芽） */
+    /* たる吉の舟のふち（開口部） */
     .marumochi-avatar::before {
       content: "";
       position: absolute;
-      top: -8px;
-      right: 14px;
-      width: 8px;
-      height: 12px;
-      background: #10B981;
-      border-radius: 0 100% 0 100%;
-      transform: rotate(20deg);
-      border: 1px solid #047857;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 38px;
+      height: 11px;
+      background: #6E451A;
+      border: 2px solid #8A5A2B;
+      border-radius: 50%;
     }
+    /* たる吉の下の水の波紋 */
     .marumochi-avatar::after {
       content: "";
       position: absolute;
-      top: -6px;
-      right: 20px;
-      width: 6px;
-      height: 10px;
-      background: #34D399;
-      border-radius: 100% 0 100% 0;
-      transform: rotate(-30deg);
-      border: 1px solid #059669;
+      bottom: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 7px;
+      border-bottom: 2px solid rgba(56, 189, 248, 0.8);
+      border-radius: 50%;
     }
 
     .marumochi-face {
@@ -215,9 +222,9 @@
       position: absolute;
       width: 4px;
       height: 5px;
-      background: #374151;
+      background: #3A2410;
       border-radius: 50%;
-      top: 20px;
+      top: 21px;
     }
     .marumochi-eye.left { left: 16px; }
     .marumochi-eye.right { right: 16px; }
@@ -226,9 +233,9 @@
       position: absolute;
       width: 8px;
       height: 5px;
-      background: rgba(244, 114, 182, 0.45);
+      background: rgba(244, 114, 182, 0.55);
       border-radius: 50%;
-      top: 24px;
+      top: 25px;
     }
     .marumochi-cheek.left { left: 10px; }
     .marumochi-cheek.right { right: 10px; }
@@ -237,13 +244,13 @@
       position: absolute;
       width: 6px;
       height: 4px;
-      border-bottom: 2px solid #4B5563;
+      border-bottom: 2px solid #3A2410;
       border-radius: 0 0 50% 50%;
-      top: 23px;
+      top: 24px;
       left: calc(50% - 3px);
     }
 
-    /* まるもち吹き出しコンポーネント */
+    /* たる吉吹き出しコンポーネント */
     .marumochi-dialogue {
       display: flex;
       gap: 14px;
@@ -1017,7 +1024,7 @@
               <span>大人のためのラム酒さんぽ</span>
               <span class="tag-release">第1弾 公開中</span>
             </div>
-            <h1 class="app-title">まるもちと愉しむラム酒さんぽ</h1>
+            <h1 class="app-title">たる吉と愉しむラム酒さんぽ</h1>
           </div>
         </div>
         <div id="header-nav-slot">
@@ -1108,7 +1115,7 @@
           {
             title: "ラムは「最も自由なスピリッツ」",
             body: "ラム酒の最大の魅力はその懐の深さ。ストレートやロックはもちろん、ソーダで弾けさせたり、ライムやミントと合わせたカクテル（モヒートやダイキリなど）にしても絶品です。食事と合わせることもできます。",
-            comment: "決まりがないって、最初はちょっと戸惑うかも。でも大丈夫、まるもちが一緒に歩くよ〜",
+            comment: "決まりがないって、最初はちょっと戸惑うかも。でも大丈夫、たる吉が一緒に歩くよ〜",
             figure: `
               <svg class="fig-svg" viewBox="0 0 360 160" width="100%">
                 <!-- ストレート -->
@@ -1152,7 +1159,7 @@
           {
             title: "場面と気分で飲み分けるのが大人",
             body: "「このラムはこの飲み方でなければいけない」という縛りはありません。暑い日の夕暮れならソーダ割り、静かな夜に本を読むならロックやストレートなど、シチュエーションに合わせて選ぶのがラムの上手な愉しみ方です。",
-            comment: "今日の気分はどう？まるもちは夕暮れのソーダ割り気分〜",
+            comment: "今日の気分はどう？たる吉は夕暮れのソーダ割り気分〜",
             figure: `
               <div style="width:100%; display:flex; justify-content:space-around; align-items:center; gap:10px;">
                 <div style="background:#FEF3C7; padding:12px 14px; border-radius:12px; text-align:center; flex:1;">
@@ -1205,7 +1212,7 @@
             ]
           }
         ],
-        afterNote: "まるもち「ラムはルールに縛られないお酒！その日の気分と場面に素直になるのが一番の愉しみ方だよ〜」"
+        afterNote: "たる吉「ラムはルールに縛られないお酒！その日の気分と場面に素直になるのが一番の愉しみ方だよ〜」"
       },
 
       "p-02": {
@@ -1303,7 +1310,7 @@
             ]
           }
         ],
-        afterNote: "まるもち「歴史を知ると、グラス一杯のラムにカリブ海の風と海のロマンが溶け込んでいるのが感じられるね〜」"
+        afterNote: "たる吉「歴史を知ると、グラス一杯のラムにカリブ海の風と海のロマンが溶け込んでいるのが感じられるね〜」"
       },
 
       "p-03": {
@@ -1381,7 +1388,7 @@
             ]
           }
         ],
-        afterNote: "まるもち「あなたの『おいしい！』が一番の正解。誰にも遠慮せず、自分の舌を信じてね！」"
+        afterNote: "たる吉「あなたの『おいしい！』が一番の正解。誰にも遠慮せず、自分の舌を信じてね！」"
       },
 
       "p-04": {
@@ -1444,7 +1451,7 @@
             comment: "鼻を近づけすぎるとツンとくるから、そっと漂わせるのが大人の嗅ぎ方だよ",
             figure: `
               <div style="background:#FFFBEB; border:2px solid #FCD34D; border-radius:12px; padding:14px; width:100%; text-align:center;">
-                <div style="font-weight:800; color:#78350F; font-size:1rem;">💡 まるもちのテイスティングメモ</div>
+                <div style="font-weight:800; color:#78350F; font-size:1rem;">💡 たる吉のテイスティングメモ</div>
                 <div style="font-size:0.92rem; color:#92400E; margin-top:6px; line-height:1.6;">
                   「口をほんの少し開けて息を吸うと、アルコールのツンとした刺激が和らいで、甘いバニラや黒糖の香りがくっきりと感じられるよ！」
                 </div>
@@ -1487,7 +1494,7 @@
             ]
           }
         ],
-        afterNote: "まるもち「プロローグ読了おめでとう！気づいたことを『バニラっぽい』『黒糖みたい』とスマホのメモに残すと、自分だけのテイスティングノートができるよ〜」"
+        afterNote: "たる吉「プロローグ読了おめでとう！気づいたことを『バニラっぽい』『黒糖みたい』とスマホのメモに残すと、自分だけのテイスティングノートができるよ〜」"
       },
 
       // -------------------------------------------------------------
@@ -1582,7 +1589,7 @@
             ]
           }
         ],
-        afterNote: "まるもち「モラセス＝コクとカラメル、アグリコール＝草とハーブ。この原料の違いを覚えるだけでラム通への大きな一歩だよ！<br><br>💡 <strong>豆知識：</strong>搾り汁を煮詰めた中間原料『ハイテストモラセス』から作るラムもあるよ。味はモラセスより軽やかでアグリコールより濃いめなんだ〜」"
+        afterNote: "たる吉「モラセス＝コクとカラメル、アグリコール＝草とハーブ。この原料の違いを覚えるだけでラム通への大きな一歩だよ！<br><br>💡 <strong>豆知識：</strong>搾り汁を煮詰めた中間原料『ハイテストモラセス』から作るラムもあるよ。味はモラセスより軽やかでアグリコールより濃いめなんだ〜」"
       },
 
       "s0-02": {
@@ -1680,7 +1687,7 @@
             ]
           }
         ],
-        afterNote: "まるもち「お酒の正体は原料で決まる！サトウキビ生まれのラムだからこその甘美な世界があるんだよ〜」"
+        afterNote: "たる吉「お酒の正体は原料で決まる！サトウキビ生まれのラムだからこその甘美な世界があるんだよ〜」"
       },
 
       "s0-03": {
@@ -1755,7 +1762,7 @@
             ]
           }
         ],
-        afterNote: "まるもち「透明だから若い、黒いから古いとは限らない！見た目に騙されず香りと味わいを楽しもうね〜」"
+        afterNote: "たる吉「透明だから若い、黒いから古いとは限らない！見た目に騙されず香りと味わいを楽しもうね〜」"
       },
 
       "s0-04": {
@@ -1843,7 +1850,7 @@
             ]
           }
         ],
-        afterNote: "まるもち「イギリス系＝力強い、スペイン系＝甘くなめらか、フランス系＝華やかハーブ。この3つを覚えたらもう立派なラム好き！」"
+        afterNote: "たる吉「イギリス系＝力強い、スペイン系＝甘くなめらか、フランス系＝華やかハーブ。この3つを覚えたらもう立派なラム好き！」"
       },
 
       "s0-05": {
@@ -1931,7 +1938,7 @@
             ]
           }
         ],
-        afterNote: "まるもち「度数が高いボトルは『濃縮されたアロマのエキス』！水を1滴垂らして香りを咲かせる愉しみを知ったら本物だよ〜」"
+        afterNote: "たる吉「度数が高いボトルは『濃縮されたアロマのエキス』！水を1滴垂らして香りを咲かせる愉しみを知ったら本物だよ〜」"
       },
 
       "s0-06": {
@@ -2014,7 +2021,7 @@
             ]
           }
         ],
-        afterNote: "まるもち「第1章を最後まで読んでくれてありがとう！これであなたも立派なラムの目利き。今夜の気分で、最高の一杯を選んでみてね！」"
+        afterNote: "たる吉「第1章を最後まで読んでくれてありがとう！これであなたも立派なラムの目利き。今夜の気分で、最高の一杯を選んでみてね！」"
       }
     };
 
@@ -2146,7 +2153,7 @@
           <span>お酒は20歳になってから。飲み過ぎに注意し、愉しむ範囲で適量を守りましょう。</span>
         </div>
 
-        <!-- まるもちの案内吹き出し -->
+        <!-- たる吉の案内吹き出し -->
         <div class="marumochi-dialogue">
           <div class="marumochi-avatar">
             <div class="marumochi-face">
@@ -2158,7 +2165,7 @@
             </div>
           </div>
           <div class="marumochi-bubble">
-            <div class="marumochi-name-tag">まるもちの案内</div>
+            <div class="marumochi-name-tag">たる吉の案内</div>
             ようこそ！ラム酒は自由で奥深く、大人の夜を最高に彩ってくれるお酒です。
             カードをめくりながら、「今夜の気分ならどれ？」を一緒に愉しく選んでいきましょう！
           </div>
@@ -2303,7 +2310,7 @@
             </div>
           </div>
           <div class="marumochi-bubble">
-            <div class="marumochi-name-tag">まるもちのひとこと</div>
+            <div class="marumochi-name-tag">たる吉のひとこと</div>
             ${slide.comment || "図解と一緒にじっくり味わってね！"}
           </div>
         </div>
@@ -2343,7 +2350,7 @@
           </div>
 
           <div class="example-choice-card">
-            <div class="example-choice-label">まるもちのセレクト</div>
+            <div class="example-choice-label">たる吉のセレクト</div>
             <div class="example-choice-text">${ex.choice}</div>
             <div class="example-reason-text"><strong>【理由】</strong>${ex.reason}</div>
           </div>
@@ -2364,7 +2371,7 @@
             </div>
           </div>
           <div class="marumochi-bubble">
-            <div class="marumochi-name-tag">まるもちの助言</div>
+            <div class="marumochi-name-tag">たる吉の助言</div>
             お手本はあくまで一例だよ。次はあなたの番！好きな選択肢を直感でタップしてみてね。
           </div>
         </div>
@@ -2447,7 +2454,7 @@
               </div>
             </div>
             <div class="marumochi-bubble">
-              <div class="marumochi-name-tag">まるもちのナビ</div>
+              <div class="marumochi-name-tag">たる吉のナビ</div>
               正解・不正解はないよ。今夜の気分に一番近いものをタップしてみてね！
             </div>
           </div>
@@ -2489,7 +2496,7 @@
           <div style="color:#B45309; font-weight:700; font-size:1rem;">「${currentStory.title}」読了</div>
 
           <div class="finish-afternote">
-            <div style="font-weight:800; color:var(--primary-dark); margin-bottom:6px; font-size:1.02rem;">📝 まるもちのテイスティングメモ</div>
+            <div style="font-weight:800; color:var(--primary-dark); margin-bottom:6px; font-size:1.02rem;">📝 たる吉のテイスティングメモ</div>
             ${currentStory.afterNote}
           </div>
 
@@ -2546,7 +2553,7 @@
         saveProgress();
         showCongratModal(
           '👑 第1弾 全お話完全読了！',
-          'プロローグ＆第1章の全10お話をすべて読み終えました！まるもちも大感激です！第2章以降の公開もぜひ楽しみにお待ちください。'
+          'プロローグ＆第1章の全10お話をすべて読み終えました！たる吉も大感激です！第2章以降の公開もぜひ楽しみにお待ちください。'
         );
       }
     }
