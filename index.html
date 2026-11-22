@@ -2252,12 +2252,11 @@
         </button>
       `;
 
-      const steps = ['スライド', 'こんなのはどう？', '気分で選ぶ', '締めのひとこと'];
+      const steps = ['スライド', 'こんなのはどう？', '気分で選ぶ'];
       let activeStepIdx = 0;
       if (storyPhase === 'slide') activeStepIdx = 0;
       else if (storyPhase === 'example') activeStepIdx = 1;
       else if (storyPhase === 'pick') activeStepIdx = 2;
-      else if (storyPhase === 'finish') activeStepIdx = 3;
 
       let pillsHtml = steps.map((_, i) => {
         let cls = 'step-pill';
@@ -2274,8 +2273,6 @@
         contentHtml = renderExamplePhase();
       } else if (storyPhase === 'pick') {
         contentHtml = renderPickPhase();
-      } else if (storyPhase === 'finish') {
-        contentHtml = renderFinishPhase();
       }
 
       mainEl.innerHTML = `
@@ -2449,7 +2446,7 @@
               ${selectedChoice.response}
             </div>
             <button class="btn btn-primary" style="width:100%;" onclick="proceedAfterPick()">
-              ${currentPickIdx < currentStory.picks.length - 1 ? '次の場面へ進む →' : '締めのひとことへ →'}
+              ${currentPickIdx < currentStory.picks.length - 1 ? '次の場面へ進む →' : '読み終える →'}
             </button>
           </div>
         `;
@@ -2506,39 +2503,12 @@
       }
     }
 
-    /* 4-4. 締めのひとこと（finish）フェーズ */
+    /* 4-4. 読了処理（締めページは廃止し、目次へ直行） */
     function finishStory() {
-      storyPhase = 'finish';
       markStoryCleared(currentStory.id);
-      renderStoryView();
+      goHome();
     }
 
-    function renderFinishPhase() {
-      const allIds = Object.keys(STORIES);
-      const currentIdx = allIds.indexOf(currentStory.id);
-      const nextStory = currentIdx >= 0 && currentIdx < allIds.length - 1 ? STORIES[allIds[currentIdx + 1]] : null;
-
-      return `
-        <div class="story-finish-card">
-          <div class="marumochi-avatar avatar-large avatar-happy" style="margin:0 auto 14px;" onclick="avatarTap(this,event)"></div>
-          <h2 class="finish-title">このお話を読み終えました！</h2>
-          <div style="color:#B45309; font-weight:700; font-size:1rem;">「${currentStory.title}」読了</div>
-
-          <div class="finish-afternote">
-            <div style="font-weight:800; color:var(--primary-dark); margin-bottom:6px; font-size:1.02rem;">📝 ときぴよのテイスティングメモ</div>
-            ${currentStory.afterNote}
-          </div>
-
-          <div style="display:flex; flex-direction:column; gap:12px;">
-            ${nextStory
-              ? `<button class="btn btn-primary" style="width:100%;" onclick="startStory('${nextStory.id}')">次のお話へ進む（${nextStory.title}） →</button>`
-              : ''
-            }
-            <button class="btn btn-secondary" style="width:100%;" onclick="goHome()">目次に戻る</button>
-          </div>
-        </div>
-      `;
-    }
 
     /* ==============================================================
        5. お祝いモーダル管理（章全読了・全お話読了）
