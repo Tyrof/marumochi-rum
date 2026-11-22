@@ -175,11 +175,13 @@
       border: none;
       border-radius: 20%;
       flex-shrink: 0;
-      animation: tarukichi-bob 2.6s ease-in-out infinite;
+      animation: tarukichi-bob 2.2s ease-in-out infinite;
     }
     @keyframes tarukichi-bob {
-      0%, 100% { transform: translateY(0) rotate(-2deg); }
-      50% { transform: translateY(-3px) rotate(2deg); }
+      0%, 100% { transform: translateY(0) rotate(-3.5deg) scale(1, 1); }
+      30% { transform: translateY(-7px) rotate(3.5deg) scale(1.02, 0.98); }
+      55% { transform: translateY(0) rotate(-2deg) scale(1.05, 0.93); }
+      78% { transform: translateY(-4px) rotate(2deg) scale(1, 1); }
     }
     .marumochi-avatar::before,
     .marumochi-avatar::after {
@@ -212,33 +214,41 @@
     /* 動き：登場ポップ・ひょっこり・ジャンプ */
     .marumochi-avatar { cursor: pointer; }
     .marumochi-dialogue .marumochi-avatar {
-      animation: tarukichi-bob 2.6s ease-in-out infinite, tarukichi-pop .5s cubic-bezier(.34, 1.56, .64, 1) both;
+      animation: tarukichi-bob 2.2s ease-in-out infinite, tarukichi-pop .65s cubic-bezier(.34, 1.56, .64, 1) both;
+    }
+    .marumochi-avatar.avatar-large {
+      animation: tarukichi-bob 2.2s ease-in-out infinite, tarukichi-pop .65s cubic-bezier(.34, 1.56, .64, 1) both;
     }
     @keyframes tarukichi-pop {
-      0% { scale: 0; }
-      60% { scale: 1.18; }
-      100% { scale: 1; }
+      0% { scale: 0; translate: 0 12px; }
+      55% { scale: 1.34; translate: 0 -11px; }
+      75% { scale: 0.92; translate: 0 2px; }
+      90% { scale: 1.08; translate: 0 -3px; }
+      100% { scale: 1; translate: 0 0; }
     }
     .marumochi-dialogue .marumochi-avatar.avatar-toki {
-      animation: tarukichi-bob 2.6s ease-in-out .75s infinite, tarukichi-peek .75s ease-out both;
+      animation: tarukichi-bob 2.2s ease-in-out .85s infinite, tarukichi-peek .85s ease-out both;
     }
     @keyframes tarukichi-peek {
-      0% { translate: -85% 0; opacity: 0; }
-      55% { translate: 7% 0; opacity: 1; }
-      78% { translate: -3% 0; }
+      0% { translate: -120% 0; opacity: 0; }
+      50% { translate: 14% -6px; opacity: 1; }
+      68% { translate: -6% 0; }
+      84% { translate: 4% -3px; }
       100% { translate: 0 0; opacity: 1; }
     }
     .marumochi-avatar.avatar-jump {
-      animation: tarukichi-bob 2.6s ease-in-out infinite, tarukichi-jump .6s ease;
+      animation: tarukichi-bob 2.2s ease-in-out infinite, tarukichi-jump .8s ease;
     }
     .marumochi-dialogue .marumochi-avatar.avatar-jump {
-      animation: tarukichi-bob 2.6s ease-in-out infinite, tarukichi-jump .6s ease;
+      animation: tarukichi-bob 2.2s ease-in-out infinite, tarukichi-jump .8s ease;
     }
     @keyframes tarukichi-jump {
-      0%, 100% { translate: 0 0; }
-      35% { translate: 0 -16px; }
-      60% { translate: 0 0; }
-      78% { translate: 0 -7px; }
+      0%, 100% { translate: 0 0; scale: 1 1; }
+      18% { translate: 0 3px; scale: 1.13 0.8; }
+      42% { translate: 0 -38px; scale: 0.93 1.09; }
+      62% { translate: 0 0; scale: 1.12 0.84; }
+      78% { translate: 0 -16px; scale: 0.97 1.03; }
+      90% { translate: 0 0; scale: 1.05 0.95; }
     }
 
     /* 押した感触（ボタンプレス） */
@@ -275,6 +285,18 @@
     .header-nav-btn:active, .footer-reset-btn:active {
       transform: scale(0.95);
     }
+
+    /* カードの登場（カスケード） */
+    @keyframes card-in {
+      from { opacity: 0; transform: translateY(16px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .story-card { animation: card-in .38s ease-out backwards; }
+    .story-card:nth-child(2) { animation-delay: .05s; }
+    .story-card:nth-child(3) { animation-delay: .1s; }
+    .story-card:nth-child(4) { animation-delay: .15s; }
+    .story-card:nth-child(5) { animation-delay: .2s; }
+    .story-card:nth-child(6) { animation-delay: .25s; }
 
     /* ときぴよ吹き出しコンポーネント */
     .marumochi-dialogue {
