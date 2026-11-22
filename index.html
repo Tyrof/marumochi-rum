@@ -2442,9 +2442,9 @@
             <div class="pick-response-header">
               <span><span class="marumochi-avatar avatar-mini avatar-surprised" style="margin-right:6px;"></span>この選択の愉しみ方</span>
             </div>
-            <div class="pick-response-body" style="display:flex; gap:12px; align-items:flex-start;">
-              <div style="flex:1; min-width:0;">${selectedChoice.response}</div>
-              ${selectedChoice.image ? `<img src="${selectedChoice.image}" alt="ロック" style="width:92px; border-radius:12px; flex-shrink:0;">` : ''}
+            <div class="pick-response-body" style="overflow:hidden;">
+              ${selectedChoice.image ? `<img src="${selectedChoice.image}" alt="ロック" style="float:right; width:92px; border-radius:12px; margin:2px 0 8px 12px;">` : ''}
+              ${selectedChoice.response}
             </div>
             <button class="btn btn-primary" style="width:100%;" onclick="proceedAfterPick()">
               ${currentPickIdx < currentStory.picks.length - 1 ? '次の場面へ進む →' : '締めのひとことへ →'}
