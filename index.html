@@ -1078,7 +1078,7 @@
           <div>
             <div class="app-subtitle">
               <span>大人のためのラム酒さんぽ</span>
-              <span class="tag-release">第2章 公開中</span>
+              <span class="tag-release">第3章 公開中</span>
             </div>
             <h1 class="app-title">たる吉と愉しむラム酒さんぽ</h1>
           </div>
@@ -1131,8 +1131,8 @@
         id: "chapter3",
         title: "第3章：世界のラム産地めぐり",
         desc: "ジャマイカ、バルバドス、キューバ、マルティニーク…風土が育む味わい。",
-        status: "upcoming",
-        storyIds: []
+        status: "open",
+        storyIds: ["s2-01", "s2-02", "s2-03", "s2-04", "s2-05", "s2-06"]
       },
       {
         id: "chapter4",
@@ -2509,7 +2509,576 @@ response: "同じ系統で甘口と辛口を並べると、違いが一気に分
 ]
 }
 ]
-}
+},
+
+      // -------------------------------------------------------------
+      // 第3章 6お話（世界のラム産地めぐり）
+      // -------------------------------------------------------------
+      "s2-01": {
+        id: "s2-01",
+        chapterId: "chapter3",
+        number: "s2-01",
+        title: "バルバドス（バランス型の元祖）",
+        summary: "ラム発祥の地のひとつ。軽やかさとコクのバランスがよく、万能型。",
+        slides: [
+          {
+            title: "ラム発祥の島、バルバドス",
+            body: "カリブ海の東端に浮かぶバルバドス島は、現存する世界最古のラム蒸留所「マウントゲイ」（1703年設立）があるラム発祥の地。サンゴ礁の大地がろ過した清らかな地下水とサトウキビの恵みから、ラムの歴史が始まりました。",
+            comment: "1703年って日本だと江戸時代中期！そんな昔から続く島なんだよ",
+            figure: `
+              <svg class="fig-svg" viewBox="0 0 360 160" width="100%">
+                <!-- カリブ海の海 -->
+                <path d="M 10 135 Q 90 120 180 135 T 350 135 L 350 155 L 10 155 Z" fill="#3B82F6" opacity="0.25"/>
+                <!-- バルバドス島 -->
+                <g transform="translate(20, 20)">
+                  <ellipse cx="60" cy="65" rx="50" ry="42" fill="#FEF3C7" stroke="#F59E0B" stroke-width="2.5"/>
+                  <path d="M 35 65 Q 60 40 85 65" stroke="#10B981" stroke-width="4" fill="none"/>
+                  <circle cx="60" cy="48" r="8" fill="#10B981"/>
+                  <text x="60" y="85" text-anchor="middle" class="fig-text-title" fill="#78350F">バルバドス島</text>
+                  <text x="60" y="102" text-anchor="middle" class="fig-text-desc">サンゴ礁の清らかな水</text>
+                </g>
+                <!-- 最古の蒸留所 1703 -->
+                <g transform="translate(165, 18)">
+                  <rect width="180" height="120" rx="10" fill="#FFF" stroke="#B45309" stroke-width="2"/>
+                  <rect x="12" y="12" width="156" height="28" rx="6" fill="#FFFBEB"/>
+                  <text x="90" y="31" text-anchor="middle" class="fig-text-title" fill="#B45309">マウントゲイ蒸留所</text>
+                  <text x="90" y="60" text-anchor="middle" class="fig-text-title" fill="#78350F">1703年 設立</text>
+                  <line x1="25" y1="72" x2="155" y2="72" stroke="#FCD34D" stroke-width="1.5"/>
+                  <text x="90" y="92" text-anchor="middle" class="fig-text-desc">現存する世界最古のラム</text>
+                  <text x="90" y="110" text-anchor="middle" class="fig-text-desc">王道のバランスと気品</text>
+                </g>
+              </svg>
+            `
+          },
+          {
+            title: "伝統が生む「黄金のバランス」",
+            body: "バルバドス・ラムの最大の特徴は「ブレンドの美学」。香りとコクが豊かなポットスチル原酒と、すっきり澄んだカラムスチル原酒を絶妙な比率で合わせることで、飲み飽きない万能の調和が生まれます。",
+            comment: "主張しすぎないのに深みがある。迷ったらまずこれ！という安心感だよ",
+            figure: `
+              <div style="background:#FFF; border:2px solid #E5E7EB; border-radius:12px; padding:12px; width:100%; display:flex; justify-content:space-around; align-items:center; gap:8px;">
+                <div style="text-align:center; flex:1;">
+                  <div style="font-size:1.4rem;">⚗️</div>
+                  <div style="font-weight:800; font-size:0.92rem; color:#78350F;">ポットスチル</div>
+                  <div style="font-size:0.8rem; color:#6B7280;">重厚なコク・芳香</div>
+                </div>
+                <div style="font-size:1.4rem; font-weight:800; color:#D97706;">＋</div>
+                <div style="text-align:center; flex:1;">
+                  <div style="font-size:1.4rem;">🗼</div>
+                  <div style="font-weight:800; font-size:0.92rem; color:#78350F;">カラムスチル</div>
+                  <div style="font-size:0.8rem; color:#6B7280;">軽快ですっきり</div>
+                </div>
+                <div style="font-size:1.4rem; font-weight:800; color:#B45309;">＝</div>
+                <div style="text-align:center; flex:1.1; background:#FEF3C7; padding:8px 4px; border-radius:8px;">
+                  <div style="font-size:1.4rem;">🥃</div>
+                  <div style="font-weight:800; font-size:0.92rem; color:#92400E;">黄金の調和</div>
+                  <div style="font-size:0.8rem; color:#B45309;">万能のバランス型</div>
+                </div>
+              </div>
+            `
+          }
+        ],
+        example: {
+          scene: "【たとえばこんな場面】バーで「ラムの王道ってどんな味？まずは奇をてらわない一杯から始めてみたい」と思ったとき。",
+          sceneFigure: `
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
+              <span>🇧🇧 王道のバランス型 × バルバドスの一杯</span>
+            </div>
+          `,
+          choice: "バルバドスの歴史ある「マウントゲイ」をロックで味わってみるのもいいね",
+          reason: "ポットスチルとカラムスチルの原酒が美しく調和し、トーストやバニラの香ばしさと優しいコクがバランスよく広がるからです。",
+          image: "",
+          imageAlt: ""
+        },
+        picks: [
+          {
+            scene: "【場面】バランスの良さが光るバルバドス・ラム。今夜はどんなアプローチで愉しんでみたい？",
+            sceneFigure: `
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#1E40AF; font-weight:700;">
+                <span>✨ バルバドスの愉しみ方セレクト</span>
+              </div>
+            `,
+            question: "気になるスタイルをタップしてみてください：",
+            choices: [
+              {
+                label: "まずは定番のバランス型をじっくりストレートやロックで",
+                response: "「マウントゲイ エクリプス」や「マウントゲイ XO」がまさにぴったり。バニラ、オーク樽の香ばしさ、穏やかなドライフルーツ感が過不足なく溶け合い、ラムの基準となる美しい味わいに包まれます。",
+                image: "",
+                imageAlt: ""
+              },
+              {
+                label: "個性派への入口として、少し重みのあるブレンドをハイボールで",
+                response: "「プランテーション オリジナルダーク」のような、バルバドスの洗練された原酒にジャマイカの力強い原酒を少し重ねたボトルが面白い！炭酸で割ると、バランスの中に心地よいスモーキーさとコクが顔を出します。",
+                image: "",
+                imageAlt: ""
+              }
+            ]
+          }
+        ],
+        afterNote: ""
+      },
+
+      "s2-02": {
+        id: "s2-02",
+        chapterId: "chapter3",
+        number: "s2-02",
+        title: "ジャマイカ（個性派・ファンク）",
+        summary: "長い発酵とポットスチルが育む土地の個性。蒸留所ごとの哲学を味わう。",
+        slides: [
+          {
+            title: "山々と土壌が育むジャマイカの蒸留所",
+            body: "緑深い山々と豊かな水源に恵まれたカリブの島ジャマイカ。島内にはアプルトン、ハンプデン、ワージーパーク、ロングポンドなど、それぞれ独自の歴史と誇りを持つ名門蒸留所が点在しています。",
+            comment: "同じ島の中でも、蒸留所ごとに驚くほど個性が違うんだよ",
+            figure: `
+              <svg class="fig-svg" viewBox="0 0 360 160" width="100%">
+                <!-- ジャマイカ島の輪郭 -->
+                <g transform="translate(15, 18)">
+                  <path d="M 20 60 Q 60 25 150 35 T 310 50 Q 320 85 280 110 T 80 115 Q 10 95 20 60 Z" fill="#ECFDF5" stroke="#10B981" stroke-width="2.5"/>
+                  <!-- 山脈 -->
+                  <path d="M 70 80 Q 120 50 180 75 T 270 70" stroke="#047857" stroke-width="3" fill="none" stroke-dasharray="4 4"/>
+                  <!-- 蒸留所ピン -->
+                  <circle cx="95" cy="65" r="5" fill="#B45309"/>
+                  <text x="95" y="52" text-anchor="middle" class="fig-text-title" fill="#78350F">アプルトン</text>
+                  <circle cx="160" cy="50" r="5" fill="#B45309"/>
+                  <text x="160" y="38" text-anchor="middle" class="fig-text-title" fill="#78350F">ハンプデン</text>
+                  <circle cx="230" cy="75" r="5" fill="#B45309"/>
+                  <text x="230" y="95" text-anchor="middle" class="fig-text-title" fill="#78350F">ワージーパーク</text>
+                  <text x="170" y="132" text-anchor="middle" class="fig-text-desc">豊かな自然と独自の蒸留所文化</text>
+                </g>
+              </svg>
+            `
+          },
+          {
+            title: "土地の酵母とポットスチルの魂",
+            body: "ジャマイカでは各蒸留所が独自の自然酵母や長期発酵のノウハウを頑なに守り、伝統的な銅製ポットスチルで蒸留します。この職人技が、世界中のラムファンを虜にする力強いボディを生み出します。",
+            comment: "銅の蒸留器と長い熟成が、あの完熟バナナのような香りを育てるんだね",
+            figure: `
+              <div style="background:#FFFBEB; border:2px solid #FCD34D; border-radius:12px; padding:14px; width:100%; display:flex; justify-content:space-around; align-items:center;">
+                <div style="text-align:center;">
+                  <div style="font-size:1.6rem;">🌿</div>
+                  <div style="font-weight:800; font-size:0.95rem; color:#78350F;">長期発酵</div>
+                  <div style="font-size:0.82rem; color:#4B5563;">自然酵母の力</div>
+                </div>
+                <div style="font-size:1.3rem; font-weight:800; color:#B45309;">➡</div>
+                <div style="text-align:center;">
+                  <div style="font-size:1.6rem;">⚗️</div>
+                  <div style="font-weight:800; font-size:0.95rem; color:#78350F;">銅製ポットスチル</div>
+                  <div style="font-size:0.82rem; color:#4B5563;">濃厚な香味を凝縮</div>
+                </div>
+                <div style="font-size:1.3rem; font-weight:800; color:#B45309;">➡</div>
+                <div style="text-align:center;">
+                  <div style="font-size:1.6rem;">🍌</div>
+                  <div style="font-weight:800; font-size:0.95rem; color:#B45309;">ジャマイカン・ファンク</div>
+                  <div style="font-size:0.82rem; color:#78350F;">完熟フルーツの芳香</div>
+                </div>
+              </div>
+            `
+          }
+        ],
+        example: {
+          scene: "【たとえばこんな場面】週末のバーで、「ひと口飲んだ瞬間にハッとするような、パンチと個性の強いラムに出会いたい」と思ったとき。",
+          sceneFigure: `
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF2F2; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#991B1B; font-weight:700;">
+              <span>🇯🇲 力強いエステル香 × ジャマイカの一杯</span>
+            </div>
+          `,
+          choice: "ジャマイカの名門「アプルトン エステート 12年」をロックで頼んでみるのもいいね",
+          reason: "ジャマイカらしい完熟オレンジやバナナの華やかな果実香を持ちながら、12年の樽熟成によって角が取れ、優雅な力強さを堪能できるからです。",
+          image: "",
+          imageAlt: ""
+        },
+        picks: [
+          {
+            scene: "【場面】個性あふれるジャマイカのラム。今夜はどの個性と出会ってみたい？",
+            sceneFigure: `
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
+                <span>🍌 ジャマイカのセレクト</span>
+              </div>
+            `,
+            question: "気になるスタイルをタップしてみてください：",
+            choices: [
+              {
+                label: "蒸留所ごとの個性をストレートでじっくり比べてみたい",
+                response: "奥深い探求ですね！エレガントでオレンジピール香が香る「アプルトン」と、野生味あふれるエステル香が炸裂する「ハンプデン」を並べてみると、同じジャマイカでも蒸留所の哲学の違いに驚かされます。",
+                image: "",
+                imageAlt: ""
+              },
+              {
+                label: "まずは親しみやすいカクテルやソーダ割りから試してみたい",
+                response: "爽快で贅沢な選択です！ジャマイカ・ラムを強炭酸で割ったハイボールや、ライムとシロップを合わせた「ジャマイカン・ダイキリ」は絶品。力強い香味が炭酸や酸味に負けず、華やかに咲き誇ります。",
+                image: "",
+                imageAlt: ""
+              }
+            ]
+          }
+        ],
+        afterNote: ""
+      },
+
+      "s2-03": {
+        id: "s2-03",
+        chapterId: "chapter3",
+        number: "s2-03",
+        title: "ガイアナ（デメララの深み）",
+        summary: "デメララ川流域の重厚なラム。独特の深みとコク、世界唯一の木製蒸留器。",
+        slides: [
+          {
+            title: "南米の秘境、デメララ川の恵み",
+            body: "カリブ海に面した南米北東部の国ガイアナ。かつて300以上あったサトウキビ農園は、デメララ川沿いの肥沃な土壌で育まれました。ここで造られるラムは「デメララ・ラム」と呼ばれ、世界で唯一無二の深いコクを誇ります。",
+            comment: "カリブ海の島ではなく南米大陸！川の肥沃な大地が深い甘みを育てるんだ",
+            figure: `
+              <svg class="fig-svg" viewBox="0 0 360 160" width="100%">
+                <!-- デメララ川 -->
+                <path d="M 180 10 Q 140 60 190 100 T 170 155" stroke="#3B82F6" stroke-width="26" fill="none" opacity="0.4"/>
+                <path d="M 180 10 Q 140 60 190 100 T 170 155" stroke="#1D4ED8" stroke-width="3" fill="none"/>
+                <!-- サトウキビ農園 -->
+                <g transform="translate(30, 35)">
+                  <rect width="110" height="85" rx="8" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/>
+                  <text x="55" y="32" text-anchor="middle" class="fig-text-title" fill="#047857">肥沃な黒土</text>
+                  <text x="55" y="55" text-anchor="middle" class="fig-text-desc">デメララ川流域</text>
+                  <text x="55" y="73" text-anchor="middle" class="fig-text-desc">高糖度のサトウキビ</text>
+                </g>
+                <!-- デメララ・ラム -->
+                <g transform="translate(225, 35)">
+                  <rect width="110" height="85" rx="8" fill="#FFFBEB" stroke="#B45309" stroke-width="2"/>
+                  <text x="55" y="32" text-anchor="middle" class="fig-text-title" fill="#78350F">デメララ・ラム</text>
+                  <text x="55" y="55" text-anchor="middle" class="fig-text-desc">濃厚なカラメル香</text>
+                  <text x="55" y="73" text-anchor="middle" class="fig-text-desc">比類なき深みとコク</text>
+                </g>
+              </svg>
+            `
+          },
+          {
+            title: "世界唯一の「木製蒸留器」が生きる",
+            body: "ガイアナのダイヤモンド蒸留所には、250年以上前の硬質な木材で造られた「木製単式蒸留器（ポットスチル）」が今も現役で動いています。木肌を通すことで、カラメルや革のような深くスモーキーな重厚さが生まれます。",
+            comment: "金属じゃなくて木でできた蒸留器！世界でここにしかない生きた伝説だよ",
+            figure: `
+              <div style="background:#FFF; border:2px solid #E5E7EB; border-radius:12px; padding:12px; width:100%; text-align:center;">
+                <div style="display:inline-block; background:#FEF3C7; border:2px solid #B45309; border-radius:10px; padding:8px 18px; margin-bottom:8px;">
+                  <span style="font-weight:800; color:#78350F; font-size:1.02rem;">🪵 木製ポットスチル（ヴェルサイユ／ポートモーラント）</span>
+                </div>
+                <div style="font-size:0.92rem; color:#4B5563; line-height:1.6;">
+                  金属製スチルでは出せない、ずっしりとした重みとロースト感。<br>
+                  銘酒「エル ドラド」の奥深い骨格を形づくっています。
+                </div>
+              </div>
+            `
+          }
+        ],
+        example: {
+          scene: "【たとえばこんな場面】夜更けの静かなバーで、黒糖やレーズン、ビターチョコのような濃厚でスモーキーな余韻にどっぷり浸りたいとき。",
+          sceneFigure: `
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
+              <span>🇬🇾 デメララの重厚なコク × ガイアナの一杯</span>
+            </div>
+          `,
+          choice: "ガイアナが誇る「エル ドラド 12年」を大きめの氷を入れたロックで",
+          reason: "デメララ川流域特有の濃厚な糖蜜感と、歴史ある木製蒸留器原酒がもたらす深みのあるスモーキーな甘みが口いっぱいに広がるからです。",
+          image: "",
+          imageAlt: ""
+        },
+        picks: [
+          {
+            scene: "【場面】唯一無二の深みを持つデメララ・ラム。今夜はどんなひとときを過ごしたい？",
+            sceneFigure: `
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#1E40AF; font-weight:700;">
+                <span>🍫 デメララ・ラムの愉しみ方</span>
+              </div>
+            `,
+            question: "気になる愉しみ方をタップしてみてください：",
+            choices: [
+              {
+                label: "重厚な1杯を、ダークチョコレートをかじりながらじっくり",
+                response: "大人の極上の時間ですね！「エル ドラド」の長期熟成ボトルは、カカオ分の高いビターチョコやドライいちじくと最高の相性。焦がしカラメルや蜂蜜のコクが幾重にも重なります。",
+                image: "",
+                imageAlt: ""
+              },
+              {
+                label: "カクテルの土台として、一杯に深い奥行きを与えたい",
+                response: "通好みの素晴らしい使い方です！ラムレーズンサンドの香り付けに使ったり、オールドファッションドなどのクラシックカクテルにデメララ・ラムを少量ベースに使うと、驚くほど骨太でリッチな一杯に仕上がります。",
+                image: "",
+                imageAlt: ""
+              }
+            ]
+          }
+        ],
+        afterNote: ""
+      },
+
+      "s2-04": {
+        id: "s2-04",
+        chapterId: "chapter3",
+        number: "s2-04",
+        title: "キューバ・スタイル（軽やかでカクテル向き）",
+        summary: "軽やかですっきりした味わい。ダイキリやキューバリブレの土台。",
+        slides: [
+          {
+            title: "軽快さを生んだキューバン・スタイル",
+            body: "19世紀後半、キューバで「ロン・リヘロ（軽やかなラム）」と呼ばれる革新的なスタイルが誕生しました。連続式蒸留機で雑味を取り除き、木炭で丁寧にろ過することで、澄んだ口当たりと爽やかな後味が実現しました。",
+            comment: "重いお酒が主流だった時代に、さらりと飲める洗練を追求したんだね",
+            figure: `
+              <svg class="fig-svg" viewBox="0 0 360 160" width="100%">
+                <!-- カリブ海の陽気な街 -->
+                <rect x="20" y="20" width="320" height="120" rx="10" fill="#FFF" stroke="#E5E7EB" stroke-width="2"/>
+                <g transform="translate(40, 35)">
+                  <text x="140" y="24" text-anchor="middle" class="fig-text-title" fill="#B45309">ロン・リヘロ（軽快なラム）</text>
+                  <line x1="20" y1="36" x2="260" y2="36" stroke="#FCD34D" stroke-width="1.5"/>
+                  <text x="140" y="58" text-anchor="middle" class="fig-text-desc">連続式蒸留 ➡ 活性炭ろ過 ➡ 樽熟成</text>
+                  <text x="140" y="78" text-anchor="middle" class="fig-text-desc">すっきり澄んだクリアな飲み口</text>
+                  <text x="140" y="96" text-anchor="middle" class="fig-text-title" fill="#047857">世界基準のカクテルベースへ</text>
+                </g>
+              </svg>
+            `
+          },
+          {
+            title: "カクテル黄金期と熟成の奥深さ",
+            body: "キューバのラムは、ダイキリやモヒートなど世界中で愛されるカクテルの生みの親。また、軽快な原酒をオーク樽で7年以上じっくり寝かせた「ハバナクラブ7年」のように、すっきりした酒質を保ちつつもタバコやバニラの芳醇な深みを持つ熟成ボトルも魅力です。",
+            comment: "カクテルで爽やかに飲むのも、7年熟成をロックで静かに味わうのも両方最高！",
+            figure: `
+              <div style="display:flex; justify-content:space-around; align-items:center; width:100%; gap:12px;">
+                <div style="background:#ECFDF5; border:2px solid #10B981; border-radius:10px; padding:12px 10px; text-align:center; flex:1;">
+                  <div style="font-size:1.6rem;">🍸</div>
+                  <div style="font-weight:800; font-size:0.95rem; color:#047857; margin-top:2px;">軽快カクテル</div>
+                  <div style="font-size:0.8rem; color:#065F46; margin-top:2px;">ダイキリ / モヒート</div>
+                </div>
+                <div style="font-size:1.4rem; font-weight:800; color:#D97706;">＆</div>
+                <div style="background:#FFFBEB; border:2px solid #F59E0B; border-radius:10px; padding:12px 10px; text-align:center; flex:1;">
+                  <div style="font-size:1.6rem;">🥃</div>
+                  <div style="font-weight:800; font-size:0.95rem; color:#78350F; margin-top:2px;">長期熟成の深み</div>
+                  <div style="font-size:0.8rem; color:#92400E; margin-top:2px;">ハバナクラブ7年など</div>
+                </div>
+              </div>
+            `
+          }
+        ],
+        example: {
+          scene: "【たとえばこんな場面】夕暮れどき、仲間との乾杯や食前酒として、喉越し爽快で明るい気分になれる一杯が欲しいとき。",
+          sceneFigure: `
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#ECFDF5; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#047857; font-weight:700;">
+              <span>🇨🇺 軽快なカクテルベース × キューバの一杯</span>
+            </div>
+          `,
+          choice: "キューバ産ラム（ハバナクラブ3年など）で作るフレッシュな「ダイキリ」",
+          reason: "ライムのフレッシュな酸味と砂糖の甘みに、キューバンラムの軽やかですっきりとした香味が見事に調和する王道のカクテルだからです。",
+          image: "",
+          imageAlt: ""
+        },
+        picks: [
+          {
+            scene: "【場面】軽やかさと洗練が光るキューバ・スタイル。今夜はどちらの表情を楽しみたい？",
+            sceneFigure: `
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
+                <span>🌴 キューバ・スタイルのセレクト</span>
+              </div>
+            `,
+            question: "気になる愉しみ方をタップしてみてください：",
+            choices: [
+              {
+                label: "カクテルで軽やかに！ライムを搾ってモヒートやキューバリブレで",
+                response: "陽気で爽やかな夜にぴったり！キューバのホワイトラムは炭酸や柑橘の香りを邪魔せず、サトウキビのほのかな甘みだけを心地よく添えてくれるため、何杯でも飲みたくなる爽快感があります。",
+                image: "",
+                imageAlt: ""
+              },
+              {
+                label: "熟成の奥深さをストレートやロックで！ハバナクラブ7年の深みを味わう",
+                response: "しっとりとした大人の夜ですね！「ハバナクラブ7年」は、キューバならではの澄んだベースを保ちつつ、オーク樽のウッディな香りとココア、トロピカルフルーツの甘美な熟成感がじんわりと喉を潤します。",
+                image: "",
+                imageAlt: ""
+              }
+            ]
+          }
+        ],
+        afterNote: ""
+      },
+
+      "s2-05": {
+        id: "s2-05",
+        chapterId: "chapter3",
+        number: "s2-05",
+        title: "マルティニーク（AOCアグリコール）",
+        summary: "サトウキビの搾り汁から造るアグリコール。AOCの決まりで守られた土地の味。",
+        slides: [
+          {
+            title: "カリブ海の真珠、マルティニーク島",
+            body: "フランス領マルティニーク島は、そびえるプレー火山の肥沃な火山灰土壌と熱帯の恵みが育むサトウキビの楽園。ここでは糖蜜ではなく、収穫したばかりのサトウキビ生搾りジュースから直接ラムを造る「アグリコール製法」が受け継がれています。",
+            comment: "サトウキビ畑の風がそのままボトルに入ったような島だよ",
+            figure: `
+              <svg class="fig-svg" viewBox="0 0 360 160" width="100%">
+                <!-- 火山とサトウキビ畑 -->
+                <path d="M 40 140 L 130 40 L 220 140 Z" fill="#D1D5DB" stroke="#9CA3AF" stroke-width="2"/>
+                <path d="M 105 68 L 130 40 L 155 68 Z" fill="#EF4444" opacity="0.6"/>
+                <text x="130" y="90" text-anchor="middle" class="fig-text-title" fill="#78350F">プレー火山</text>
+                <text x="130" y="108" text-anchor="middle" class="fig-text-desc">ミネラル豊かな火山灰土壌</text>
+                <!-- アグリコールの特徴 -->
+                <g transform="translate(235, 25)">
+                  <rect width="115" height="110" rx="8" fill="#ECFDF5" stroke="#10B981" stroke-width="2"/>
+                  <text x="57" y="28" text-anchor="middle" class="fig-text-title" fill="#047857">生搾り果汁</text>
+                  <text x="57" y="52" text-anchor="middle" class="fig-text-desc">糖蜜を使わない</text>
+                  <text x="57" y="72" text-anchor="middle" class="fig-text-desc">青草とハーブの香</text>
+                  <text x="57" y="94" text-anchor="middle" class="fig-text-title" fill="#047857">純粋な大地の味</text>
+                </g>
+              </svg>
+            `
+          },
+          {
+            title: "厳格な基準「マルティニークAOC」",
+            body: "フランスの高級ワインと同じく、マルティニークのラムは原産地呼称統制（AOC）で厳格に保護されています。サトウキビの品種から収穫時期、搾汁から発酵までの時間まで細かく規定され、J.BALLY（J.バリー）やクレマン、デパズなど誇り高き銘醸が揃います。",
+            comment: "ワインと同じ法律で守られている蒸留酒って世界でも珍しいんだよ！",
+            figure: `
+              <div style="background:#FFF; border:2px solid #E5E7EB; border-radius:12px; padding:12px; width:100%; text-align:center;">
+                <div style="display:inline-block; background:#FEF3C7; border:2px solid #B45309; border-radius:20px; padding:4px 16px; margin-bottom:6px;">
+                  <span style="font-weight:800; color:#78350F; font-size:0.95rem;">🇫🇷 AOC Martinique 認証</span>
+                </div>
+                <div style="font-size:0.88rem; color:#4B5563; line-height:1.55;">
+                  収穫エリア・品種限定 ／ 搾汁後すぐ発酵 ／ 連続式カラム蒸留<br>
+                  自然のフレッシュさと気品を法律で守り抜く世界基準。
+                </div>
+              </div>
+            `
+          }
+        ],
+        example: {
+          scene: "【たとえばこんな場面】初夏の風が心地よい夕暮れ、まるで森や草原にいるような清々しい植物のアロマをグラスで愉しみたいとき。",
+          sceneFigure: `
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#ECFDF5; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#047857; font-weight:700;">
+              <span>🇲🇶 AOCアグリコール × マルティニークの一杯</span>
+            </div>
+          `,
+          choice: "マルティニークのアグリコール・ブラン（白）にライムを一欠片搾る「ティ・ポンシュ」",
+          reason: "サトウキビ生搾り果汁ならではの青草やライムの花のようなフレッシュな芳香が、少量の砂糖とライムで鮮烈に引き立つ伝統の飲み方だからです。",
+          image: "",
+          imageAlt: ""
+        },
+        picks: [
+          {
+            scene: "【場面】フランスの誇りと大地の恵みが詰まったマルティニーク。今夜はどの香りに惹かれる？",
+            sceneFigure: `
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
+                <span>🌿 マルティニークのセレクト</span>
+              </div>
+            `,
+            question: "気になるスタイルをタップしてみてください：",
+            choices: [
+              {
+                label: "搾り汁ならではの青草やハーブのようなフレッシュな香り（ブラン）",
+                response: "みずみずしい自然の息吹ですね！「J.BALLY ブラン」や「クレマン カンヌ・ブルー」など未熟成のホワイトは、刈りたてのサトウキビやフローラルな香りが鮮やかで、ワインのように繊細です。",
+                image: "",
+                imageAlt: ""
+              },
+              {
+                label: "火山灰土壌とオーク樽が織りなす、上品でまろやかな樽熟成（アンブレ / VSOP）",
+                response: "優雅で気品あふれる選択です！「J.BALLY アンブレ」や「デパズ」「クレマン VSOP」など樽熟成したものは、干し草やシナモンのような上品なスパイスと、ブランデーに似たまろやかな熟成香が楽しめます。",
+                image: "",
+                imageAlt: ""
+              }
+            ]
+          }
+        ],
+        afterNote: ""
+      },
+
+      "s2-06": {
+        id: "s2-06",
+        chapterId: "chapter3",
+        number: "s2-06",
+        title: "スペイン系の甘口スタイル（中米・南米）",
+        summary: "まろやかで甘口のスタイルが多い地域。ソレラ熟成との相性も抜群。",
+        slides: [
+          {
+            title: "中米・南米が誇る甘美なソレラの世界",
+            body: "グアテマラやベネズエラ、コロンビアなど中南米のスペイン語圏では、まろやかでとろりとした甘口のラムが愛されています。シェリー酒の熟成法である「ソレラシステム」を取り入れ、年代の異なる樽原酒を継ぎ足しながら育てるのが特徴です。",
+            comment: "ピラミッド状に積まれた樽の中で、古い原酒と若い原酒が優しく溶け合うんだ",
+            figure: `
+              <svg class="fig-svg" viewBox="0 0 360 160" width="100%">
+                <!-- ソレラピラミッド -->
+                <g transform="translate(145, 15)">
+                  <!-- 最上段 -->
+                  <rect x="20" y="0" width="30" height="24" rx="4" fill="#FEF3C7" stroke="#B45309" stroke-width="1.5"/>
+                  <!-- 2段目 -->
+                  <rect x="0" y="32" width="30" height="24" rx="4" fill="#FDE68A" stroke="#B45309" stroke-width="1.5"/>
+                  <rect x="40" y="32" width="30" height="24" rx="4" fill="#FDE68A" stroke="#B45309" stroke-width="1.5"/>
+                  <!-- 最下段（ソレラ） -->
+                  <rect x="-20" y="64" width="30" height="24" rx="4" fill="#F59E0B" stroke="#B45309" stroke-width="2"/>
+                  <rect x="20" y="64" width="30" height="24" rx="4" fill="#F59E0B" stroke="#B45309" stroke-width="2"/>
+                  <rect x="60" y="64" width="30" height="24" rx="4" fill="#F59E0B" stroke="#B45309" stroke-width="2"/>
+                  <!-- 矢印 -->
+                  <path d="M 35 100 L 35 125 M 28 118 L 35 125 L 42 118" stroke="#78350F" stroke-width="2.5" fill="none"/>
+                  <text x="35" y="145" text-anchor="middle" class="fig-text-title" fill="#78350F">ソレラ熟成によるブレンド</text>
+                </g>
+                <!-- 説明ラベル -->
+                <g transform="translate(15, 45)">
+                  <text x="0" y="20" class="fig-text-title" fill="#B45309">ソレラシステム</text>
+                  <text x="0" y="42" class="fig-text-desc">若い原酒の瑞々しさと</text>
+                  <text x="0" y="62" class="fig-text-desc">古酒の深いコクが一体化</text>
+                </g>
+              </svg>
+            `
+          },
+          {
+            title: "スイーツのように寄り添う優雅な一杯",
+            body: "標高2,300メートルの高地で冷涼熟成される「ロン サカパ」や、ベネズエラの豊かな自然が生んだ「ディプロマティコ」「パンペロ」など、ドライフルーツやキャラメル、蜂蜜を思わせる甘美なアロマが特徴。お酒の強い刺激が苦手な方でも夢見心地に愉しめます。",
+            comment: "一口含むと、とろけるような甘い香りに包まれるよ。大人のデザートだね",
+            figure: `
+              <div style="background:#FFFBEB; border:2px solid #FCD34D; border-radius:12px; padding:14px; width:100%; display:flex; justify-content:space-around; align-items:center;">
+                <div style="text-align:center;">
+                  <div style="font-size:1.6rem;">🍯</div>
+                  <div style="font-weight:800; font-size:0.95rem; color:#78350F;">蜂蜜・トフィー</div>
+                  <div style="font-size:0.82rem; color:#4B5563;">甘やかなアロマ</div>
+                </div>
+                <div style="font-size:1.4rem; font-weight:800; color:#D97706;">＋</div>
+                <div style="text-align:center;">
+                  <div style="font-size:1.6rem;">🏔️</div>
+                  <div style="font-weight:800; font-size:0.95rem; color:#78350F;">中南米の風土</div>
+                  <div style="font-size:0.82rem; color:#4B5563;">高地冷涼熟成</div>
+                </div>
+                <div style="font-size:1.4rem; font-weight:800; color:#B45309;">＝</div>
+                <div style="text-align:center;">
+                  <div style="font-size:1.6rem;">🍮</div>
+                  <div style="font-weight:800; font-size:0.95rem; color:#B45309;">絹のような喉越し</div>
+                  <div style="font-size:0.82rem; color:#78350F;">極上のリラックス</div>
+                </div>
+              </div>
+            `
+          }
+        ],
+        example: {
+          scene: "【たとえばこんな場面】美味しいディナーのあと、甘いデザートの代わりにロックグラスを傾けて、ホッと肩の力を抜きたいとき。",
+          sceneFigure: `
+            <div style="display:inline-flex; align-items:center; gap:8px; background:#FEF3C7; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#92400E; font-weight:700;">
+              <span>🇪🇸 甘美なソレラ熟成 × 中南米の一杯</span>
+            </div>
+          `,
+          choice: "ベネズエラやグアテマラの甘口ラム（ディプロマティコやパンペロ アニベルサリオ）をオン・ザ・ロックで",
+          reason: "ソレラ熟成などがもたらすバニラやキャラメル、トフィーのような甘く滑らかな口当たりが、食後のひとときを最高のリラックスタイムに変えてくれるからです。",
+          image: "",
+          imageAlt: ""
+        },
+        picks: [
+          {
+            scene: "【場面】甘美で優しいスペイン系のラム。今夜はどんなシチュエーションで味わいたい？",
+            sceneFigure: `
+              <div style="display:inline-flex; align-items:center; gap:8px; background:#EFF6FF; padding:8px 14px; border-radius:10px; font-size:0.92rem; color:#1E40AF; font-weight:700;">
+                <span>🍮 甘口スタイルのセレクト</span>
+              </div>
+            `,
+            question: "気になる愉しみ方をタップしてみてください：",
+            choices: [
+              {
+                label: "大きめの丸氷を浮かべたロックで、ゆっくりと溶ける甘みを味わう",
+                response: "至福のひとときですね！「ロン サカパ 23」や「パンペロ」をロックに注ぐと、氷が少しずつ溶けるにつれてカカオやトフィーの香りがふわりと開き、とろけるような滑らかさを最後まで楽しめます。",
+                image: "",
+                imageAlt: ""
+              },
+              {
+                label: "食後のコーヒーや葉巻、ビタースイーツと一緒にゆっくり楽しむ",
+                response: "贅沢な大人のペアリングですね！濃厚な甘口ラムは、エスプレッソの苦味やガトーショコラのカカオ感と合わせるとお互いの旨味を引き立て合い、まるで高級ホテルのラウンジにいるような優雅な気分に浸れます。",
+                image: "",
+                imageAlt: ""
+              }
+            ]
+          }
+        ],
+        afterNote: ""
+      }
     };
 
     /* ==============================================================
@@ -2668,7 +3237,7 @@ response: "同じ系統で甘口と辛口を並べると、違いが一気に分
             <div class="progress-bar-fill" style="width: ${progressPercent}%;"></div>
           </div>
           <div class="progress-text-sub">
-            <span>公開中（プロローグ〜第2章）</span>
+            <span>公開中（プロローグ〜第3章）</span>
             <span>${progressPercent}% 読了</span>
           </div>
         </div>
@@ -2739,7 +3308,7 @@ response: "同じ系統で甘口と辛口を並べると、違いが一気に分
         <div class="story-container">
           <div class="story-header-bar">
             <div class="story-meta-row">
-              <span class="story-badge-category">${currentStory.number} : ${currentStory.chapterId === 'prologue' ? 'プロローグ' : '第1章'}</span>
+              <span class="story-badge-category">${currentStory.number} : ${(CHAPTERS.find(c => c.id === currentStory.chapterId)?.title.split('：')[0]) || ''}</span>
               <div class="step-indicator-pills">${pillsHtml}</div>
             </div>
             <h2 class="story-main-title">${currentStory.title}</h2>
@@ -3019,7 +3588,22 @@ response: "同じ系統で甘口と辛口を並べると、違いが一気に分
         }
       }
 
-      // 公開済み全お話（プロローグ4話 + 第1章6話 + 第2章6話 = 計16話）読了チェック
+      // 第3章全読了チェック
+      const chapter3 = CHAPTERS.find(c => c.id === 'chapter3');
+      if (chapter3) {
+        const isChapter3All = chapter3.storyIds.every(id => isStoryCleared(id));
+        if (isChapter3All && !appState.shownModals.includes('chapter3_cleared')) {
+          appState.shownModals.push('chapter3_cleared');
+          saveProgress();
+          showCongratModal(
+            '🏆 第3章 完全読了！',
+            '素晴らしい！カリブ海の島々から南米まで、世界のラム産地を巡る旅を終えました。土地と伝統が育む豊かな個性がしっかり身につきましたね！'
+          );
+          return;
+        }
+      }
+
+      // 公開済み全お話（プロローグ4話 + 第1章6話 + 第2章6話 + 第3章6話 = 計22話）読了チェック
       const allImplementedIds = Object.keys(STORIES);
       const isAllCleared = allImplementedIds.every(id => isStoryCleared(id));
       if (isAllCleared && !appState.shownModals.includes('all_implemented_cleared')) {
@@ -3027,7 +3611,7 @@ response: "同じ系統で甘口と辛口を並べると、違いが一気に分
         saveProgress();
         showCongratModal(
           '👑 全お話完全読了！',
-          'プロローグ〜第2章の全16お話をすべて読み終えました！たる吉も大感激です！第3章以降の公開もぜひ楽しみにお待ちください。'
+          'プロローグ〜第3章の全22お話をすべて読み終えました！たる吉も大感激です！第4章以降の公開もぜひ楽しみにお待ちください。'
         );
       }
     }
